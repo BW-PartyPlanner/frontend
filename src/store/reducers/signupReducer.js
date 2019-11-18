@@ -1,4 +1,4 @@
-import { GET_FETCH_REQUEST, GET_FETCH_SUCCESS, GET_FETCH_ERROR } from '../actions/signupActions';
+import { FETCH_SIGNUP_REQUEST, FETCH_SIGNUP_REQUEST_SUCCESS, FETCH_SIGNUP_REQUEST_ERROR } from '../actions/signupActions';
 
 const initialState = {
   isLoading: false,
