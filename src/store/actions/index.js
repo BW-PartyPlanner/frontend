@@ -1,1 +1,1 @@
-import { GET_FETCH_REQUEST, GET_FETCH_SUCCESS, GET_FETCH_ERROR } from './signupActions';
+import { FETCH_SIGNUP_REQUEST, FETCH_SIGNUP_SUCCESS, FETCH_SIGNUP_ERROR } from './signupActions';
