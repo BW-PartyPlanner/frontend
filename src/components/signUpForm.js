@@ -4,10 +4,6 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const UserForm = ({values, touched, errors, status}) => {
-    //const [users, setUsers] = useState([]);
-    // useEffect(() => {
-    //     status && setUsers(users => [...users, status]);
-    // }, [status]);
 
     return (
         <div className="user-form">
@@ -67,16 +63,16 @@ const FormikUserForm = withFormik({
         password: Yup.string().required("Please enter a password.")
     }),
 
-    // handleSubmit(values, { setStatus }) {
-    //     axios.post("", values)
-    //     .then(res => {
-    //         setStatus(res.data);
-    //         console.log(res);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
-    // }
+    handleSubmit(values, { setStatus }) {
+        axios().post("/", values)
+        .then(res => {
+            setStatus(res.data);
+            console.log(res);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
 })(UserForm);
 console.log(FormikUserForm);
 
