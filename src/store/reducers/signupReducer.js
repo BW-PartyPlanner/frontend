@@ -12,7 +12,6 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         isLoading: true,
-        users: null,
         error: null
       }
     case FETCH_SIGNUP_SUCCESS:
@@ -25,8 +24,7 @@ export function reducer(state = initialState, action) {
     case FETCH_SIGNUP_ERROR:
       return {
         ...state,
-        isLoading: true,
-        users: null,
+        isLoading: false,
         error: action.payload
       }
     default:

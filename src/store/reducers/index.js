@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import { reducer as signupReducer } from './signupReducer';
 import { reducer as loginReducer } from './loginReducer';
 
