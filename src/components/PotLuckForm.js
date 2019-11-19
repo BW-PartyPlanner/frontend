@@ -110,6 +110,10 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     {touched.description && errors.description && <p>{errors.description}</p>}
                 </div>
                 <button >Create</button>
+
+                <Link to="/PotLuckParty">
+                    Go To Pot Luck Party
+                </Link>
                 
             </Form>
         </section>
@@ -146,21 +150,21 @@ const FormikPotLuckForm = withFormik({
         foodItem: Yup.string(),
         foodQty: Yup.number(),
         description: Yup.string()
-    }),
-    handleSubmit(values, { props, resetForm, setSubmitting }) {
-        axios
-        .post("https://reqres.in/api/users", values)
-        .then(res => {
-            console.log(res);
-            props.setNewParty(res.data);
-            resetForm();
-            setSubmitting(false);
-        })
-        .catch(err => {
-            console.log(err);
-            setSubmitting(false);
-        });
-    }
+    })
+    // handleSubmit(values, { props, resetForm, setSubmitting }) {
+    //     axios
+    //     .post("https://reqres.in/api/users", values)
+    //     .then(res => {
+    //         console.log(res);
+    //         props.setNewParty(res.data);
+    //         resetForm();
+    //         setSubmitting(false);
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //         setSubmitting(false);
+    //     });
+    // }
 })(PotLuckForm);
 
 export default FormikPotLuckForm;
