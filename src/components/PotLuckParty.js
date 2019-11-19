@@ -1,12 +1,14 @@
-import React from 'react';
-import FormikGuestListForm from './GuestListForm';
-import FormikAccountedForForm from './AccountedForForm';
+import React, { useState } from 'react';
+
+import GuestList from './GuestList';
+import AccountedForList from './AccountForList';
 
 
 
-export default function PotLuckParty(props) {
 
-   
+export default function PotLuckParty() {
+    
+    
 
     return (
         <div className="Pot-Luck-Party">
@@ -21,9 +23,11 @@ export default function PotLuckParty(props) {
             <button>Edit</button>
             
             <div>props.Number of Guests</div>
-            <FormikGuestListForm />
+            
+            
+            <GuestList />
             <div>props.Items/Food Needed</div>
-            <FormikAccountedForForm />
+            <AccountedForList />
         </div>
         
         
