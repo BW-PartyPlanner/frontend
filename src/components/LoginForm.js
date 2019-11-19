@@ -11,11 +11,11 @@ const LoginForm = ({ values, touched, errors, status }) => {
             <Form>
                 <Field
                     type="text"
-                    name="email"
-                    placeholder="Email"
-                    value={values.email}
+                    name="username"
+                    placeholder="Username"
+                    value={values.username}
                 />
-                {touched.email && errors.email && <p>{errors.email}</p>}
+                {touched.username && errors.username && <p>{errors.username}</p>}
 
                 <Field
                     type="password"
@@ -32,15 +32,15 @@ const LoginForm = ({ values, touched, errors, status }) => {
 };
 
 const FormikUserForm = withFormik({
-    mapPropsToValues({email, password}) {
+    mapPropsToValues({username, password}) {
         return {
-            email: email || "",
+            username: username || "",
             password: password || ""
         };
     },
 
     validationSchema: Yup.object().shape({
-        email: Yup.string().required("Please enter an email."),
+        username: Yup.string().required("Please enter an username."),
         password: Yup.string().required("Password incorrect.")
     }),
 
