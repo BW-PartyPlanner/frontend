@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux';
+import { registerUser } from '../store/actions/signupActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-const UserForm = ({values, touched, errors, status}) => {
+const UserForm = ({ values, touched, errors, status }) => {
 
     return (
         <div className="user-form">
@@ -62,17 +64,12 @@ const FormikUserForm = withFormik({
         password: Yup.string().required("Please enter a password.")
     }),
 
-    // handleSubmit(values, { setStatus }) {
-    //     axios.post("", values)
-    //     .then(res => {
-    //         setStatus(res.data);
-    //         console.log(res);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
-    // }
+    handleSubmit(values, formikBag) {
+        formikBag.props.registerUser(values);
+        formikBag.resetForm()
+        formikBag.setStatus()
+    }
 })(UserForm);
-console.log(FormikUserForm);
 
-export default FormikUserForm;
+
+export default connect(null, { registerUser })(FormikUserForm);
