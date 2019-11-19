@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const UserForm = ({values, touched, errors, status}) => {
-    //const [users, setUsers] = useState([]);
-    // useEffect(() => {
-    //     status && setUsers(users => [...users, status]);
-    // }, [status]);
 
     return (
         <div className="user-form">
