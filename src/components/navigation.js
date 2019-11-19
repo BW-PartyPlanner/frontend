@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import SignUpForm from './SignUpForm';
+import LoginForm from './LoginForm';
 
 const Navigation = () => {
     return (
@@ -23,6 +24,7 @@ const Navigation = () => {
                 </Link>
             </div>
             <Route path='/signup' component={SignUpForm} />
+            <Route path='/login' component={LoginForm} />
         </div>
     );
 };
