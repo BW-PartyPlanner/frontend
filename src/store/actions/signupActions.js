@@ -15,7 +15,7 @@ export const registerUser = user => dispatch => {
       dispatch({ type: FETCH_SIGNUP_SUCCESS, payload: res.data })
     })
     .catch(err => {
-      console.log("Unable to create user.", err.response.error)
+      console.log("Unable to create user.", err.response.message)
       dispatch({ type: FETCH_SIGNUP_ERROR })
     })
 
