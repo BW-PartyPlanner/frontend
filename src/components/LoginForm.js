@@ -35,17 +35,15 @@ const LoginForm = ({values, touched, errors, status}) => {
 };
 
 const FormikUserForm = withFormik({
-    mapPropsToValues({firstName, lastName, email, password}) {
+    mapPropsToValues({email, password}) {
         return {
-            firstName: firstName || "",
-            lastName: lastName || "",
             email: email || "",
             password: password || ""
         };
     },
 
     validationSchema: Yup.object().shape({
-        email: Yup.string().required("Please enter an email"),
+        email: Yup.string().required("Please enter an email."),
         password: Yup.string().required("Password incorrect.")
     }),
 
