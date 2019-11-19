@@ -23,8 +23,8 @@ const Navigation = () => {
                     Profile
                 </Link>
             </div>
-            <Route path='/signup' component={SignUpForm} />
-            <Route path='/login' component={LoginForm} />
+            <Route exact path='/signup' component={SignUpForm} />
+            <Route exact path='/login' component={LoginForm} />
         </div>
     );
 };
