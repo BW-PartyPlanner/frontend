@@ -5,11 +5,13 @@ export const FETCH_SIGNUP_SUCCESS = 'FETCH_SIGNUP_SUCCESS'
 export const FETCH_SIGNUP_ERROR = 'FETCH_SIGNUP_ERROR'
 
 export const registerUser = user => dispatch => {
+  console.log('user', user)
   dispatch({ type: FETCH_SIGNUP_REQUEST })
 
   axios()
     .post('/users/register', user)
     .then(res => {
+      console.log('data', res.data)
       dispatch({ type: FETCH_SIGNUP_SUCCESS, payload: res.data })
     })
     .catch(err => {
