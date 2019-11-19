@@ -3,7 +3,7 @@ import axios from "axios";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-const SignUpForm = ({values, touched, errors, status}) => {
+const LoginForm = ({values, touched, errors, status}) => {
     //const [users, setUsers] = useState([]);
     // useEffect(() => {
     //     status && setUsers(users => [...users, status]);
@@ -12,22 +12,6 @@ const SignUpForm = ({values, touched, errors, status}) => {
     return (
         <div className="user-form">
             <Form>
-                <Field
-                    type="text"
-                    name="firstName"
-                    placeholder="First Name"
-                    value={values.firstName}
-                />
-                {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
-                
-                <Field
-                    type="text"
-                    name="lastName"
-                    placeholder="Last Name"
-                    value={values.lastName}
-                />
-                {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
-
                 <Field
                     type="text"
                     name="email"
@@ -61,10 +45,8 @@ const FormikUserForm = withFormik({
     },
 
     validationSchema: Yup.object().shape({
-        firstName: Yup.string().required("What is your first name?"),
-        lastName: Yup.string().required("What is your last name?"),
-        email: Yup.string().required("What is your email?"),
-        password: Yup.string().required("Please enter a password.")
+        email: Yup.string().required("Please enter an email"),
+        password: Yup.string().required("Password incorrect.")
     }),
 
     // handleSubmit(values, { setStatus }) {
@@ -77,7 +59,7 @@ const FormikUserForm = withFormik({
     //         console.log(err);
     //     });
     // }
-})(SignUpForm);
+})(LoginForm);
 console.log(FormikUserForm);
 
 export default FormikUserForm;
