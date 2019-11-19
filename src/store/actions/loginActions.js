@@ -8,13 +8,13 @@ export const loginUser = () => dispatch => {
   dispatch({ type: FETCH_LOGIN_REQUEST })
 
   axios()
-    .get('/users/register', )
+    .get('/auth/login', )
     .then(res => {
       console.log('data', res.data)
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: res.data })
     })
     .catch(err => {
-      console.log("Unable to create user.", err.response.error)
+      console.log("Unable to login.", err.response.error)
       dispatch({ type: FETCH_LOGIN_ERROR })
     })
 
