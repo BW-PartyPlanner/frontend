@@ -47,7 +47,7 @@ const FormikUserForm = withFormik({
     handleSubmit(values, formikBag) {
       formikBag.props.loginUser(values);
       formikBag.resetForm()
-      formikBag.setStatus()
+      formikBag.props.history.push('/')
   }
 })(LoginForm);
 
