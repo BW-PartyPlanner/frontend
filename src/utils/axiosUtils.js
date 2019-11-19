@@ -14,7 +14,8 @@ export const axiosWithAuth = () => {
   return axios.create({
     baseURL: 'https://party-planner-api.herokuapp.com/api',
     headers: {
-      Authorization: getToken(),
+      "Authorization": getToken(),
+      "Content-Type": 'application/json'
     }
   })
 }
