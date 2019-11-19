@@ -1,16 +1,15 @@
 import React from 'react';
 import Navigation from './components/Navigation';
-import FormikGuestListForm from './components/GuestListForm'
-;
-import PotLuckParty from './components/PotLuckParty';
+
+import Dashboard from './components/UserDashboard';
 
 function App() {
 
   return (
     <div className="App">
       <Navigation />  
-      <FormikGuestListForm />
-      <PotLuckParty />
+      <Dashboard />
+
     </div>
   );
 }
