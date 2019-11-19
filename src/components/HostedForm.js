@@ -5,21 +5,20 @@ import * as Yup from 'yup';
 import axios from 'axios';
 
 
-function PotLuckForm({ values, touched, errors }, props ) {
-  
+function HostedForm({ values, touched, errors }, props ) {
 
     return (
-        <section className="pot-luck-form">
+        <section className="hosted-form">
             <Form>
                 <div>
                     <Field
                         type="text"
-                        name="name"
+                        name= "name"
                         placeholder="Party's Name"
                         value={values.name}
                     />
-                        {touched.name && errors.name && <p>{errors.name}</p>}
-                    <Field 
+                    {touched.name && errors.name && <p>{errors.name}</p>}
+                    <Field
                         type="text"
                         name="theme"
                         placeholder="Theme"
@@ -29,13 +28,13 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     <Field
                         type="text"
                         name="guestAmt"
-                        placeholder="Number Of Guests"
+                        placeholder="Number of Guests"
                         value={values.guestAmt}
                     />
                     {touched.guestAmt && errors.guestAmt && <p>{errors.guestAmt}</p>}
                 </div>
                 <div>
-                    <Field
+                    <Field 
                         type="text"
                         name="date"
                         placeholder="Date"
@@ -69,36 +68,28 @@ function PotLuckForm({ values, touched, errors }, props ) {
                 <div>
                     <Field
                         type="text"
+                        name="budget"
+                        placeholder="Budget"
+                        value={values.budget}
+                    />
+                    {touched.budget && errors.budget && <p>{errors.budget}</p>}
+                    <p>Remaining budget will go here when ready</p>
+                </div>
+                <div>
+                    <Field
+                        type="text"
                         name="itemList"
-                        placeholder="List Item"
+                        placeholder="Items Needed"
                         value={values.itemList}
                     />
                     {touched.itemList && errors.itemList && <p>{errors.itemList}</p>}
                     <Field
                         type="text"
-                        name="itemQty"
-                        placeholder="Quantity"
-                        value={values.itemQty}
+                        name="itemCost"
+                        placeholder=" Item Cost"
+                        value={values.itemCost}
                     />
-                    {touched.itemQty && errors.itemQty && <p>{errors.itemQty}</p>}
-                    
-                </div>
-                <div>
-                    <Field  
-                        type="text"
-                        name="foodItem"
-                        placeholder="Food Item"
-                        value={values.foodItem}
-                    />
-                    {touched.foodItem && errors.foodItem && <p>{errors.foodItem}</p>}
-                    <Field
-                        type="text"
-                        name="foodQty"
-                        placeholder="Quantity"
-                        value={values.foodQty}
-                    />
-                    {touched.foodQty && errors.foodQty && <p>{errors.foodQty}</p>}
-                    
+                    {touched.itemCost&& errors.itemCost && <p>{errors.itemCost}</p>}
                 </div>
                 <div>
                     <Field
@@ -111,17 +102,15 @@ function PotLuckForm({ values, touched, errors }, props ) {
                 </div>
                 <button >Create</button>
 
-                <Link to="/PotLuckParty">
-                    Go To Pot Luck Party
-                </Link>
+                <Link to="HostedParty">Go to Hosted Party</Link>
                 
             </Form>
         </section>
     );
 };
 
-const FormikPotLuckForm = withFormik({
-    mapPropsToValues({ name, theme, guestAmt, date, startTime, endTime, location,  itemList, itemQty, foodItem, foodQty, description }) {
+const FormikHostedForm = withFormik({
+    mapPropsToValues({ name, theme, guestAmt, date, startTime, endTime, location, budget, itemList, itemCost, description }) {
         return {
             name: name || "",
             theme: theme || "",
@@ -130,10 +119,9 @@ const FormikPotLuckForm = withFormik({
             startTime: startTime || "",
             endTime: endTime || "",
             location: location || "",
+            budget: budget || "",
             itemList: itemList || "",
-            itemQty: itemQty || "",
-            foodItem: foodItem || "",
-            foodQty: foodQty || "",
+            itemCost: itemCost || "",
             description: description || ""
         };
     },
@@ -146,25 +134,20 @@ const FormikPotLuckForm = withFormik({
         endTime: Yup.string().required("Please enter the end time for your party."),
         location: Yup.string().required("Please enter a location for your party."),
         itemList: Yup.string().required("You must enter at least one item"),
-        itemQty: Yup.number().required("You must enter at least one"),
-        foodItem: Yup.string(),
-        foodQty: Yup.number(),
-        description: Yup.string()
+        itemCost: Yup.number().required("Please enter the cost of your item"),
+        budget: Yup.number().required("Please enter your budget"),
+        description: Yup.string()  
     })
-    // handleSubmit(values, { props, resetForm, setSubmitting }) {
-    //     axios
-    //     .post("https://reqres.in/api/users", values)
-    //     .then(res => {
-    //         console.log(res);
-    //         props.setNewParty(res.data);
-    //         resetForm();
-    //         setSubmitting(false);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //         setSubmitting(false);
-    //     });
-    // }
-})(PotLuckForm);
+    //handleSubmit(values { props, resetForm, setSubmitting }) {
+    //  axios
+    //  .post("htps://reqres.in/api/users", values)
+    //  .then(res => {
+    //      console.log(res);
+    //      props.setNewHosted(res.data);
+    //      resetForm();
+    //      setSubmitting(false);
+   //   }) ;   
+   // }
+})(HostedForm);
 
-export default FormikPotLuckForm;
+export default FormikHostedForm;

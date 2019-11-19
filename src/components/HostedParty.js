@@ -1,12 +1,9 @@
 import React from 'react';
 import FormikGuestListForm from './GuestListForm';
-import FormikAccountedForForm from './AccountedForForm';
 
 
+export default function HostedParty(props) {
 
-export default function PotLuckParty(props) {
-
-   
 
     return (
         <div className="Pot-Luck-Party">
@@ -22,10 +19,10 @@ export default function PotLuckParty(props) {
             
             <div>props.Number of Guests</div>
             <FormikGuestListForm />
+            <div>props.Budget</div>
+            <div>props.Remaining Budget</div>
             <div>props.Items/Food Needed</div>
-            <FormikAccountedForForm />
-        </div>
-        
-        
+
+         </div>
     );
 }
