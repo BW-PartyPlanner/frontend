@@ -9,7 +9,7 @@ export const registerUser = user => dispatch => {
   dispatch({ type: FETCH_SIGNUP_REQUEST })
 
   axios()
-    .post('/users/register', user)
+    .post('/auth/register', user)
     .then(res => {
       console.log('data', res.data)
       dispatch({ type: FETCH_SIGNUP_SUCCESS, payload: res.data })
