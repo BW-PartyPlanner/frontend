@@ -8,7 +8,7 @@ export const getItems = () => dispatch => {
   dispatch({ type: FETCH_ITEMS_REQUEST })
 
   axios()
-    .get('/auth/items')
+    .get('/items')
     .then(res => {
       console.log('data', res.data)
       dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data })
@@ -23,7 +23,7 @@ export const getItems = () => dispatch => {
 export const createItem = item => dispatch => {
 
   axios()
-    .post("/auth/items", item)
+    .post("/items", item)
     .then(res => {
       dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data });
     })
@@ -36,7 +36,7 @@ export const createItem = item => dispatch => {
 export const deleteItem = id => dispatch => {
   
   axios()
-    .delete(`/auth/items/${id}`)
+    .delete(`/items/${id}`)
     .then(res => {
       dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data });
     })
