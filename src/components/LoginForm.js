@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { connect } from 'react-redux';
+import { loginUser } from '../store/actions/loginActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-const LoginForm = ({values, touched, errors, status}) => {
-    //const [users, setUsers] = useState([]);
-    // useEffect(() => {
-    //     status && setUsers(users => [...users, status]);
-    // }, [status]);
+const LoginForm = ({ values, touched, errors, status }) => {
 
     return (
         <div className="user-form">
             <Form>
                 <Field
                     type="text"
-                    name="email"
-                    placeholder="Email"
-                    value={values.email}
+                    name="username"
+                    placeholder="Username"
+                    value={values.username}
                 />
-                {touched.email && errors.email && <p>{errors.email}</p>}
+                {touched.username && errors.username && <p>{errors.username}</p>}
 
                 <Field
                     type="password"
@@ -35,29 +32,23 @@ const LoginForm = ({values, touched, errors, status}) => {
 };
 
 const FormikUserForm = withFormik({
-    mapPropsToValues({email, password}) {
+    mapPropsToValues({username, password}) {
         return {
-            email: email || "",
+            username: username || "",
             password: password || ""
         };
     },
 
     validationSchema: Yup.object().shape({
-        email: Yup.string().required("Please enter an email."),
+        username: Yup.string().required("Please enter an username."),
         password: Yup.string().required("Password incorrect.")
     }),
 
-    // handleSubmit(values, { setStatus }) {
-    //     axios.post("", values)
-    //     .then(res => {
-    //         setStatus(res.data);
-    //         console.log(res);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
-    // }
+    handleSubmit(values, formikBag) {
+      formikBag.props.loginUser(values);
+      formikBag.resetForm()
+      formikBag.props.history.push('/')
+  }
 })(LoginForm);
-console.log(FormikUserForm);
 
-export default FormikUserForm;
+export default connect(null, { loginUser })(FormikUserForm);
