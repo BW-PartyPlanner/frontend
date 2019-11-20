@@ -6,7 +6,7 @@ import { setLoggedIn } from '../store/actions/loginActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-const UserForm = ({ values, touched, errors }) => {
+const SignUpForm = ({ values, touched, errors }) => {
 
     return (
         <div className="user-form">
@@ -75,7 +75,6 @@ const FormikUserForm = withFormik({
         formikBag.resetForm()
         formikBag.props.history.push('/')
     }
-})(UserForm);
-
+})(SignUpForm);
 
 export default connect(null, { registerUser, setLoggedIn })(FormikUserForm);
