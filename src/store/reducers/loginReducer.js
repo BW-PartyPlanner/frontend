@@ -1,9 +1,10 @@
-import { FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS, FETCH_LOGIN_ERROR } from '../actions/loginActions';
+import { FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS, FETCH_LOGIN_ERROR, SET_LOGGED_IN, SET_LOGGED_IN_FALSE } from '../actions/loginActions';
 
 const initialState = {
   isLoading: false,
   error: '',
-  users: []
+  users: [],
+  isLoggedIn: false
 }
 
 export function reducer(state = initialState, action) {
@@ -26,6 +27,16 @@ export function reducer(state = initialState, action) {
         ...state,
         isLoading: false,
         error: action.payload
+      }
+    case SET_LOGGED_IN: 
+      return {
+        ...state,
+        isLoggedIn: true
+      }
+    case SET_LOGGED_IN_FALSE: 
+      return {
+        ...state,
+        isLoggedIn: false
       }
     default:
       return state
