@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { registerUser } from '../store/actions/signupActions';
 import { setLoggedIn } from '../store/actions/loginActions';
 import { withFormik, Form, Field } from "formik";
@@ -43,6 +44,8 @@ const UserForm = ({ values, touched, errors }) => {
                 {touched.password && errors.password && <p>{errors.password}</p>}
 
                 <button type="submit">Submit</button>
+
+                <Link to="/login">Already have an account?</Link>
             </Form>     
         </div>
     );
