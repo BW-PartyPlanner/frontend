@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from 'react-redux';
 import { loginUser, setLoggedIn } from '../store/actions/loginActions';
 import { withFormik, Form, Field } from "formik";
