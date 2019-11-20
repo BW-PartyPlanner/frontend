@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withFormik, Field, Form } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 
- function GuestListForm ({ values }) {
+
+ function GuestListForm ({ values }, props) {
 
     return (
         <section className="guest-list">
@@ -12,7 +14,7 @@ import * as Yup from 'yup';
                         type="text"
                         name="guestName"
                         placeholder="Guest Name"
-                        // value={values.guestName}
+                        value={values.guestName}
                     />
                     <button>Add Guest To List</button>
                 </div>
@@ -31,6 +33,20 @@ const FormikGuestListForm = withFormik({
     validationSchema: Yup.object().shape({
         guestName: Yup.string()
     })
+    // handleSubmit(values, { props, resetForm, setSubmitting }) {
+    //     axios
+    //     .post("https://reqres.in/api/users", values)
+    //     .then(res => {
+    //         console.log(res);
+    //         props.setGuests(res.data);
+    //         resetForm();
+    //         setSubmitting(false);
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //         setSubmitting(false);
+    //     });
+   // }
 })(GuestListForm);
 
 export default FormikGuestListForm;
