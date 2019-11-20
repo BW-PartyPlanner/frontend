@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import SignUpForm from './SignUpForm';
 import LoginForm from './LoginForm';
+import UserDashboard from './UserDashboard';
 import { getToken } from '../utils/axiosUtils';
 
 const Navigation = () => {
@@ -22,8 +23,8 @@ const Navigation = () => {
                 {!signedIn && <Link to="/login">
                     Login
                 </Link>}
-                {signedIn && <Link to="/profile">
-                    Profile
+                {signedIn && <Link to="/dashboard">
+                    Dashboard
                 </Link>}
                 {signedIn && <Link to="/login" onClick={() => {localStorage.removeItem('token')}}>
                     Logout
@@ -31,6 +32,7 @@ const Navigation = () => {
             </div>
             <Route exact path='/signup' component={SignUpForm} />
             <Route exact path='/login' component={LoginForm} />
+            <Route exact path='/dashboard' component={UserDashboard} />
         </div>
     );
 };
