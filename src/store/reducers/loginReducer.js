@@ -1,4 +1,4 @@
-import { FETCH_SIGNUP_REQUEST, FETCH_SIGNUP_SUCCESS, FETCH_SIGNUP_ERROR } from '../actions/signupActions';
+import { FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS, FETCH_LOGIN_ERROR } from '../actions/loginActions';
 
 const initialState = {
   isLoading: false,
@@ -8,20 +8,20 @@ const initialState = {
 
 export function reducer(state = initialState, action) {
   switch(action.type) {
-    case FETCH_SIGNUP_REQUEST:
+    case FETCH_LOGIN_REQUEST:
       return {
         ...state,
         isLoading: true,
         error: null
       }
-    case FETCH_SIGNUP_SUCCESS:
+    case FETCH_LOGIN_SUCCESS:
       return {
         ...state,
           isLoading: false,
           users: action.payload,
           error: null
       }
-    case FETCH_SIGNUP_ERROR:
+    case FETCH_LOGIN_ERROR:
       return {
         ...state,
         isLoading: false,
