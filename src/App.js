@@ -1,15 +1,12 @@
 import React from 'react';
 import Navigation from './components/Navigation';
-import FormikGuestListForm from './components/GuestListForm';
-import PotLuckParty from './components/PotLuckParty';
+import './styles.scss';
 
 function App() {
 
   return (
     <div className="App">
-      <Navigation />  
-      <FormikGuestListForm />
-      <PotLuckParty />
+      <Navigation />     
     </div>
   );
 }

@@ -4,6 +4,8 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+import HostedParty from './HostedParty';
+
 
 function HostedForm({ values, touched, errors }, props ) {
 
@@ -102,9 +104,10 @@ function HostedForm({ values, touched, errors }, props ) {
                 </div>
                 <button >Create</button>
 
-                <Link to="HostedParty">Go to Hosted Party</Link>
+                <Link to="/hostedParty">Go to Hosted Party</Link>
                 
             </Form>
+            <Route exact path='/hostedParty' component={HostedParty}/>
         </section>
     );
 };
