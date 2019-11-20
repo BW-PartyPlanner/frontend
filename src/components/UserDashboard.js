@@ -3,16 +3,19 @@ import { Link, Route } from 'react-router-dom'
 import { userInfo } from 'os';
 // import SignUpForm from './SignUpForm';
 // import LoginForm from './LoginForm';
+import CreatePartyModal from './CreatePartyModal';
+
 
 const Dashboard = () => {
     return (
         <div className="container-dashboard">
             <h2>Hello, 'User'</h2>
-            <button>
+            <CreatePartyModal />
+            {/* <button>
                 <Link to="/home">
                     Create Party
                 </Link>
-            </button>
+            </button> */}
             <div className="container-options">
                 <div className="option">My Parties</div>
                 <div className="option">Friends List</div>
