@@ -5,29 +5,31 @@ import * as Yup from 'yup';
 import axios from 'axios';
 
 
+
+
 function PotLuckForm({ values, touched, errors }, props ) {
     
   
 
     return (
         <section className="pot-luck-form">
-            <Form>
-                <div>
-                    <Field
+            <Form className="pot-luck">
+                <div className="name-theme-numOfGuests">
+                    <Field id="name-text"
                         type="text"
                         name="name"
                         placeholder="Party's Name"
                         value={values.name}
                     />
                         {touched.name && errors.name && <p>{errors.name}</p>}
-                    <Field 
+                    <Field id="theme-text"
                         type="text"
                         name="theme"
                         placeholder="Theme"
                         value={values.theme}
                     />
                     {touched.theme && errors.theme && <p>{errors.theme}</p>}
-                    <Field
+                    <Field id="guest-amt"
                         type="text"
                         name="guestAmt"
                         placeholder="Number Of Guests"
@@ -35,22 +37,22 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     />
                     {touched.guestAmt && errors.guestAmt && <p>{errors.guestAmt}</p>}
                 </div>
-                <div>
-                    <Field
+                <div className= "date-times">
+                    <Field id="date"
                         type="text"
                         name="date"
                         placeholder="Date"
                         value={values.date}
                     />
                     {touched.date && errors.date &&   <p>{errors.date}</p>}
-                    <Field 
+                    <Field id="start-time"
                         type="text"
                         name="startTime"
                         placeholder="Start Time"
                         value={values.startTime}
                     />
                     {touched.startTime && errors.startTime && <p>{errors.startTime}</p>}
-                    <Field
+                    <Field id="end-time"
                         type="text"
                         name="endTime"
                         placeholder="End Time"
@@ -58,8 +60,8 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     />
                     {touched.endTime && errors.emdTime && <p>{errors.endTime}</p>}
                 </div>
-                <div>
-                    <Field
+                <div className="location">
+                    <Field id="location"
                         type="text"
                         name="location"
                         placeholder="Location"
@@ -67,15 +69,15 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     />
                     {touched.location && errors.location && <p>{errors.location}</p>}
                 </div>
-                <div>
-                    <Field
+                <div className="item-list-qty">
+                    <Field id="item-list"
                         type="text"
                         name="itemList"
                         placeholder="List Item"
                         value={values.itemList}
                     />
                     {touched.itemList && errors.itemList && <p>{errors.itemList}</p>}
-                    <Field
+                    <Field id="item-qty"
                         type="text"
                         name="itemQty"
                         placeholder="Quantity"
@@ -84,15 +86,15 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     {touched.itemQty && errors.itemQty && <p>{errors.itemQty}</p>}
                     
                 </div>
-                <div>
-                    <Field  
+                <div className="food-list-qty">
+                    <Field  id="food-item"
                         type="text"
                         name="foodItem"
                         placeholder="Food Item"
                         value={values.foodItem}
                     />
                     {touched.foodItem && errors.foodItem && <p>{errors.foodItem}</p>}
-                    <Field
+                    <Field id="food-qty"
                         type="text"
                         name="foodQty"
                         placeholder="Quantity"
@@ -101,8 +103,8 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     {touched.foodQty && errors.foodQty && <p>{errors.foodQty}</p>}
                     
                 </div>
-                <div>
-                    <Field
+                <div className="description">
+                    <Field id="description"
                         type="textarea"
                         name="description"
                         placeholder="Description"
@@ -110,7 +112,7 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     />
                     {touched.description && errors.description && <p>{errors.description}</p>}
                 </div>
-                <button >Create</button>
+                <button className="pot-luck-button" >Create</button>
 
                 <Link to="/PotLuckParty">
                     Go To Pot Luck Party

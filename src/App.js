@@ -1,15 +1,16 @@
 import React from 'react';
 import Navigation from './components/Navigation';
+import './styles.scss';
 
-import Dashboard from './components/UserDashboard';
 
 function App() {
 
   return (
     <div className="App">
       <Navigation />  
-      <Dashboard />
-
+     
+      
+      
     </div>
   );
 }
