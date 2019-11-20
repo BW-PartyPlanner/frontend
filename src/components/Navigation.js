@@ -3,13 +3,11 @@ import { Link, Route } from 'react-router-dom';
 import SignUpForm from './SignUpForm';
 import LoginForm from './LoginForm';
 import UserDashboard from './UserDashboard';
-import { getToken } from '../utils/axiosUtils';
 import { setLoggedIn } from '../store/actions/loginActions'
 import { connect } from 'react-redux';
 
 const Navigation = ({ setLoggedIn, signedIn }) => {
     
-
     const signOut = () => {
         localStorage.removeItem('token')
         setLoggedIn()

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import React from 'react';
 import Navigation from './components/Navigation';
 
 function App() {
