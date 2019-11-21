@@ -18,7 +18,7 @@ function App() {
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />
-        <Route path='/dashboard' component={UserDashboard} />
+        <Route path='/dashboard' render={props => <UserDashboard {...props} /> } />
         <Route path='/hostedform' component={HostedForm} />
         <Route path='/potluckform' component={PotLuckForm} />    
       </Switch>
