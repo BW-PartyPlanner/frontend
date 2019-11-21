@@ -1,8 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import { Link, Route } from 'react-router-dom';
-import HostedForm from './HostedForm';
-import PotLuckForm from './PotLuck/PotLuckForm';
+import { Link } from 'react-router-dom';
 
 export default function CreatePartyModal()  {
     return (

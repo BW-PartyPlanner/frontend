@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Link, Route } from "react-router-dom";
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
 import HostedParty from './HostedParty';
 
 function HostedForm({ values, touched, errors }, props ) {
