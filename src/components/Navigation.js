@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import SignUpForm from './SignUpForm';
-import LoginForm from './LoginForm';
-import UserDashboard from './UserDashboard';
+import { Link } from 'react-router-dom';
 import { setLoggedIn } from '../store/actions/loginActions'
 import { connect } from 'react-redux';
 
@@ -35,10 +32,6 @@ const Navigation = ({ setLoggedIn, signedIn }) => {
                     Logout
                 </Link>}
             </div>
-            <Route exact path='/' component={UserDashboard} />
-            <Route path='/signup' render={props => <SignUpForm {...props} /> } />
-            <Route path='/login' component={LoginForm} />
-            <Route path='/dashboard' component={UserDashboard} />
         </div>
     );
 };
