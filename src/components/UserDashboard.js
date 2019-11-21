@@ -1,15 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Route } from 'react-router-dom'
-import { userInfo } from 'os';
-// import SignUpForm from './SignUpForm';
-// import LoginForm from './LoginForm';
 import CreatePartyModal from './CreatePartyModal';
+import { axiosWithAuth as axios } from '../utils/axiosUtils';
 
+const Dashboard = (props) => {
+    const [users, setUsers] = useState([])
+    const [user, setUser] = useState({
+        id: '',
+        first_name: '',
+        last_name: '',
+        username: ''
+    })
 
-const Dashboard = () => {
+    useEffect(() => {
+        axios()
+            .get(`/users/`)
+            .then(res => {
+                console.log(res.data)
+                setUsers(res.data)
+            })
+            .catch(err => {
+                console.log(err, 'User not found.')
+            })
+    }, [])
+
+    console.log(props)
+
+    useEffect(() => {
+        axios()
+            .get(`/users/${props.match.params.id}`)
+            .then(res => {
+                console.log(res.data)
+                setUser(res.data)
+            })
+            .catch(err => {
+                console.log(err, 'User not found.')
+            })
+    }, [props.match.params.id])
+
     return (
         <div className="container-dashboard">
-            <h2>Hello, 'User'</h2>
+            <h2 key={user.id}>Hello, {user.username}</h2>
             <CreatePartyModal />
             {/* <button>
                 <Link to="/home">

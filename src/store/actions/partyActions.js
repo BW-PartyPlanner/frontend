@@ -35,6 +35,7 @@ export const createParty = party => dispatch => {
 
 export const deleteParty = id => dispatch => {
   
+  if (window.confirm('Are you sure you want to delete party?'))
   axios()
     .delete(`/parties/${id}`)
     .then(res => {
