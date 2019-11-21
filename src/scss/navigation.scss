@@ -1,0 +1,26 @@
+//Navigation
+.Nav {
+    //display: flex;
+    //justify-content:
+    width: 100%;
+    .container-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0px 0px 20px;
+
+        .NavLinks {
+            display: flex;
+            background: $pacific-blue;
+            width: 40%;
+            justify-content: space-between;
+
+            a {
+                display: flex;
+                //margin: 0px 2%;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
