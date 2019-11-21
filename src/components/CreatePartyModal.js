@@ -3,11 +3,11 @@ import Popup from 'reactjs-popup';
 import { Link, Route } from 'react-router-dom';
 
 import HostedForm from './HostedForm';
-import PotLuckForm from './PotLuck/PotLuckForm';
+import FormikPotLuckForm from './PotLuck/PotLuckForm';
 
 export default function CreatePartyModal()  {
     return (
-        <div>
+        
         <div>
             <Popup trigger={<button>Create Party</button>} positiom="center center">
                 <div>
@@ -21,10 +21,6 @@ export default function CreatePartyModal()  {
 
                 </div>
             </Popup>
-
-        </div>
-            <Route exact path='/hostedForm' component={HostedForm} />
-            <Route exact path='/potLuckForm' component={PotLuckForm} />
         </div>
     );
 }

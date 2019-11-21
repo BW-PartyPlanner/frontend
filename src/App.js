@@ -6,6 +6,9 @@ import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import './styles.scss';
 
+import HostedForm from './components/HostedForm';
+
+
 import FormikPotLuckForm from './components/PotLuck/PotLuckForm';
 
 function App() {
@@ -19,6 +22,8 @@ function App() {
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />
         <Route path='/dashboard' component={UserDashboard} />    
+        <Route exact path='/hostedForm' component={HostedForm} />
+        <Route exact path='/potLuckForm' component={FormikPotLuckForm} />
       </Switch>
 
     </div>
