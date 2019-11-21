@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { registerUser } from '../store/actions/signupActions';
-import { setLoggedIn } from '../store/actions/loginActions';
+import { registerUser } from '../../store/actions/signupActions';
+import { setLoggedIn } from '../../store/actions/loginActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
@@ -10,8 +10,8 @@ const SignUpForm = ({ values, touched, errors }) => {
 
     return (
         <div className="user-form">
-            <Form>
-                <Field
+            <Form className="sign-up-form">
+                <Field className="sign-up-field"
                     type="text"
                     name="first_name"
                     placeholder="First Name"
@@ -19,7 +19,7 @@ const SignUpForm = ({ values, touched, errors }) => {
                 />
                 {touched.first_name && errors.first_name && <p>{errors.first_name}</p>}
                 
-                <Field
+                <Field className="sign-up-field"
                     type="text"
                     name="last_name"
                     placeholder="Last Name"
@@ -27,7 +27,7 @@ const SignUpForm = ({ values, touched, errors }) => {
                 />
                 {touched.last_name && errors.last_name && <p>{errors.last_name}</p>}
 
-                <Field
+                <Field className="sign-up-field"
                     type="text"
                     name="username"
                     placeholder="Username"
@@ -35,7 +35,7 @@ const SignUpForm = ({ values, touched, errors }) => {
                 />
                 {touched.username && errors.username && <p>{errors.username}</p>}
 
-                <Field
+                <Field className="sign-up-field"
                     type="password"
                     name="password"
                     placeholder="Password"
