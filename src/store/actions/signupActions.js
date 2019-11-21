@@ -7,7 +7,7 @@ export const FETCH_SIGNUP_ERROR = 'FETCH_SIGNUP_ERROR'
 export const registerUser = user => dispatch => {
   console.log('user', user)
   dispatch({ type: FETCH_SIGNUP_REQUEST })
-
+  if (window.confirm('Thank you for registering. Please login to your new account.'))
   axios()
     .post('/auth/register', user)
     .then(res => {

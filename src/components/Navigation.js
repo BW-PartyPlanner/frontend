@@ -35,9 +35,10 @@ const Navigation = ({ setLoggedIn, signedIn }) => {
                     Logout
                 </Link>}
             </div>
-            <Route exact path='/signup' render={props => <SignUpForm {...props} /> } />
-            <Route exact path='/login' component={LoginForm} />
-            <Route exact path='/dashboard' component={UserDashboard} />
+            <Route exact path='/' component={UserDashboard} />
+            <Route path='/signup' render={props => <SignUpForm {...props} /> } />
+            <Route path='/login' component={LoginForm} />
+            <Route path='/dashboard' component={UserDashboard} />
         </div>
     );
 };
