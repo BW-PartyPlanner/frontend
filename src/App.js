@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import UserDashboard from './components/UserDashboard';
 import LoginForm from './components/LoginForm';

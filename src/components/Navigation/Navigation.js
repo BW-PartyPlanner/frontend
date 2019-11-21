@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { setLoggedIn } from '../store/actions/loginActions'
+import { setLoggedIn } from '../../store/actions/loginActions'
 import { connect } from 'react-redux';
 
 const Navigation = ({ setLoggedIn, signedIn }) => {
