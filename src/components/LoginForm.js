@@ -5,7 +5,7 @@ import { loginUser, setLoggedIn } from '../store/actions/loginActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-const LoginForm = ({ values, touched, errors, status }) => {
+const LoginForm = ({ values, touched, errors }) => {
 
     return (
         <div className="user-form">

@@ -23,9 +23,13 @@ export const loginUser = user => dispatch => {
 
 }
 
+// Action creator to check if a user 
+// is logged in/authenticated.
+// Helps display the Nav based on their status.
 export const setLoggedIn = () => dispatch => {
+
   if (!getToken()) {
+    return dispatch({ type: SET_LOGGED_IN })
+  } else if (getToken()) 
     return dispatch({ type: SET_LOGGED_IN_FALSE })
-  }
-  dispatch({ type: SET_LOGGED_IN })
 }
