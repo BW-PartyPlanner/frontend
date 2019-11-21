@@ -1,45 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CreatePartyModal from './CreatePartyModal';
-import { axiosWithAuth as axios } from '../utils/axiosUtils';
 
 const Dashboard = (props) => {
-    const [users, setUsers] = useState([])
-    const [user, setUser] = useState({
-        id: '',
-        first_name: '',
-        last_name: '',
-        username: ''
-    })
-
-    useEffect(() => {
-        axios()
-            .get(`/users/`)
-            .then(res => {
-                console.log(res.data)
-                setUsers(res.data)
-            })
-            .catch(err => {
-                console.log(err, 'User not found.')
-            })
-    }, [users])
-
-    console.log(props)
-
-    useEffect(() => {
-        axios()
-            .get(`/users/${props.match.params.id}`)
-            .then(res => {
-                console.log(res.data)
-                setUser(res.data)
-            })
-            .catch(err => {
-                console.log(err, 'User not found.')
-            })
-    }, [props.match.params.id])
+    const welcome = localStorage.getItem('message')
 
     return (
         <div className="container-dashboard">
-            <h2 key={user.id}>Hello, {user.username}</h2>
+            <h2>{welcome}</h2>
             <CreatePartyModal />
             {/* <button>
                 <Link to="/home">
