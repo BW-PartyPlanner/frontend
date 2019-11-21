@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import GuestList from '../GuestList';
 import AccountedForList from '../AccountForList';
 
-
+ 
 
 
 export default function PotLuckParty() {
@@ -24,14 +25,30 @@ export default function PotLuckParty() {
             <div className="pl-description">props.Description</div>
             <button className="pl-edit-button">Edit</button>
             
-            <div>props.Number of Guests</div>
+            <div className="pl-guest-info  ">props.Number of Guests
+                <GuestList />
+
+            </div>
+                <Link to='/guestListForm'>
+                    <button>Add to Guest List</button>
+                </Link>
             
-            
-            <GuestList />
-            <div>props.Items/Food Needed</div>
-            <AccountedForList />
+            <div className="pl-lists">
+
+                <div className="pl-item-list">props.Items/Food Needed</div>
+                <div className="pl-acct-for-list"> 
+                    <AccountedForList />  
+                    <Link to='/accountedForForm'>
+                        <button>Add Items Accounted For</button>
+                    </Link>
+                </div>
+            </div>
+
         </div>
         
         
     );
 }
+
+
+
