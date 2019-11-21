@@ -6,10 +6,13 @@ import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import './styles.scss';
 
+import FormikPotLuckForm from './components/PotLuck/PotLuckForm';
+
 function App() {
 
   return (
     <div className="App">
+   
       <Navigation />
       <Switch>
         <Route exact path='/' component={UserDashboard} />
@@ -17,6 +20,7 @@ function App() {
         <Route path='/login' component={LoginForm} />
         <Route path='/dashboard' component={UserDashboard} />    
       </Switch>
+
     </div>
   );
 }
