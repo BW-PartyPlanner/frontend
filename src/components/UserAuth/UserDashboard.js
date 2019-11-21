@@ -1,5 +1,5 @@
 import React from 'react';
-import CreatePartyModal from './CreatePartyModal';
+import CreatePartyModal from '../CreatePartyModal';
 
 const Dashboard = (props) => {
     const welcome = localStorage.getItem('message')

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import GuestList from '../GuestList';
-import AccountedForList from '../AccountForList';
+import GuestList from '../Guests/GuestList';
+import AccountedForList from '../AccountedFor/AccountForList';
 
 
 

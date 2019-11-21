@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { registerUser } from '../store/actions/signupActions';
+import { registerUser } from '../../store/actions/signupActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 

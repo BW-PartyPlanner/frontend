@@ -10,10 +10,10 @@ export default function CreatePartyModal()  {
 
                 <div>
                     <p>Please choose which type of party you would like to create.</p>
-                    <Link to="/hostedForm">
+                    <Link to="/hostedform">
                         <button>Hosted Party</button>
                     </Link>
-                    <Link to="/potLuckForm">
+                    <Link to="/potluckform">
                         <button>Pot Luck Party</button>
                     </Link>
 
