@@ -1,27 +1,27 @@
-import { FETCH_SIGNUP_REQUEST, FETCH_SIGNUP_SUCCESS, FETCH_SIGNUP_ERROR } from '../actions/signupActions';
+import { FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USERS_ERROR } from '../actions/userActions';
 
 const initialState = {
   isLoading: false,
   error: '',
-  users: []
+  items: []
 }
 
 export function reducer(state = initialState, action) {
   switch(action.type) {
-    case FETCH_SIGNUP_REQUEST:
+    case FETCH_USERS_REQUEST:
       return {
         ...state,
         isLoading: true,
         error: null
       }
-    case FETCH_SIGNUP_SUCCESS:
+    case FETCH_USERS_SUCCESS:
       return {
         ...state,
           isLoading: false,
           users: action.payload,
           error: null
       }
-    case FETCH_SIGNUP_ERROR:
+    case FETCH_USERS_ERROR:
       return {
         ...state,
         isLoading: false,

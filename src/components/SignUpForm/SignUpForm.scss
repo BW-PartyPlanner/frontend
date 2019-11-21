@@ -1,13 +1,37 @@
 .user-form {
     display: flex;
     flex-direction: column;
+    margin: 10px;
+    width: 100%;
+    align-items: center;
 
     .sign-up-form {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        min-width: 220px;
+        width: 30%;
+        background: $iceberg;
+        border: 2px solid $cyprus;
 
-        input {
+        .sign-up-field {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0px;
+            color: red;
+            font-family: 'Quicksand', sans-serif;
+            align-items: center;
             
+            .existing-user {
+                text-decoration: none;
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            button {
+                background: $pacific-blue;
+                width: 80px;
+                min-width: 40px;
+            }
         }
     }
 }

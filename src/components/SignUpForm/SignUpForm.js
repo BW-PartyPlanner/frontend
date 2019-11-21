@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../../store/actions/signupActions';
-import { setLoggedIn } from '../../store/actions/loginActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
@@ -71,10 +70,9 @@ const FormikUserForm = withFormik({
     handleSubmit(values, formikBag) {
         console.log(formikBag.props)
         formikBag.props.registerUser(values);
-        formikBag.props.setLoggedIn()
         formikBag.resetForm()
         formikBag.props.history.push('/login')
     }
 })(SignUpForm);
 
-export default connect(null, { registerUser, setLoggedIn })(FormikUserForm);
+export default connect(null, { registerUser })(FormikUserForm);

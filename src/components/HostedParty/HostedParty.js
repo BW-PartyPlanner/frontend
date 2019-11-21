@@ -1,5 +1,5 @@
 import React from 'react';
-import FormikGuestListForm from './GuestListForm';
+import GuestListForm from '../Guests/GuestListForm';
 
 
 export default function HostedParty(props) {
@@ -18,7 +18,7 @@ export default function HostedParty(props) {
             <button>Edit</button>
             
             <div>props.Number of Guests</div>
-            <FormikGuestListForm />
+            <GuestListForm />
             <div>props.Budget</div>
             <div>props.Remaining Budget</div>
             <div>props.Items/Food Needed</div>
