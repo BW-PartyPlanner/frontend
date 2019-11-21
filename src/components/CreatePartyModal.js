@@ -17,8 +17,9 @@ export default function CreatePartyModal()  {
                         <button>Pot Luck Party</button>
                     </Link>
 
-                </div>
-            </Popup>
+                    </div>
+                </Popup>
+           
 
         </div>
     );
