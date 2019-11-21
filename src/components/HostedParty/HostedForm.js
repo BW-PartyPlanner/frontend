@@ -99,12 +99,14 @@ function HostedForm({ values, touched, errors }, props ) {
                     />
                     {touched.description && errors.description && <p>{errors.description}</p>}
                 </div>
-                <button >Create</button>
 
-                <Link to="/hostedParty">Go to Hosted Party</Link>
+                <Link to="/hostedParty">
+                    <button >Create</button>
+
+                </Link>
                 
             </Form>
-            <Route exact path='/hostedParty' component={HostedParty}/>
+            
         </section>
     );
 };

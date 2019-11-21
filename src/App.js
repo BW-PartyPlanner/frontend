@@ -5,8 +5,11 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 import UserDashboard from './components/UserDashboard';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
-import HostedForm from './components/HostedForm';
+import HostedForm from './components/HostedParty/HostedForm';
+import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
+import PotLuckParty from './components/PotLuck/PotLuckParty';
+
 
 function App() {
 
@@ -20,7 +23,10 @@ function App() {
         <Route path='/login' component={LoginForm} />
         <Route path='/dashboard' component={UserDashboard} />
         <Route path='/hostedform' component={HostedForm} />
-        <Route path='/potluckform' component={PotLuckForm} />    
+        <Route path='/potluckform' component={PotLuckForm} /> 
+        <Route path='/potLuckParty' component={PotLuckParty} /> 
+        <Route path='/hostedForm' component={HostedForm} />  
+        <Route path='/hostedParty' component={HostedParty} />
       </Switch>
 
     </div>

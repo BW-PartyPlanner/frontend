@@ -106,10 +106,10 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     />
                     {touched.description && errors.description && <p>{errors.description}</p>}
                 </div>
-                <button className="pot-luck-button" >Create</button>
 
                 <Link to="/PotLuckParty">
-                    Go To Pot Luck Party
+                    <button className="pot-luck-button" >Create</button>
+                    
                 </Link>
                 
             </Form>
