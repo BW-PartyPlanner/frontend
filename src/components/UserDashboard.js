@@ -8,11 +8,6 @@ const Dashboard = (props) => {
         <div className="container-dashboard">
             <h2>{welcome}</h2>
             <CreatePartyModal />
-            {/* <button>
-                <Link to="/home">
-                    Create Party
-                </Link>
-            </button> */}
             <div className="container-options">
                 <div className="option">My Parties</div>
                 <div className="option">Friends List</div>
