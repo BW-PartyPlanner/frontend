@@ -1,8 +1,9 @@
 //Navigation
 .Nav {
-    //display: flex;
-    //justify-content:
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+    background: $pacific-blue;
     .container-nav {
         display: flex;
         justify-content: space-between;

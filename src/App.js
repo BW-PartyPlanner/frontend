@@ -14,6 +14,7 @@ function App() {
     <div className="App">
    
       <Navigation />
+      <FormikPotLuckForm />
       <Switch>
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
