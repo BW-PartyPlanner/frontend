@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-export const FETCH_LOGIN_REQUEST = 'FETCH_LOGIN_REQUEST'
-export const FETCH_LOGIN_SUCCESS = 'FETCH_LOGIN_SUCCESS'
-export const FETCH_LOGIN_ERROR = 'FETCH_LOGIN_ERROR'
-=======
 import { axiosWithoutAuth as axios, getToken } from '../../utils/axiosUtils';
 
 export const FETCH_LOGIN_REQUEST = 'FETCH_LOGIN_REQUEST'
@@ -34,4 +29,3 @@ export const setLoggedIn = () => dispatch => {
   }
   dispatch({ type: SET_LOGGED_IN })
 }
->>>>>>> e56420b3e349334a48a9719e5cbb6d9f64002796

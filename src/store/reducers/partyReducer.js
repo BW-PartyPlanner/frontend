@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-//KEVIN SILVESTRE REACT II / WORKING ON IT
-=======
 import { FETCH_PARTIES_REQUEST, FETCH_PARTIES_SUCCESS, FETCH_PARTIES_ERROR } from '../actions/partyActions';
 
 const initialState = {
@@ -34,4 +31,3 @@ export function reducer(state = initialState, action) {
       return state
     }
 }
->>>>>>> e56420b3e349334a48a9719e5cbb6d9f64002796

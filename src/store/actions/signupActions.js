@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-export const FETCH_SIGNUP_REQUEST = 'FETCH_SIGNUP_REQUEST'
-export const FETCH_SIGNUP_SUCCESS = 'FETCH_SIGNUP_SUCCESS'
-export const FETCH_SIGNUP_ERROR = 'FETCH_SIGNUP_ERROR'
-=======
 import { axiosWithoutAuth as axios } from '../../utils/axiosUtils';
 
 export const FETCH_SIGNUP_REQUEST = 'FETCH_SIGNUP_REQUEST'
@@ -25,4 +20,3 @@ export const registerUser = user => dispatch => {
     })
 
 }
->>>>>>> e56420b3e349334a48a9719e5cbb6d9f64002796
