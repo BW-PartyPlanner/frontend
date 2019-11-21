@@ -3,25 +3,43 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: $pacific-blue;
-    .container-nav {
+    background: $iceberg;
+    //border-radius: 5px;
+    border: 2px solid $cyprus;
+    margin: 0px 0px 10px;
+
+    .Logo {
         display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin: 0px 0px 20px;
+        margin: 0px 0px 0px 2%;
+        width: 80%;
 
-        .NavLinks {
-            display: flex;
-            background: $pacific-blue;
+        img {
             width: 40%;
-            justify-content: space-between;
-
-            a {
-                display: flex;
-                //margin: 0px 2%;
-                text-decoration: none;
-            }
+            border-radius: 5px;
+            margin: 5px 0px;
         }
     }
+    
+    .NavLinks {
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        margin: 0px 2% 0px 0px;
+        align-items: center;
+
+        a {
+            display: flex;
+            text-decoration: none;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            color: $cyprus;
+            font-size: 1rem;
+        }
+
+        a:hover {
+            color: $pacific-blue;
+        }
+    }
+    
 }
 

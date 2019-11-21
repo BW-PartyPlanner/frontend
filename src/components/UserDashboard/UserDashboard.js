@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Route } from 'react-router-dom'
-import CreatePartyModal from './CreatePartyModal';
-import { axiosWithAuth as axios } from '../utils/axiosUtils';
+import CreatePartyModal from '../CreatePartyModal';
+import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
 const Dashboard = (props) => {
     const [users, setUsers] = useState([])
