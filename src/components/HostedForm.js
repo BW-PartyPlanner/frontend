@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, Route } from "react-router-dom";
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-
 import HostedParty from './HostedParty';
 
 function HostedForm({ values, touched, errors }, props ) {
