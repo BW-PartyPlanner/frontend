@@ -6,8 +6,8 @@ import UserDashboard from './components/UserDashboard';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import FormikPotLuckForm from './components/PotLuck/PotLuckForm';
-import HostedForm from './HostedForm';
-import PotLuckForm from './PotLuck/PotLuckForm';
+import HostedForm from './components/HostedForm';
+import PotLuckForm from './components/PotLuck/PotLuckForm';
 
 function App() {
 
