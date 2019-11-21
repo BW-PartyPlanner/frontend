@@ -1,5 +1,5 @@
 import React from 'react';
-import GuestListForm from '../GuestListForm';
+import GuestListForm from '../GuestList/GuestListForm';
 
 
 export default function HostedParty(props) {

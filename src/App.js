@@ -9,8 +9,8 @@ import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
-import GuestListForm from './components/GuestListForm';
-import AccountedForForm from './components/AccountedForForm';
+import GuestListForm from './components/GuestList/GuestListForm';
+import AccountedForForm from './components/AccountedFor/AccountedForForm';
 
 
 function App() {

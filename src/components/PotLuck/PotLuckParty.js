@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import GuestList from '../GuestList';
-import AccountedForList from '../AccountForList';
+import GuestList from '../GuestList/GuestList';
+import AccountedForList from '../AccountedFor/AccountForList';
 
  
 
