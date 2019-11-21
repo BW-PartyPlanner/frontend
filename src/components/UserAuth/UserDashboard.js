@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CreatePartyModal from '../CreatePartyModal';
 
 const Dashboard = (props) => {
     const welcome = localStorage.getItem('message')
+    const [welcomeMessage, setWelcomeMessage] = useState(welcome)
+
+    useEffect(() => {
+        setWelcomeMessage(welcomeMessage)
+    }, [welcomeMessage])
 
     return (
         <div className="container-dashboard">
-            <h2>{welcome}</h2>
+            <h2>{welcomeMessage}</h2>
             <CreatePartyModal />
             <div className="container-options">
                 <div className="option">My Parties</div>
