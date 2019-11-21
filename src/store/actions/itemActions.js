@@ -1,4 +1,4 @@
-import { axiosWithoutAuth as axios } from '../../utils/axiosUtils';
+import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
 export const FETCH_ITEMS_REQUEST = 'FETCH_ITEMS_REQUEST'
 export const FETCH_ITEMS_SUCCESS = 'FETCH_ITEMS_SUCCESS'
