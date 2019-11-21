@@ -1,8 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import { Link, Route } from 'react-router-dom';
-import HostedForm from './HostedForm';
-import FormikPotLuckForm from './PotLuck/PotLuckForm';
+import { Link } from 'react-router-dom';
 
 export default function CreatePartyModal()  {
     return (
@@ -19,11 +17,9 @@ export default function CreatePartyModal()  {
                         <button>Pot Luck Party</button>
                     </Link>
 
-                </div>
-            </Popup>
-
-
-
+                    </div>
+                </Popup>
+           
         </div>
     );
 }
