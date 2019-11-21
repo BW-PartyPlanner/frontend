@@ -35,6 +35,7 @@ export const createItem = item => dispatch => {
 
 export const deleteItem = id => dispatch => {
   
+  if (window.confirm('Are you sure you want to delete item?'))
   axios()
     .delete(`/items/${id}`)
     .then(res => {
@@ -44,4 +45,16 @@ export const deleteItem = id => dispatch => {
       dispatch({ type: FETCH_ITEMS_ERROR, payload: err.response });
     });
 
+}
+
+export const editItem = item => dispatch => {
+
+  axios()
+    .put(`/items/${item.id}`, item)
+    .then(res => {
+      dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_ITEMS_ERROR, payload: err.response })
+    })
 }

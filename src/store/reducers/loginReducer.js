@@ -31,12 +31,12 @@ export function reducer(state = initialState, action) {
     case SET_LOGGED_IN: 
       return {
         ...state,
-        isLoggedIn: true
+        isLoggedIn: !state.isLoggedIn
       }
     case SET_LOGGED_IN_FALSE: 
       return {
         ...state,
-        isLoggedIn: false
+        isLoggedIn: !state.isLoggedIn
       }
     default:
       return state
