@@ -3,41 +3,48 @@ import { Link, Route } from 'react-router-dom';
 import SignUpForm from './SignUpForm';
 import LoginForm from './LoginForm';
 import UserDashboard from './UserDashboard';
-import { getToken } from '../utils/axiosUtils';
-//import '../index';
+import { setLoggedIn } from '../store/actions/loginActions'
+import { connect } from 'react-redux';
 
-const Navigation = () => {
-    const signedIn = getToken()
+const Navigation = ({ setLoggedIn, signedIn }) => {
+    
+    const signOut = () => {
+        localStorage.removeItem('token')
+        setLoggedIn()
+    }
 
     return (
         <div className="Nav">
-            <div className="container-nav">
-                <div className="Logo">
-                    Logo
-                </div>
-                <div className="NavLinks">
-                    <Link to="/home">
-                        Home
-                    </Link>
-                    {!signedIn && <Link to="/signup">
-                        Sign Up
-                    </Link>}
-                    {!signedIn && <Link to="/login">
-                        Login
-                    </Link>}
-                    {signedIn && <Link to="/dashboard">
-                        Dashboard
-                    </Link>}
-                    {signedIn && <Link to="/login" onClick={() => {localStorage.removeItem('token')}}>
-                        Logout
-                    </Link>}
-                </div>
+            <div className="Logo">
+                Logo
             </div>
-            <Route exact path='/signup' component={SignUpForm} />
-            <Route exact path='/login' component={LoginForm} />
-            <Route exact path='/dashboard' component={UserDashboard} />
+            <div className="NavLinks">
+                <Link to="/home">
+                    Home
+                </Link>
+                {!signedIn && <Link to="/signup">
+                    Sign Up
+                </Link>}
+                {!signedIn && <Link to="/login">
+                    Login
+                </Link>}
+                {signedIn && <Link to="/dashboard">
+                    Dashboard
+                </Link>}
+                {signedIn && <Link to="/login" onClick={() => signOut()}>
+                    Logout
+                </Link>}
+            </div>
+            <Route exact path='/' component={UserDashboard} />
+            <Route path='/signup' render={props => <SignUpForm {...props} /> } />
+            <Route path='/login' component={LoginForm} />
+            <Route path='/dashboard' component={UserDashboard} />
         </div>
     );
 };
 
-export default Navigation;
+const mapStateToProps = state => ({
+  signedIn: state.loginReducer.isLoggedIn 
+})
+
+export default connect(mapStateToProps, { setLoggedIn })(Navigation);

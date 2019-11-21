@@ -1,42 +1,31 @@
-import { FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS, FETCH_LOGIN_ERROR, SET_LOGGED_IN, SET_LOGGED_IN_FALSE } from '../actions/loginActions';
+import { FETCH_PARTIES_REQUEST, FETCH_PARTIES_SUCCESS, FETCH_PARTIES_ERROR } from '../actions/partyActions';
 
 const initialState = {
   isLoading: false,
   error: '',
-  users: [],
-  isLoggedIn: false
+  items: []
 }
 
 export function reducer(state = initialState, action) {
   switch(action.type) {
-    case FETCH_LOGIN_REQUEST:
+    case FETCH_PARTIES_REQUEST:
       return {
         ...state,
         isLoading: true,
         error: null
       }
-    case FETCH_LOGIN_SUCCESS:
+    case FETCH_PARTIES_SUCCESS:
       return {
         ...state,
           isLoading: false,
           users: action.payload,
           error: null
       }
-    case FETCH_LOGIN_ERROR:
+    case FETCH_PARTIES_ERROR:
       return {
         ...state,
         isLoading: false,
         error: action.payload
-      }
-    case SET_LOGGED_IN: 
-      return {
-        ...state,
-        isLoggedIn: !state.isLoggedIn
-      }
-    case SET_LOGGED_IN_FALSE: 
-      return {
-        ...state,
-        isLoggedIn: !state.isLoggedIn
       }
     default:
       return state

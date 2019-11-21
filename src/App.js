@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import React from 'react';
 import Navigation from './components/Navigation';
+import './styles.scss';
 
 function App() {
 
   return (
     <div className="App">
-      <Navigation />
-      {/* <h1>Hello World!</h1>    */}
+      <Navigation />     
     </div>
   );
 }
