@@ -2,6 +2,8 @@ import React from 'react';
 import { withFormik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
+import GuestList from './GuestList';
+
  function GuestListForm ({ values }, props) {
 
     return (
@@ -17,6 +19,9 @@ import * as Yup from 'yup';
                     <button>Add Guest To List</button>
                 </div>
             </Form>
+            <div>
+                <GuestList />
+            </div>
         </section>
     );
 }

@@ -9,6 +9,8 @@ import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
+import GuestListForm from './components/Guests/GuestListForm';
+import AccountedForForm from './components/AccountedFor/AccountedForForm';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path='/potLuckParty' component={PotLuckParty} /> 
         <Route path='/hostedForm' component={HostedForm} />  
         <Route path='/hostedParty' component={HostedParty} />
+        <Route path='/guestListForm' component={GuestListForm} />
+        <Route path='/accountedForForm' component={AccountedForForm} />
       </Switch>
 
     </div>

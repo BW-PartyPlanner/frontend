@@ -1,6 +1,6 @@
 import React from 'react';
-import GuestListForm from '../Guests/GuestListForm';
-
+import { Link } from 'react-router-dom';
+import GuestList from '../Guests/GuestList';
 
 export default function HostedParty(props) {
 
@@ -18,7 +18,12 @@ export default function HostedParty(props) {
             <button>Edit</button>
             
             <div>props.Number of Guests</div>
-            <GuestListForm />
+            <div>
+                <GuestList />
+                <Link to="/guestListForm">
+                    <button>Add Guests</button>
+                </Link>
+            </div>
             <div>props.Budget</div>
             <div>props.Remaining Budget</div>
             <div>props.Items/Food Needed</div>
