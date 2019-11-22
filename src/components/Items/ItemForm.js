@@ -1,26 +1,32 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { createItem } from '../../store/actions/itemActions'
+import { useDispatch } from 'react-redux';
+import { createItem } from '../../store/actions/itemActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const ItemForm = ({ values, touched, errors }) => {
+  const dispatch = useDispatch()
 
   return (
-    <div className="itemForm">
-      <Form>
+    <div className="itemFormContainer">
+      <Form className='itemForm'>
+        <h1>ADD <br /> ITEMS</h1>
+        <hr />
         <Field 
           type="text"
           name="name"
-          placeholder="name"
+          placeholder="Name"
+          className='itemInput'
           value={values.name}
         />
-        {touched.name && errors.name&& <p>{errors.first_name}</p>}
+        {touched.name && errors.name && <p>{errors.name}</p>}
 
         <Field
           type="text"
           name="description"
-          placeholder="description"
+          placeholder="Description"
+          className='itemInput'
           value={values.description}
         />
         {touched.description && errors.description && <p>{errors.description}</p>}
@@ -29,11 +35,20 @@ const ItemForm = ({ values, touched, errors }) => {
           type="text"
           name="cost"
           placeholder="Cost"
+          className='itemInput'
           value={values.cost}
         />
         {touched.cost && errors.cost && <p>{errors.cost}</p>}
 
-        <button type="submit">Submit</button>
+        <div className='btnContainer'>
+          <button className='submitBtn' type='submit'>
+            Submit
+          </button>
+          
+          <button className="removeBtn" type='delete' onClick={() => dispatch({ type: 'REMOVE_TODO' })}>
+            Remove
+          </button>
+        </div>
       </Form> 
   </div>
   );
@@ -51,7 +66,7 @@ const FormikItemForm = withFormik({
   validationSchema: Yup.object().shape({
     name: Yup.string().required("What is the item name?"),
     description: Yup.string().required("Describe the item."),
-    username: Yup.string().required("Cost of item")
+    cost: Yup.string().required("Cost of item")
   }),
 
   handleSubmit(values, formikBag) {
@@ -61,4 +76,4 @@ const FormikItemForm = withFormik({
   }
 })(ItemForm);
 
-export default connect(null, { createItem})(FormikItemForm);
+export default connect(null, { createItem })(FormikItemForm);
