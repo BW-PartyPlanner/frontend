@@ -4,7 +4,8 @@ import { setLoggedIn } from '../../store/actions/loginActions'
 import { connect } from 'react-redux';
 import Logo from '../../img/logo.png';
 
-const Navigation = ({ setLoggedIn, signedIn }) => {
+const Navigation = () => {
+    const signedIn = localStorage.getItem('token')
     
     const signOut = () => {
         localStorage.removeItem('token')
@@ -36,8 +37,4 @@ const Navigation = ({ setLoggedIn, signedIn }) => {
     );
 };
 
-const mapStateToProps = state => ({
-  signedIn: state.loginReducer.isLoggedIn 
-})
-
-export default connect(mapStateToProps, { setLoggedIn })(Navigation);
+export default Navigation;
