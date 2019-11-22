@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CreatePartyModal from '../CreatePartyModal';
+import CreatePartyModal from '../Modal/CreatePartyModal';
 import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
 const Dashboard = (props) => {
