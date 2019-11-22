@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { setLoggedIn } from '../../store/actions/loginActions'
-import { connect } from 'react-redux';
 import Logo from '../../img/logo.png';
 
 const Navigation = () => {
@@ -11,7 +9,6 @@ const Navigation = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('message')
         localStorage.removeItem('username')
-        setLoggedIn()
     }
 
     return (
