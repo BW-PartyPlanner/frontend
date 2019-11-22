@@ -1,11 +1,6 @@
 import React from 'react';
-
-
-
-
 import { Link } from 'react-router-dom';
 import GuestList from '../GuestList/GuestList';
-
 
 export default function HostedParty(props) {
 

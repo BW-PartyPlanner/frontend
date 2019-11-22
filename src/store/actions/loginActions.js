@@ -12,10 +12,11 @@ export const loginUser = user => dispatch => {
   axios()
     .post('/auth/login', user)
     .then(res => {
-      console.log('data', res.data)
+      console.log('user who just logged in', user)
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: res.data })
       localStorage.setItem("token", res.data.token)
       localStorage.setItem('message', res.data.message)
+      localStorage.setItem('username', user.username)
     })
     .catch(err => {
       console.log("Unable to login.", err.response.message)
