@@ -9,8 +9,7 @@ import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
-import FormikPotLuckForm from './components/PotLuck/PotLuckForm';
-
+import PrivateRoute from './auth/PrivateRoute'
 
 function App() {
 
@@ -18,17 +17,16 @@ function App() {
     <div className="App">
    
       <Navigation />
-      <FormikPotLuckForm />
       <Switch>
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />
-        <Route path='/dashboard' render={props => <UserDashboard {...props} /> } />
-        <Route path='/hostedform' component={HostedForm} />
-        <Route path='/potluckform' component={PotLuckForm} /> 
-        <Route path='/potLuckParty' component={PotLuckParty} /> 
-        <Route path='/hostedForm' component={HostedForm} />  
-        <Route path='/hostedParty' component={HostedParty} />
+        <PrivateRoute path='/dashboard' component={UserDashboard} />
+        <PrivateRoute path='/hostedform' component={HostedForm} />
+        <PrivateRoute path='/potluckform' component={PotLuckForm} /> 
+        <PrivateRoute path='/potluckparty' component={PotLuckParty} /> 
+        <PrivateRoute path='/hostedform' component={HostedForm} />  
+        <PrivateRoute path='/hostedparty' component={HostedParty} />
       </Switch>
 
     </div>

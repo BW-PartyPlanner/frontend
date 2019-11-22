@@ -18,9 +18,6 @@ const Navigation = ({ setLoggedIn, signedIn }) => {
                 <img src={Logo} alt="Logo"/>
             </div>
             <div className="NavLinks">
-                <Link to="/home">
-                    Home
-                </Link>
                 {!signedIn && <Link to="/signup">
                     Sign Up
                 </Link>}
