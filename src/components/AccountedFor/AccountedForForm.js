@@ -12,7 +12,7 @@ function AccountedForForm ({ values }) {
                         type="text"
                         name="accountedFor"
                         placeholder="Items Accounted For"
-                        // value={values.accountedFor}
+                        value={values.accountedFor}
                     />
                     <button>Add To Accounted For</button>
                 </div>

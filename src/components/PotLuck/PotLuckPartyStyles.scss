@@ -1,22 +1,26 @@
-// * {
-//     border:1px solid red;
-// }
+* {
+    border:1px solid red;
+}
 .pl-pot-luck-party {
     display: flex;
     flex-wrap: wrap;
-    
+    height: 50em;
 }
 .pl-name-div {
     display: flex;
     flex-direction: column; 
     width: 30%; 
-    
+    height: 30%;
+    .pl-guest-num{
+        width: 30%;
+    }
 }
 .pl-date-time-location {
     display: flex;
     width: 30%;
     flex-wrap: wrap;
     margin-left: 5%;
+    height: 30%;
     .pl-time{
         width: 40%;
     }
@@ -27,11 +31,21 @@
 .pl-description{
     margin-left: 5%;
     width: 20%;
+    height: 30%;
 }
 .pl-edit-button{
     margin-left: 5%;
     margin-top: 5%;
     height: 5%;
+}
+.pl-item-list, .pl-acct-for-list {
+    // height: 50%;
+    width: 40%;
+}
+.pl-lists{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
 }
 
 
