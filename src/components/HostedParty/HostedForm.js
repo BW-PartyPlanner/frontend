@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Link, Route } from "react-router-dom";
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
 import HostedParty from './HostedParty';
 
 function HostedForm({ values, touched, errors }, props ) {
@@ -100,12 +99,14 @@ function HostedForm({ values, touched, errors }, props ) {
                     />
                     {touched.description && errors.description && <p>{errors.description}</p>}
                 </div>
-                <button >Create</button>
 
-                <Link to="/hostedParty">Go to Hosted Party</Link>
+                <Link to="/hostedParty">
+                    <button >Create</button>
+
+                </Link>
                 
             </Form>
-            <Route exact path='/hostedParty' component={HostedParty}/>
+            
         </section>
     );
 };

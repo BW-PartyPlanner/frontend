@@ -1,4 +1,4 @@
-import { FETCH_PARTIES_REQUEST, FETCH_PARTIES_SUCCESS, FETCH_PARTIES_ERROR } from '../actions/partyActions';
+import { FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USERS_ERROR } from '../actions/userActions';
 
 const initialState = {
   isLoading: false,
@@ -8,20 +8,20 @@ const initialState = {
 
 export function reducer(state = initialState, action) {
   switch(action.type) {
-    case FETCH_PARTIES_REQUEST:
+    case FETCH_USERS_REQUEST:
       return {
         ...state,
         isLoading: true,
         error: null
       }
-    case FETCH_PARTIES_SUCCESS:
+    case FETCH_USERS_SUCCESS:
       return {
         ...state,
           isLoading: false,
           users: action.payload,
           error: null
       }
-    case FETCH_PARTIES_ERROR:
+    case FETCH_USERS_ERROR:
       return {
         ...state,
         isLoading: false,

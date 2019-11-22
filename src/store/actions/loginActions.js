@@ -15,6 +15,7 @@ export const loginUser = user => dispatch => {
       console.log('data', res.data)
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: res.data })
       localStorage.setItem("token", res.data.token)
+      localStorage.setItem('message', res.data.message)
     })
     .catch(err => {
       console.log("Unable to login.", err.response.message)
@@ -28,8 +29,8 @@ export const loginUser = user => dispatch => {
 // Helps display the Nav based on their status.
 export const setLoggedIn = () => dispatch => {
 
-  if (!getToken()) {
+  if (localStorage.getItem('token')) {
     return dispatch({ type: SET_LOGGED_IN })
-  } else if (getToken()) 
+  } else if (!localStorage.getItem('token')) 
     return dispatch({ type: SET_LOGGED_IN_FALSE })
 }
