@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CreatePartyModal from '../Modal/CreatePartyModal';
 import { axiosWithAuth as axios } from '../../utils/axiosUtils';
-import { Route, Switch, Link, withRouter } from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import LoginForm from '../LoginForm/LoginForm';
 
 const Dashboard = (props) => {
     const welcome = localStorage.getItem('message')
@@ -17,10 +18,11 @@ const Dashboard = (props) => {
             <CreatePartyModal />
             <div className="container-options">
                 <div className="option">My Parties</div>
-                <div className="option">Friends List</div>
+                <div className="option" onClick={console.log("test")}>Friends List</div>
                 <div className="option">Invitations</div>
             </div>
             <div className="container-rsvps-and-parties"> 
+                <Route path='/friends' component={LoginForm} />
                 <div className="party-list">
                     <h3>RSVP's</h3>
                     <div>A bunch of parties I have RSVP'd to.</div>
@@ -35,11 +37,3 @@ const Dashboard = (props) => {
 };
 
 export default Dashboard;
-
-const FriendsList = [ 
-    "one", 
-    "two", 
-    "three", 
-    "four", 
-    "five"
-]
