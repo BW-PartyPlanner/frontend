@@ -9,6 +9,7 @@ const Navigation = ({ setLoggedIn, signedIn }) => {
     const signOut = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('message')
+        localStorage.removeItem('username')
         setLoggedIn()
     }
 
