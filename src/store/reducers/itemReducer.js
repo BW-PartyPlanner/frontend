@@ -56,7 +56,7 @@ export function reducer(state = initialState, action) {
       }
     case REMOVE_ITEM:
       return {
-        items: state.items.filter(item => !item.isCompleted)
+        items: state.items.filter(item => item.id === state.item.id)
       };
     default:
       return state

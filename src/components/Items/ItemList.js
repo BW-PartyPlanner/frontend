@@ -5,6 +5,8 @@ import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
 function ItemList() {
   const [items, setItems] = useState([])
+  const [updateItems, setUpdateItems] = useState(false)
+  console.log(items, updateItems)
 
   useEffect(() => {
     axios()
@@ -15,7 +17,11 @@ function ItemList() {
       .catch(err => {
         console.log(err, "Unable to get data.")
       })
-  })
+  }, [updateItems])
+
+  const toggleUpdateItems = () => {
+    setUpdateItems(!updateItems)
+  }
 
   return (
   
@@ -24,7 +30,7 @@ function ItemList() {
         <ItemForm />
       </div>
       <div className='listItems'>
-        {items.map(item => <Item key={item.id} item={item} />)}
+        {items.map(item => <Item key={item.id} item={item} toggleUpdateItems={toggleUpdateItems} />)}
       </div>
     </div>
   )
