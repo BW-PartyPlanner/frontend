@@ -9,8 +9,16 @@ import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
+
+
+
+
 import ItemList from './components/Items/ItemList';
+import ItemForm from './components/Items/ItemForm';
+import AccountedForForm from './components/AccountedFor/AccountedForForm';
+import GuestListForm from './components/GuestList/GuestListForm';
 import PrivateRoute from './auth/PrivateRoute'
+
 
 function App() {
 
@@ -29,6 +37,11 @@ function App() {
         <PrivateRoute path='/potluckparty' component={PotLuckParty} /> 
         <PrivateRoute path='/hostedform' component={HostedForm} />  
         <PrivateRoute path='/hostedparty' component={HostedParty} />
+
+        <PrivateRoute path='/itemForm' component={ItemForm} />
+        <PrivateRoute path='/accountedForForm' component={AccountedForForm} />
+        <PrivateRoute path='/guestListForm' component={GuestListForm} />
+
       </Switch>
 
     </div>
