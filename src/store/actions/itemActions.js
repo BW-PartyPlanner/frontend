@@ -4,6 +4,10 @@ export const FETCH_ITEMS_REQUEST = 'FETCH_ITEMS_REQUEST'
 export const FETCH_ITEMS_SUCCESS = 'FETCH_ITEMS_SUCCESS'
 export const FETCH_ITEMS_ERROR = 'FETCH_ITEMS_ERROR'
 
+export const ADD_ITEM = 'ADD_ITEM'
+export const REMOVE_ITEM = 'REMOVE_ITEM'
+export const TOGGLE_ITEM = 'TOGGLE_ITEM'
+
 export const getItems = () => dispatch => {
   dispatch({ type: FETCH_ITEMS_REQUEST })
 
@@ -25,6 +29,7 @@ export const createItem = item => dispatch => {
   axios()
     .post("/items", item)
     .then(res => {
+      console.log(res.data)
       dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data });
     })
     .catch(err => {

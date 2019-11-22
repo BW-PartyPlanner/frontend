@@ -9,6 +9,7 @@ import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
+import ItemList from './components/Items/ItemList';
 import PrivateRoute from './auth/PrivateRoute'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
    
       <Navigation />
       <Switch>
+        <Route path='/item' component={ItemList} />
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />
