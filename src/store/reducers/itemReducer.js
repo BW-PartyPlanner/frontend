@@ -1,9 +1,15 @@
-import { FETCH_ITEMS_REQUEST, FETCH_ITEMS_SUCCESS, FETCH_ITEMS_ERROR } from '../actions/itemActions';
+import { FETCH_ITEMS_REQUEST, FETCH_ITEMS_SUCCESS, FETCH_ITEMS_ERROR, POST_ITEMS_REQUEST, POST_ITEMS_SUCCESS, POST_ITEMS_ERROR, ADD_ITEM, TOGGLE_ITEM, REMOVE_ITEM } from '../actions/itemActions';
 
 const initialState = {
   isLoading: false,
   error: '',
-  items: []
+  items: [{
+    name: '',
+    description: '',
+    isAccountedFor: false,
+    party_id: 1,
+    user_id: 1
+  }]
 }
 
 export function reducer(state = initialState, action) {
@@ -18,7 +24,7 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
           isLoading: false,
-          users: action.payload,
+          items: action.payload,
           error: null
       }
     case FETCH_ITEMS_ERROR:
@@ -27,6 +33,51 @@ export function reducer(state = initialState, action) {
         isLoading: false,
         error: action.payload
       }
+    case POST_ITEMS_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        error: null
+      }
+    case POST_ITEMS_SUCCESS:
+      return {
+        ...state,
+          isLoading: false,
+          items: action.payload,
+          error: null
+      }
+    case POST_ITEMS_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload
+      }
+    case ADD_ITEM:
+      return {
+        ...state, items: [ ...state.items, 
+          {
+            name: action.payload.name,
+            description: action.payload.description,
+            isAccounredFor: false,
+          }
+        ]
+      }
+    case TOGGLE_ITEM:
+      const toggleItem = state.items.map(item => {
+        if (item.id === action.payload.id) {
+          return { ...item, isAccountedFor: !item.isAccountedFor };
+        } else {
+          return item;
+        }
+      });
+      return {
+        ...state,
+        items: toggleItem
+      }
+    case REMOVE_ITEM:
+      return {
+        items: state.items.filter(item => !item.isAccountedFor)
+      };
     default:
       return state
     }
