@@ -3,7 +3,12 @@ import { FETCH_ITEMS_REQUEST, FETCH_ITEMS_SUCCESS, FETCH_ITEMS_ERROR, ADD_ITEM, 
 const initialState = {
   isLoading: false,
   error: '',
-  items: []
+  items: [{
+    name: '',
+    description: '',
+    isCompleted: false,
+    id: ''
+  }]
 }
 
 export function reducer(state = initialState, action) {

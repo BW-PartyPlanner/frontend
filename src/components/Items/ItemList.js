@@ -3,15 +3,21 @@ import { getItems } from '../../store/actions/itemActions';
 import { useDispatch, useSelector } from 'react-redux';
 import Item from './Item';
 import ItemForm from './ItemForm';
+import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
 function ItemList() {
-  const dispatch = useDispatch()
-  const items = useSelector(state => state.items)
-  console.log(items)
+  const [items, setItems] = useState([])
 
   useEffect(() => {
-    dispatch(getItems())
-  }, [dispatch])
+    axios()
+      .get('/items')
+      .then(res => {
+        setItems(res.data)
+      })
+      .catch(err => {
+        console.log(err, "Unable to get data.")
+      })
+  })
 
   return (
     <div className='listContainer'>

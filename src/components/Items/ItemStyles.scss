@@ -69,7 +69,7 @@ hr {
   margin: 0 auto;
 }
 
-.todoItem {
+.item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,7 +88,7 @@ hr {
   cursor: pointer;
 }
 
-.todoItem:hover {
+.item:hover {
   background-color: rgb(0, 179, 0);
 }
 

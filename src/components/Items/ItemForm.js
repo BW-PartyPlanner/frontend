@@ -7,7 +7,7 @@ import * as Yup from "yup";
 const ItemForm = ({ values, touched, errors }) => {
 
   return (
-    <div className="itemForm">
+    <div className="itemFormContainer">
       <Form className='itemForm'>
         <Field 
           type="text"
@@ -41,7 +41,7 @@ const ItemForm = ({ values, touched, errors }) => {
             Submit
           </button>
           
-          <button className="removeBtn" onClick={(e) => deleteItem(e.target.value)}>
+          <button className="removeBtn" type='delete' onClick={(e) => deleteItem(e.target.value)}>
             Remove
           </button>
         </div>
@@ -72,4 +72,4 @@ const FormikItemForm = withFormik({
   }
 })(ItemForm);
 
-export default connect(null, { createItem })(FormikItemForm);
+export default connect(null, { createItem, deleteItem })(FormikItemForm);
