@@ -2,9 +2,9 @@
 import React from 'react';
 import Navigation from './components/Navigation/Navigation';
 import { Route, Switch, withRouter } from 'react-router-dom'
-import UserDashboard from './components/UserAuth/UserDashboard';
-import LoginForm from './components/UserAuth/LoginForm';
-import SignUpForm from './components/UserAuth/SignUpForm';
+import UserDashboard from './components/UserDashboard/UserDashboard';
+import LoginForm from './components/LoginForm/LoginForm';
+import SignUpForm from './components/SignUpForm/SignUpForm';
 import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
