@@ -1,17 +1,15 @@
 
 import React from 'react';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 import { Route, Switch, withRouter } from 'react-router-dom'
-import UserDashboard from './components/UserAuth/UserDashboard';
-import LoginForm from './components/UserAuth/LoginForm';
-import SignUpForm from './components/UserAuth/SignUpForm';
+import UserDashboard from './components/UserDashboard/UserDashboard';
+import LoginForm from './components/LoginForm/LoginForm';
+import SignUpForm from './components/SignUpForm/SignUpForm';
 import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
-import GuestListForm from './components/Guests/GuestListForm';
-import AccountedForForm from './components/AccountedFor/AccountedForForm';
-
+import PrivateRoute from './auth/PrivateRoute'
 
 function App() {
 
@@ -23,14 +21,12 @@ function App() {
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />
-        <Route path='/dashboard' render={props => <UserDashboard {...props} /> } />
-        <Route path='/hostedform' component={HostedForm} />
-        <Route path='/potluckform' component={PotLuckForm} /> 
-        <Route path='/potLuckParty' component={PotLuckParty} /> 
-        <Route path='/hostedForm' component={HostedForm} />  
-        <Route path='/hostedParty' component={HostedParty} />
-        <Route path='/guestListForm' component={GuestListForm} />
-        <Route path='/accountedForForm' component={AccountedForForm} />
+        <PrivateRoute path='/dashboard' component={UserDashboard} />
+        <PrivateRoute path='/hostedform' component={HostedForm} />
+        <PrivateRoute path='/potluckform' component={PotLuckForm} /> 
+        <PrivateRoute path='/potluckparty' component={PotLuckParty} /> 
+        <PrivateRoute path='/hostedform' component={HostedForm} />  
+        <PrivateRoute path='/hostedparty' component={HostedParty} />
       </Switch>
 
     </div>

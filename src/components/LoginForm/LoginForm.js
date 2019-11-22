@@ -63,7 +63,7 @@ const FormikUserForm = withFormik({
       formikBag.props.loginUser(values);
       formikBag.props.setLoggedIn()
       formikBag.resetForm()
-      formikBag.props.history.push('/')
+      formikBag.props.history.push('/dashboard')
   }
 })(LoginForm);
 

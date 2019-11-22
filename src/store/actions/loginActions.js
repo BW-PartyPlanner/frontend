@@ -29,8 +29,8 @@ export const loginUser = user => dispatch => {
 // Helps display the Nav based on their status.
 export const setLoggedIn = () => dispatch => {
 
-  if (!getToken()) {
+  if (localStorage.getItem('token')) {
     return dispatch({ type: SET_LOGGED_IN })
-  } else if (getToken()) 
+  } else if (!localStorage.getItem('token')) 
     return dispatch({ type: SET_LOGGED_IN_FALSE })
 }

@@ -1,8 +1,14 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@import "variables.scss";
 @import url('https://fonts.googleapis.com/css?family=Questrial|Quicksand|Righteous&display=swap');
 @import "components/PotLuck/PotLuckFormStyles.scss";
 @import "components/PotLuck/PotLuckPartyStyles.scss";
-@import "components/Modal/ModalStyles.scss";
-@import "components/AccountedFor/AccountedForFormStyles.scss";
-@import "components/Guests/GuestListFormStyles.scss";
-@import "components/HostedParty/HostedPartyFormStyles.scss";
-@import "components/HostedParty//HostedPartyStyles.scss";
+@import "components/Navigation/Navigation.scss";
+@import "components/UserDashboard/UserDashboard.scss";
+@import "components/SignUpForm/SignUpForm.scss";
+@import "app.scss";
