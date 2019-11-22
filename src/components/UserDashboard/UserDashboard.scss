@@ -82,3 +82,19 @@
     }
 
 }
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    background: lightgrey;
+    padding: 5px 10px;
+}
+
+a.active { 
+    background-color: #07B5B5;
+}
