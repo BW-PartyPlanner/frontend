@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { createItem, deleteItem } from '../../store/actions/itemActions';
+import { createItem } from '../../store/actions/itemActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
@@ -76,4 +76,4 @@ const FormikItemForm = withFormik({
   }
 })(ItemForm);
 
-export default connect(null, { createItem, deleteItem })(FormikItemForm);
+export default connect(null, { createItem })(FormikItemForm);
