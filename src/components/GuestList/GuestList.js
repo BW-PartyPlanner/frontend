@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 export default function GuestList() {
+    const [guests, setGuests] = useState([])
+
+    useEffect(() => {
+
+    },[guests]);
+
     return (
-        <div>
-            <p>props.GuestList from guest list form </p>
+        <div className="gl-guest-list">
+            GuestList from guest list form 
         </div>
     );
 }
