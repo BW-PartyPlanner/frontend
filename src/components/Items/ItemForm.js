@@ -15,7 +15,7 @@ const ItemForm = ({ values, touched, errors }) => {
           placeholder="name"
           value={values.name}
         />
-        {touched.name && errors.name&& <p>{errors.first_name}</p>}
+        {touched.name && errors.name&& <p>{errors.name}</p>}
 
         <Field
           type="text"
