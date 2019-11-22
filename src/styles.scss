@@ -6,6 +6,7 @@
 
 @import "variables.scss";
 @import url('https://fonts.googleapis.com/css?family=Questrial|Quicksand|Righteous&display=swap');
+@import "app.scss";
 @import "components/PotLuck/PotLuckFormStyles.scss";
 @import "components/PotLuck/PotLuckPartyStyles.scss";
 @import "components/AccountedFor/AccountedForFormStyles.scss";
@@ -13,3 +14,5 @@
 @import "components/Modal/ModalStyles.scss";
 @import "components/Items/ItemStyles.scss";
 @import "components/Navigation/Navigation.scss";
+@import "components/SignUpForm/SignUpForm.scss";
+@import "components/UserDashboard/UserDashboard.scss";
