@@ -29,6 +29,7 @@ export const createItem = item => dispatch => {
   axios()
     .post("/items", item)
     .then(res => {
+      console.log(res.data)
       dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data });
     })
     .catch(err => {

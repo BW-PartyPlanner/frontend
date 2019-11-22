@@ -36,7 +36,7 @@ export function reducer(state = initialState, action) {
       return {
         ...state, items: [ ...state.items, 
           {
-            item: action.payload,
+            name: action.payload,
             isCompleted: false,
             id: Date.now(),
           }

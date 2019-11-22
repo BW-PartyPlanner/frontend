@@ -12,16 +12,16 @@ const ItemForm = ({ values, touched, errors }) => {
         <Field 
           type="text"
           name="name"
-          placeholder="name"
+          placeholder="Name"
           className='itemInput'
           value={values.name}
         />
-        {touched.name && errors.name&& <p>{errors.name}</p>}
+        {touched.name && errors.name && <p>{errors.name}</p>}
 
         <Field
           type="text"
           name="description"
-          placeholder="description"
+          placeholder="Description"
           className='itemInput'
           value={values.description}
         />
@@ -62,7 +62,7 @@ const FormikItemForm = withFormik({
   validationSchema: Yup.object().shape({
     name: Yup.string().required("What is the item name?"),
     description: Yup.string().required("Describe the item."),
-    username: Yup.string().required("Cost of item")
+    cost: Yup.string().required("Cost of item")
   }),
 
   handleSubmit(values, formikBag) {
