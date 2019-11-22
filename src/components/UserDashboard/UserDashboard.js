@@ -12,7 +12,7 @@ const Dashboard = (props) => {
 
     return (
         <div className="container-dashboard">
-            <h2>{welcomeMessage}</h2>
+            <h2>{welcomeMessage ? welcomeMessage : 'Welcome to the Party!'}</h2>
             <CreatePartyModal />
             <div className="container-options">
                 <div className="option">My Parties</div>
