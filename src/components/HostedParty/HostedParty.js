@@ -1,9 +1,13 @@
 import React from 'react';
-import GuestListForm from '../GuestList/GuestListForm';
+
+
+
+
+import { Link } from 'react-router-dom';
+import GuestList from '../GuestList/GuestList';
 
 
 export default function HostedParty(props) {
-
 
     return (
         <div className="Pot-Luck-Party">
