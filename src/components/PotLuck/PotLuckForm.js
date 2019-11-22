@@ -20,12 +20,17 @@ const PotLuckForm = ({ values, touched, errors }) => {
                     />
                         {touched.name && errors.name && <p>{errors.name}</p>}
                 </div>
+
+                    
                 <div className= "date-times">
                     <Field 
+
                         type="text"
                         name="date"
                         placeholder="Date"
                         value={values.date}
+
+                
                     />
                     {touched.date && errors.date &&   <p>{errors.date}</p>}
                     
@@ -44,10 +49,12 @@ const FormikPotLuckForm = withFormik({
         return {
             name: name || "",
             date: date || ""
+
         };
     },
     validationSchema: Yup.object().shape({
         name: Yup.string().required("You must name your party."),
+
         date: Yup.date().required("Please enter your party's date."),
         
     }),
@@ -61,6 +68,7 @@ const FormikPotLuckForm = withFormik({
     
  
 })(PotLuckForm);
+
 
 
 export default connect(null, {createParty})(FormikPotLuckForm);

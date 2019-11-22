@@ -20,6 +20,8 @@ function ItemList() {
   })
 
   return (
+
+    
     <div className='listContainer'>
       <div className="formContainer">
         <ItemForm />
@@ -27,6 +29,7 @@ function ItemList() {
       <div className='listItems'>
         {items.map(item => <Item key={item.id} item={item} />)}
       </div>
+
     </div>
   )
 }
