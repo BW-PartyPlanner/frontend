@@ -43,16 +43,29 @@ export default function PotLuckParty() {
             <div className="pl-lists">
 
                 <div className="pl-item-list">
-                    <ItemList />
-                    <Link to='/itemForm'>
-                        <button>Add Items to List</button>
-                    </Link>
+                    <h3 className="item-list-title">Items Needed List</h3>
+                    <div className="pl-item-list-div">
+
+                        <ItemList />
+                    </div>
+                    <div className="pl-add-items-link">
+
+                        <Link to='/itemForm'>
+                            <button className="pl-add-items-button">Add Items to List</button>
+                        </Link>
+                    </div>
                 </div>
                 <div className="pl-acct-for-list"> 
-                    <AccountedForList />  
-                    <Link to='/accountedForForm'>
-                        <button>Add Items Accounted For</button>
-                    </Link>
+                    <div className="pl-acct-for">
+
+                        <AccountedForList />  
+                    </div>
+                    <div classname="pl-acct-for-link">
+
+                        <Link to='/accountedForForm'>
+                            <button className="pl-add-acct-for-button">Add Items Accounted For</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
 
