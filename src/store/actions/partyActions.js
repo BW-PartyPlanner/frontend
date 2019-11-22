@@ -4,6 +4,7 @@ export const FETCH_PARTIES_REQUEST = 'FETCH_PARTIES_REQUEST'
 export const FETCH_PARTIES_SUCCESS = 'FETCH_PARTIES_SUCCESS'
 export const FETCH_PARTIES_ERROR = 'FETCH_PARTIES_ERROR'
 
+
 export const getParties = () => dispatch => {
   dispatch({ type: FETCH_PARTIES_REQUEST })
 
@@ -21,6 +22,7 @@ export const getParties = () => dispatch => {
 }
 
 export const createParty = party => dispatch => {
+
 
   axios()
     .post("/parties", party)
