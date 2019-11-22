@@ -13,7 +13,7 @@
         font-weight: bold;
     }
 
-    button {
+    .modal-button {
         background: $pacific-blue;
         width: 200px;
         height: 40px;
@@ -22,7 +22,7 @@
         margin: 0px 0px 20px;
     }
 
-    button:hover {
+    .modal-button:hover {
         box-shadow: 3px 3px 3px grey;
     }
 
@@ -61,6 +61,7 @@
             align-items: center;
             width: 49%;
             background: whitesmoke;
+            
             h3 {
                 display: flex;
                 font-family: 'Quicksand', sans-serif;
@@ -72,7 +73,7 @@
                 display: flex;
                 font-family: 'Quicksand', sans-serif;
                 //font-weight: bold;
-                margin: 0px 0px 10px;
+                margin: 0px 10px 10px;
             }
         }
 

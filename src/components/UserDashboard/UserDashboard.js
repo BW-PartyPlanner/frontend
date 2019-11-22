@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CreatePartyModal from '../Modal/CreatePartyModal';
 import { axiosWithAuth as axios } from '../../utils/axiosUtils';
+import { Route, Switch, Link, withRouter } from 'react-router-dom'
 
 const Dashboard = (props) => {
     const welcome = localStorage.getItem('message')
@@ -34,3 +35,11 @@ const Dashboard = (props) => {
 };
 
 export default Dashboard;
+
+const FriendsList = [ 
+    "one", 
+    "two", 
+    "three", 
+    "four", 
+    "five"
+]

@@ -6,7 +6,7 @@ export default function CreatePartyModal()  {
     return (
 
         <div>
-            <Popup trigger={<button>Create Party</button>} position="center center">
+            <Popup trigger={<button class="modal-button">Create Party</button>} position="center center">
 
                 <div>
                     <p>Please choose which type of party you would like to create.</p>
