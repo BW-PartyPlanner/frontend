@@ -1,14 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteItem } from '../../store/actions/itemActions';
 
-function Item({ item, toggleUpdateItems }) {
+function Item({ item }) {
   const dispatch = useDispatch()
 
   return (
     <>
-      <div className='item' onClick={() => dispatch(deleteItem(item.id), toggleUpdateItems())}>
-        {item.isCompleted ? <del>{`${item.name}`}</del> : `${item.name}`}
+      <div className='item' onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: item })}>
+        {item.isAccountedFor ? <del>{`${item.name}`}</del> : `${item.name}`}
       </div>
     </>
   )
