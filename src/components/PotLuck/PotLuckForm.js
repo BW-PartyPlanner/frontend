@@ -16,13 +16,14 @@ function PotLuckForm({ values, touched, errors }, props ) {
                         value={values.name}
                     />
                         {touched.name && errors.name && <p>{errors.name}</p>}
-                    <Field id="theme-text"
+                </div>
+                    {/* <Field id="theme-text"
                         type="text"
                         name="theme"
                         placeholder="Theme"
                         value={values.theme}
-                    />
-                    {touched.theme && errors.theme && <p>{errors.theme}</p>}
+                    /> */}
+                    {/* {touched.theme && errors.theme && <p>{errors.theme}</p>}
                     <Field id="guest-amt"
                         type="text"
                         name="guestAmt"
@@ -30,16 +31,16 @@ function PotLuckForm({ values, touched, errors }, props ) {
                         value={values.guestAmt}
                     />
                     {touched.guestAmt && errors.guestAmt && <p>{errors.guestAmt}</p>}
-                </div>
-                <div className= "date-times">
-                    <Field id="date"
+                </div> */}
+                {/* <div className= "date-times"> */}
+                    {/* <Field id="date"
                         type="text"
                         name="date"
                         placeholder="Date"
                         value={values.date}
-                    />
-                    {touched.date && errors.date &&   <p>{errors.date}</p>}
-                    <Field id="start-time"
+                    /> */}
+                    {/* {touched.date && errors.date &&   <p>{errors.date}</p>} */}
+                    {/* <Field id="start-time"
                         type="text"
                         name="startTime"
                         placeholder="Start Time"
@@ -52,9 +53,9 @@ function PotLuckForm({ values, touched, errors }, props ) {
                         placeholder="End Time"
                         value={values.endTime}
                     />
-                    {touched.endTime && errors.emdTime && <p>{errors.endTime}</p>}
-                </div>
-                <div className="location">
+                    {touched.endTime && errors.emdTime && <p>{errors.endTime}</p>} */}
+                {/* </div> */}
+                {/* <div className="location">
                     <Field id="location"
                         type="text"
                         name="location"
@@ -62,8 +63,8 @@ function PotLuckForm({ values, touched, errors }, props ) {
                         value={values.location}
                     />
                     {touched.location && errors.location && <p>{errors.location}</p>}
-                </div>
-                <div className="item-list-qty">
+                </div> */}
+                {/* <div className="item-list-qty">
                     <Field id="item-list"
                         type="text"
                         name="itemList"
@@ -79,25 +80,9 @@ function PotLuckForm({ values, touched, errors }, props ) {
                     />
                     {touched.itemQty && errors.itemQty && <p>{errors.itemQty}</p>}
                     
-                </div>
-                <div className="food-list-qty">
-                    <Field  id="food-item"
-                        type="text"
-                        name="foodItem"
-                        placeholder="Food Item"
-                        value={values.foodItem}
-                    />
-                    {touched.foodItem && errors.foodItem && <p>{errors.foodItem}</p>}
-                    <Field id="food-qty"
-                        type="text"
-                        name="foodQty"
-                        placeholder="Quantity"
-                        value={values.foodQty}
-                    />
-                    {touched.foodQty && errors.foodQty && <p>{errors.foodQty}</p>}
-                    
-                </div>
-                <div className="description">
+                </div> */}
+                
+                {/* <div className="description">
                     <Field id="description"
                         type="textarea"
                         name="description"
@@ -105,7 +90,7 @@ function PotLuckForm({ values, touched, errors }, props ) {
                         value={values.description}
                     />
                     {touched.description && errors.description && <p>{errors.description}</p>}
-                </div>
+                </div> */}
 
                 <Link to="/PotLuckParty">
                     <button className="pot-luck-button" >Create</button>
@@ -121,32 +106,32 @@ const FormikPotLuckForm = withFormik({
     mapPropsToValues({ name, theme, guestAmt, date, startTime, endTime, location,  itemList, itemQty, foodItem, foodQty, description }) {
         return {
             name: name || "",
-            theme: theme || "",
-            guestAmt: guestAmt || "",
-            date: date || "",
-            startTime: startTime || "",
-            endTime: endTime || "",
-            location: location || "",
+            // theme: theme || "",
+            // guestAmt: guestAmt || "",
+            // date: date || "",
+            // startTime: startTime || "",
+            // endTime: endTime || "",
+            // location: location || "",
             itemList: itemList || "",
             itemQty: itemQty || "",
-            foodItem: foodItem || "",
-            foodQty: foodQty || "",
-            description: description || ""
+            // foodItem: foodItem || "",
+            // foodQty: foodQty || "",
+            // description: description || ""
         };
     },
     validationSchema: Yup.object().shape({
         name: Yup.string().required("You must name your party."),
-        theme: Yup.string(),
-        guestAmt: Yup.number().required("You must enter a number of guests"),
-        date: Yup.date().required("Please enter your party's date."),
-        startTime: Yup.string().required("Please enter a start time for your party."),
-        endTime: Yup.string().required("Please enter the end time for your party."),
-        location: Yup.string().required("Please enter a location for your party."),
+        // theme: Yup.string(),
+        // guestAmt: Yup.number().required("You must enter a number of guests"),
+        // date: Yup.date().required("Please enter your party's date."),
+        // startTime: Yup.string().required("Please enter a start time for your party."),
+        // endTime: Yup.string().required("Please enter the end time for your party."),
+        // location: Yup.string().required("Please enter a location for your party."),
         itemList: Yup.string().required("You must enter at least one item"),
         itemQty: Yup.number().required("You must enter at least one"),
-        foodItem: Yup.string(),
-        foodQty: Yup.number(),
-        description: Yup.string()
+        // foodItem: Yup.string(),
+        // foodQty: Yup.number(),
+        // description: Yup.string()
     })
     // handleSubmit(values, { props, resetForm, setSubmitting }) {
     //     axios
