@@ -1,4 +1,4 @@
-import { axiosWithoutAuth as axios, getToken } from '../../utils/axiosUtils';
+import { axiosWithoutAuth as axios } from '../../utils/axiosUtils';
 
 export const FETCH_LOGIN_REQUEST = 'FETCH_LOGIN_REQUEST'
 export const FETCH_LOGIN_SUCCESS = 'FETCH_LOGIN_SUCCESS'

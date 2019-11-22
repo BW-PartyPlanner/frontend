@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
 import GuestList from '../GuestList/GuestList';
 import AccountedForList from '../AccountedFor/AccountForList';
 import ItemList from '../Items/ItemList';
 
- 
-
 
 export default function PotLuckParty() {
     
-    
-
     return (
         <div className="pl-pot-luck-party">
             <div className="pl-name-div">

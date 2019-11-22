@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { getItems } from '../../store/actions/itemActions';
 import Item from './Item';
 import ItemForm from './ItemForm';
 import { axiosWithAuth as axios } from '../../utils/axiosUtils';
