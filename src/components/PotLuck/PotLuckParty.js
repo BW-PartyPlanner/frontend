@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-<<<<<<< HEAD
-import GuestList from '../Guests/GuestList';
-import AccountedForList from '../AccountedFor/AccountForList';
-
-=======
 import GuestList from '../GuestList/GuestList';
 import AccountedForList from '../AccountedFor/AccountForList';
->>>>>>> 2788c4f99c44a90dba22db976986ed74678393da
 
  
 
@@ -32,27 +26,6 @@ export default function PotLuckParty() {
             <div className="pl-description">props.Description</div>
             <button className="pl-edit-button">Edit</button>
             
-<<<<<<< HEAD
-            <div className="pl-bottom">
-
-                <div className="pl-guest-list">
-                    <GuestList />
-                    <Link to="/guestListForm">
-                        <button>Add Guests</button>
-                    </Link>
-                </div>
-                <div className="pl-items-needed">props.Items/Food Needed</div>
-                <div className="pl-acct-for">
-                    <div className="pl-acct-for-list">
-
-                        <AccountedForList  />
-                    </div>
-                    <Link to="/accountedForForm" className="pl-acct-for-link">
-                        <button className="pl-add-acct-for">Add Items Accounted For</button>
-                    </Link>
-                </div>
-                </div>
-=======
             <div className="pl-guest-info  ">props.Number of Guests
                 <GuestList />
 
@@ -72,7 +45,6 @@ export default function PotLuckParty() {
                 </div>
             </div>
 
->>>>>>> 2788c4f99c44a90dba22db976986ed74678393da
         </div>
         
         
