@@ -6,7 +6,7 @@ const initialState = {
   items: [{
     name: '',
     description: '',
-    isCompleted: false,
+    isAccountedFor: false,
     id: ''
   }]
 }
@@ -37,7 +37,7 @@ export function reducer(state = initialState, action) {
         ...state, items: [ ...state.items, 
           {
             name: action.payload,
-            isCompleted: false,
+            isAccounredFor: false,
             id: Date.now(),
           }
         ]
@@ -45,7 +45,7 @@ export function reducer(state = initialState, action) {
     case TOGGLE_ITEM:
       const toggleItem = state.items.map(item => {
         if (item.id === action.payload.id) {
-          return { ...item, isCompleted: !item.isCompleted };
+          return { ...item, isAccountedFor: !item.isAccountedFor };
         } else {
           return item;
         }
@@ -56,7 +56,7 @@ export function reducer(state = initialState, action) {
       }
     case REMOVE_ITEM:
       return {
-        items: state.items.filter(item => !item.isCompleted)
+        items: state.items.filter(item => !item.isAccountedFor)
       };
     default:
       return state
