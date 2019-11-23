@@ -23,7 +23,7 @@ const FriendsList = () => {
     )
 
     return (
-            <div>{FriendsLineItems}</div>
+            <div className='friends-list'>{FriendsLineItems}</div>
         
     );
 };
