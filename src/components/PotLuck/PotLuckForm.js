@@ -5,7 +5,6 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 const PotLuckForm = ({ values, touched, errors }) => {
-
    
     
     return (
@@ -25,7 +24,7 @@ const PotLuckForm = ({ values, touched, errors }) => {
                 <div className= "date-times">
                     <Field 
 
-                        type="text"
+                        type="date"
                         name="date"
                         placeholder="Date"
                         value={values.date}
@@ -34,7 +33,21 @@ const PotLuckForm = ({ values, touched, errors }) => {
                     />
                     {touched.date && errors.date &&   <p>{errors.date}</p>}
                     
-                </div>   
+                </div> 
+
+                  <div className= "date-times">
+                    <Field 
+
+                        type="number"
+                        name="budget"
+                        placeholder="Budget"
+                        value={values.budget}
+
+                
+                    />
+                    {touched.budget && errors.budget &&   <p>{errors.budget}</p>}
+                    
+                </div>     
                 <div>
                      <button className="pot-luck-button" type="submit" >Create</button>
                 </div>
@@ -45,22 +58,22 @@ const PotLuckForm = ({ values, touched, errors }) => {
 };
 
 const FormikPotLuckForm = withFormik({
-    mapPropsToValues({ name, date }) {
+    mapPropsToValues({ name, date, budget }) {
         return {
             name: name || "",
-            date: date || ""
-
+            date: date || "",
+            budget: budget || 0
         };
     },
     validationSchema: Yup.object().shape({
         name: Yup.string().required("You must name your party."),
-
         date: Yup.date().required("Please enter your party's date."),
+        budget: Yup.number().required("You must have a budget"),
         
     }),
 
     handleSubmit(values, formikBag) {
-        formikBag.props.createParty(values);
+        formikBag.props.createParty({user_id: formikBag.props.user_id, ...values});
         formikBag.props.history.push('/PotLuckParty')
         console.log(values, "console log from handle summit")
     }
@@ -69,6 +82,8 @@ const FormikPotLuckForm = withFormik({
  
 })(PotLuckForm);
 
+const mapStateToProps = ({ userReducer}) => ({
+    user_id: userReducer.user_id
+})
 
-
-export default connect(null, {createParty})(FormikPotLuckForm);
+export default connect(mapStateToProps, {createParty})(FormikPotLuckForm);

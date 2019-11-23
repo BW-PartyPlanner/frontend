@@ -3,6 +3,7 @@ import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 export const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST'
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS'
 export const FETCH_USERS_ERROR = 'FETCH_USERS_ERROR'
+export const SET_USER_ID = 'SET_USER_ID'
 
 export const getUsers = () => dispatch => {
   dispatch({ type: FETCH_USERS_REQUEST })
@@ -57,4 +58,8 @@ export const editUser = user => dispatch => {
     .catch(err => {
       dispatch({ type: FETCH_USERS_ERROR, payload: err.response })
     })
+}
+
+export const setUserId = id => dispatch => {
+  dispatch({ type: SET_USER_ID, payload: id })
 }
