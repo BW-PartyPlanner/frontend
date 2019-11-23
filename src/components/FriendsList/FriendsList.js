@@ -15,9 +15,9 @@ const FriendsList = () => {
     ]
 
     const FriendsLineItems = FriendsList.map( 
-        (item) => {
+        (item, index) => {
             return (
-                <li>{item}</li>
+                <li key={index}>{item}</li>
             )
         }
     )
