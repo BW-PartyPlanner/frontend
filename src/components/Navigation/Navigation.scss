@@ -3,28 +3,23 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: $iceberg;
-    //border-radius: 5px;
-    border: 2px solid $cyprus;
-    margin: 0px 0px 10px;
+    margin: 0 auto;
+    padding: 0 2%;
 
     .Logo {
         display: flex;
-        margin: 0px 0px 0px 2%;
         width: 80%;
 
         img {
             width: 40%;
             border-radius: 5px;
-            margin: 5px 0px;
         }
     }
     
     .NavLinks {
         display: flex;
         width: 40%;
-        justify-content: space-between;
-        margin: 0px 2% 0px 0px;
+        justify-content: space-evenly;
         align-items: center;
 
         a {
@@ -33,7 +28,8 @@
             font-family: 'Quicksand', sans-serif;
             font-weight: bold;
             color: $cyprus;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            background: white;
         }
 
         a:hover {

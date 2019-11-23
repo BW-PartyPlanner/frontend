@@ -8,40 +8,32 @@ import * as Yup from "yup";
 const LoginForm = ({ values, touched, errors }) => {
 
     return (
-        <div className="user-form">
-            <div className="sign-up-form">
-                <Form>
-                    <div className="sign-up-field">
-                        <Field 
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                            value={values.username}
-                        />
-                        {touched.username && errors.username && <p>{errors.username}</p>}
-                    </div>
+        <div className="loginContainer">
+            <Form className="loginForm">
+                <Field 
+                    className="loginField"
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={values.username}
+                />
+                {touched.username && errors.username && <p>{errors.username}</p>}
 
-                    <div className="sign-up-field">
-                        <Field
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            value={values.password}
-                        />
-                        {touched.password && errors.password && <p>{errors.password}</p>}
-                    </div>
+                <Field
+                    className="loginField"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={values.password}
+                />
+                {touched.password && errors.password && <p className='errors'>{errors.password}</p>}
 
-                    <div className="sign-up-field">
-                        <button type="submit">Submit</button>
-                    </div>
+                <button className='loginBtn' type="submit">Submit</button>
 
-                    <div className="sign-up-field">
-                        <Link to="/signup" className="existing-user">
-                            Not an existing user?
-                        </Link>
-                    </div>
-                </Form> 
-            </div>    
+                <Link to="/signup" className="existing-user">
+                    Not an existing user?
+                </Link>
+            </Form>    
         </div>
     );
 };

@@ -1,0 +1,43 @@
+.popup-content {
+  min-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1%;
+  border: none;
+  border-radius: 1em;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-width: 400px;
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1%;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid $cyprus;
+  border-radius: 1em;
+}
+
+.modalLink {
+  cursor: pointer;
+  background: white;
+}
+
+.modalBtn {
+  width: 80%;
+  height: 50px;
+  color: white;
+  background: $cyprus;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.modalBtn:hover {
+  transform: scale(1.02);
+  background: #006c72;
+}

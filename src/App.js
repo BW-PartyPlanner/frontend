@@ -30,9 +30,10 @@ function App({ setUserId, user_id }) {
   })
 
   return (
+    <>
+      <Navigation />
     <div className="App">
    
-      <Navigation />
       <Switch>
 
         <Route path='/items' component={ItemList} />
@@ -54,6 +55,7 @@ function App({ setUserId, user_id }) {
       </Switch>
 
     </div>
+    </>
   );
 }
 
