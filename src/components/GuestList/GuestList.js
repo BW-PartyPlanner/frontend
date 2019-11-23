@@ -9,12 +9,11 @@ export default function GuestList() {
     },[guests]);
 
     return (
-        <div classname="gl-list-container">
-            <h2 classname="gl-list-title">Guest List</h2>
+        <div className="gl-list-container">
+            <h2 className="gl-list-title">Guest List</h2>
             <div className="gl-guest-list">
                 GuestList from guest list form 
             </div>
         </div>
     );
 }
-

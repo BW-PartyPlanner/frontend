@@ -34,6 +34,7 @@ export const createParty = party => dispatch => {
     .post("/parties", data)
     .then(res => {
       dispatch({ type: POST_PARTY_SUCCESS, payload: res.data });
+      console.log(res.data, "from post party request  .party")
     })
     .catch(err => {
       dispatch({ type: POST_PARTY_ERROR, payload: err.response });
