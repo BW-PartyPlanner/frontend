@@ -1,22 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const DashboardHome = () => {
-    // const FriendsList = [
-    //     'bobby',
-    //     'sally',
-    //     'timmy',
-    //     'wendy',
-    //     'tommy',
-    //     'tammy'
-    // ]
-
-    // const FriendsLineItems = FriendsList.map( 
-    //     (item) => {
-    //         return (
-    //             <li>{item}</li>
-    //         )
-    //     }
-    // )
 
     return (
         <div className='dashboard-home'>

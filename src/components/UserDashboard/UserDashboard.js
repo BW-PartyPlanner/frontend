@@ -14,8 +14,6 @@ const Dashboard = (props) => {
         setWelcomeMessage(welcomeMessage)
     }, [welcomeMessage])
 
-    
-
     return (
         <div className="container-dashboard">
             <h2>{welcomeMessage ? welcomeMessage : 'Welcome to the Party!'}</h2>
