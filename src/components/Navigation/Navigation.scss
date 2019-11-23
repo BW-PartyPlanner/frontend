@@ -7,14 +7,16 @@
     //border-radius: 5px;
     border: 2px solid $cyprus;
     margin: 0px 0px 10px;
+    padding: 0px 2%;
 
     .Logo {
         display: flex;
-        margin: 0px 0px 0px 2%;
-        width: 80%;
+        //margin: 0px 0px 0px 2%;
+        max-width: 40%;
+        //width: 80%;
 
         img {
-            width: 40%;
+            width: 100%;
             border-radius: 5px;
             margin: 5px 0px;
         }
@@ -22,9 +24,10 @@
     
     .NavLinks {
         display: flex;
-        width: 40%;
+        width: 200px;
+        max-width: 50%;
         justify-content: space-between;
-        margin: 0px 2% 0px 0px;
+        //margin: 0px 2% 0px 0px;
         align-items: center;
 
         a {
@@ -32,12 +35,16 @@
             text-decoration: none;
             font-family: 'Quicksand', sans-serif;
             font-weight: bold;
-            color: $cyprus;
+            color: $big-stone;
             font-size: 1rem;
+            margin: 0px;
         }
-
+        a:last-child{
+            //margin-right: 2%;
+        }
         a:hover {
-            color: $pacific-blue;
+            //color: $pacific-blue;
+            box-shadow: 3px 3px 3px grey;
         }
     }
     

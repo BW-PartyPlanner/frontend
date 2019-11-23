@@ -13,6 +13,7 @@
         margin: 20px 0px;
         font-family: 'Quicksand', sans-serif;
         font-weight: bold;
+        color: $big-stone;
     }
 
     .modal-button {
@@ -53,7 +54,7 @@
     .container-dashboard-lower-part {
         display: flex;
         //flex-direction: 
-        width: 90%;
+        width: 96%;
         justify-content: space-between;
         margin: 0px 0px 10px;
         background: lightgrey;
@@ -140,7 +141,7 @@
 a {
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: $big-stone;
     display: flex;
     flex-wrap: nowrap;
     font-family: 'Quicksand', sans-serif;
