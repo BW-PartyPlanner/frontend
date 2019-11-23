@@ -1,25 +1,26 @@
-import React from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import GuestList from '../GuestList/GuestList';
 import AccountedForList from '../AccountedFor/AccountForList';
 import ItemList from '../Items/ItemList';
 
 
-export default function PotLuckParty() {
+function PotLuckParty(props) {
+
     
     return (
         <div className="pl-pot-luck-party">
             <div className="pl-name-div">
-                <h1 className="pl-pot-luck-name">Name of Party</h1>
-                {/* <h2>props.Theme of Party</h2>
-                <div className="pl-guest-num">props.Number of Guests</div> */}
+                    <h1 className="pl-pot-luck-name">
+                        {props.state.partyReducer.party ? `hello${props.state.partyReducer.party.party.name}` : "Party's Name"}
+                    </h1>
+                <div className="pl-guest-num">props.Number of Guests</div>
             </div>
-            {/* <div className="pl-date-time-location">
-                <p>props.Date of Party</p>
-                <p className="pl-time">props.Start Time until props.End Time</p>
-                <p className="pl-location">props.Location</p>
-            // </div> */}
-             {/* <div className="pl-description">props.Description</div> */}
+            <div className="pl-date-time-location">
+                 <h3>Date of Party</h3>
+                 <p className="pl-time">{props.state.partyReducer.party ? `${props.state.partyReducer.party.party.date}`: "date not available"}</p>
+            </div>
             <button className="pl-edit-button">Edit</button>
             
             <div className="pl-guest-info  ">
@@ -69,6 +70,14 @@ export default function PotLuckParty() {
         
     );
 }
+
+const mapStateToProps = function(state) {
+  
+    return {state: state}
+    
+}
+
+export default connect(mapStateToProps)(PotLuckParty)
 
 
 
