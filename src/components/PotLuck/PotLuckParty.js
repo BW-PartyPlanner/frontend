@@ -12,6 +12,9 @@ function PotLuckParty(props) {
     return (
         <div className="pl-pot-luck-party">
             <div className="pl-name-div">
+
+                
+
                     <h1 className="pl-pot-luck-name">
                         {props.state.partyReducer.party ? `hello${props.state.partyReducer.party.party.name}` : "Party's Name"}
                     </h1>

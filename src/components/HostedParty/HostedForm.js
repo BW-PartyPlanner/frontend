@@ -17,7 +17,9 @@ function HostedForm({ values, touched, errors }, props ) {
                         placeholder="Party's Name"
                         value={values.name}
                     />
+
                         {touched.name && errors.name && <p>{errors.name}</p>}
+
                 </div>
 
                   
@@ -32,26 +34,34 @@ function HostedForm({ values, touched, errors }, props ) {
                 
                     />
                     {touched.date && errors.date &&   <p>{errors.date}</p>}
-                    
-                </div> 
 
-                  <div className= "date-times">
-                    <Field 
+                   
+                </div>
+                
+                <div>
+                    <Field
+                        type="text"
 
-                        type="number"
                         name="budget"
                         placeholder="Budget"
                         value={values.budget}
 
                 
                     />
-                    {touched.budget && errors.budget &&   <p>{errors.budget}</p>}
+
+                    {touched.budget && errors.budget && <p>{errors.budget}</p>}
                     
-                </div>     
+                </div>
+               
+               
+
+                
+
                 <div>
                      <button className="pot-luck-button" type="submit" >Create</button>
                 </div>
-               
+                
+
             </Form>
         </section>
     );
@@ -68,6 +78,8 @@ const FormikPotLuckForm = withFormik({
     validationSchema: Yup.object().shape({
         name: Yup.string().required("You must name your party."),
         date: Yup.date().required("Please enter your party's date."),
+
+
         budget: Yup.number().required("You must have a budget"),
         
     }),
