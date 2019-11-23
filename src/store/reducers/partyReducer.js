@@ -39,7 +39,7 @@ export function reducer(state = initialState, action) {
         return {
           ...state,
             isLoading: false,
-            parties: action.payload,
+            party: action.payload,
             error: null
         }
       case POST_PARTY_ERROR:
