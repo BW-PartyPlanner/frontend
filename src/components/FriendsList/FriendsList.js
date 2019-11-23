@@ -6,12 +6,12 @@ import React, { useEffect, useState } from 'react';
 
 const FriendsList = () => {
     const FriendsList = [
-        'bobby',
-        'sally',
-        'timmy',
-        'wendy',
-        'tommy',
-        'tammy'
+        'Bobby',
+        'Jarod',
+        'Timmy',
+        'Wendy',
+        'Tommy',
+        'Tammy'
     ]
 
     const FriendsLineItems = FriendsList.map( 
