@@ -5,7 +5,6 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 const PotLuckForm = ({ values, touched, errors }) => {
-   
     
     return (
         <section className="pot-luck-form">
@@ -73,7 +72,7 @@ const FormikPotLuckForm = withFormik({
     }),
 
     handleSubmit(values, formikBag) {
-        formikBag.props.createParty({user_id: formikBag.props.user_id, ...values});
+        formikBag.props.createParty({ user_id: formikBag.props.user_id, ...values });
         formikBag.props.history.push('/PotLuckParty')
         console.log(values, "console log from handle summit")
     }
@@ -82,7 +81,7 @@ const FormikPotLuckForm = withFormik({
  
 })(PotLuckForm);
 
-const mapStateToProps = ({ userReducer}) => ({
+const mapStateToProps = ({ userReducer }) => ({
     user_id: userReducer.user_id
 })
 
