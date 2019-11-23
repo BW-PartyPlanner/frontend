@@ -18,7 +18,6 @@ import decode from 'jwt-decode';
 import { connect } from 'react-redux';
 import { setUserId } from './store/actions/userActions';
 
-
 function App({ setUserId, user_id }) {
 
   useEffect(() => {
@@ -35,7 +34,7 @@ function App({ setUserId, user_id }) {
    
       <Navigation />
       <Switch>
-        
+
         <Route path='/items' component={ItemList} />
         <Route path='/items/:id' component={ItemList} />
         <Route exact path='/' component={UserDashboard} />
