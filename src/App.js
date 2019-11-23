@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navigation from './components/Navigation/Navigation';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import UserDashboard from './components/UserDashboard/UserDashboard';
@@ -9,18 +9,26 @@ import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
-
-
-
-
 import ItemList from './components/Items/ItemList';
 import ItemForm from './components/Items/ItemForm';
 import AccountedForForm from './components/AccountedFor/AccountedForForm';
 import GuestListForm from './components/GuestList/GuestListForm';
-import PrivateRoute from './auth/PrivateRoute'
+import PrivateRoute from './auth/PrivateRoute';
+import decode from 'jwt-decode';
+import { connect } from 'react-redux';
+import { setUserId } from './store/actions/userActions';
 
 
-function App() {
+function App({ setUserId, user_id }) {
+
+  useEffect(() => {
+    if (user_id === '' && localStorage.getItem('token')) {
+      const token = localStorage.getItem('token')
+      const { subject }= decode(token)
+
+      setUserId(subject)
+    }
+  })
 
   return (
     <div className="App">
@@ -48,4 +56,8 @@ function App() {
   );
 }
 
-export default withRouter(App);
+const mapStateToProps = ({ userReducer }) => ({
+  user_id: userReducer.user_id
+})
+
+export default connect(mapStateToProps, { setUserId })(withRouter(App));

@@ -8,7 +8,6 @@ export const POST_PARTY_REQUEST = 'POST_PARTY_REQUEST'
 export const POST_PARTY_SUCCESS = 'POST_PARTY_SUCCESS'
 export const POST_PARTY_ERROR =   'POST_PARTY_ERROR'
 
-
 export const getParties = () => dispatch => {
   dispatch({ type: FETCH_PARTIES_REQUEST })
 
