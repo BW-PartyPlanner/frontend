@@ -20,7 +20,7 @@ function HostedForm({ values, touched, errors }, props ) {
                         {touched.name && errors.name && <p>{errors.name}</p>}
                 </div>
 
-                    
+                  
                 <div className= "date-times">
                     <Field 
 
@@ -73,14 +73,14 @@ const FormikPotLuckForm = withFormik({
     }),
 
     handleSubmit(values, formikBag) {
-        formikBag.props.createParty({user_id: formikBag.props.user_id, ...values});
+        formikBag.props.createParty({ user_id: formikBag.props.user_id, ...values });
         formikBag.props.history.push('/HostedParty')
         console.log(values, "console log from handle summit")
     }
 
 })(HostedForm);
 
-const mapStateToProps = ({ userReducer}) => ({
+const mapStateToProps = ({ userReducer }) => ({
     user_id: userReducer.user_id
 })
 
