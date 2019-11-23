@@ -4,7 +4,7 @@
     align-items: center;
     margin: 10px 0px;
     width: 100%;
-    min-height: 80vh;
+    //min-height: 80vh;
     height: 100%;
     background: $iceberg;
     border: 2px solid $cyprus;
@@ -15,16 +15,17 @@
         font-weight: bold;
     }
 
-    button {
+    .modal-button {
         background: $pacific-blue;
         width: 200px;
         height: 40px;
         font-family: 'Quicksand', sans-serif;
         font-weight: bold;
         margin: 0px 0px 20px;
+        font-size: 1.5rem;
     }
 
-    button:hover {
+    .modal-button:hover {
         box-shadow: 3px 3px 3px grey;
     }
 
@@ -36,12 +37,12 @@
         margin: 0px 0px 10px;
 
         .option {
-            display: flex;
-            flex-wrap: nowrap;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: bold;
-            background: lightgrey;
-            padding: 5px 10px;
+            // display: flex;
+            // flex-wrap: nowrap;
+            // font-family: 'Quicksand', sans-serif;
+            // font-weight: bold;
+            // background: lightgrey;
+            // padding: 5px 10px;
         }
 
         .option:hover {
@@ -49,34 +50,87 @@
         }
     }
 
-    .container-rsvps-and-parties {
+    .container-dashboard-lower-part {
         display: flex;
+        //flex-direction: 
         width: 90%;
         justify-content: space-between;
         margin: 0px 0px 10px;
         background: lightgrey;
         padding: 1%;
 
-        .party-list {
+        .dashboard-home {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 49%;
+            justify-content: center;
             background: whitesmoke;
-            h3 {
-                display: flex;
-                font-family: 'Quicksand', sans-serif;
-                font-weight: bold;
-                margin: 10px 0px;
-            }
+            width: 100%;
 
-            div {
-                display: flex;
-                font-family: 'Quicksand', sans-serif;
-                //font-weight: bold;
-                margin: 0px 0px 10px;
+            p {
+                font-size: 1.5rem;
             }
         }
+
+        .friends-list {
+            display: flex;
+            flex-direction: column;
+            background: whitesmoke;
+            width: 100%;
+            align-items: center;
+
+            li {
+                font-family: 'Quicksand', sans-serif;
+            }
+        }
+
+        .container-my-parties {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+             .party-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 49%;
+                background: whitesmoke;
+                
+                h3 {
+                    display: flex;
+                    font-family: 'Quicksand', sans-serif;
+                    font-weight: bold;
+                    margin: 10px 0px;
+                }
+
+                div {
+                    display: flex;
+                    font-family: 'Quicksand', sans-serif;
+                    //font-weight: bold;
+                    margin: 0px 10px 10px;
+                }
+            }
+        }
+
+        // .party-list {
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     width: 49%;
+        //     background: whitesmoke;
+            
+        //     h3 {
+        //         display: flex;
+        //         font-family: 'Quicksand', sans-serif;
+        //         font-weight: bold;
+        //         margin: 10px 0px;
+        //     }
+
+        //     div {
+        //         display: flex;
+        //         font-family: 'Quicksand', sans-serif;
+        //         //font-weight: bold;
+        //         margin: 0px 10px 10px;
+        //     }
+        // }
 
 
     }
@@ -97,4 +151,8 @@ a {
 
 a.active { 
     background-color: #07B5B5;
+}
+
+div {
+    font-family: 'Quicksand', sans-serif;
 }
