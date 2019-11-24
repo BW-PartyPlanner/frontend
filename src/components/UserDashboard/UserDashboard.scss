@@ -106,6 +106,27 @@
                     //font-weight: bold;
                     margin: 0px 10px 10px;
                 }
+
+                .rendered-parties {
+                    display:flex;
+                    flex-direction:column;
+
+                        .party-link{
+                            background-color:white;
+                            padding:5px 30px;
+                            font-size:18px;
+                            color: $pacific-blue;
+                           
+                        }
+
+                        .party-link:hover{
+                            cursor: pointer;
+                            opacity:0.5;
+                        }
+                }
+
+                
+
             }
         }
 
