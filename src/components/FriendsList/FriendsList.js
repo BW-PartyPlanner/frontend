@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react';
-// import CreatePartyModal from '../Modal/CreatePartyModal';
-// import { axiosWithAuth as axios } from '../../utils/axiosUtils';
-// import { Route } from 'react-router-dom';
-// import LoginForm from '../LoginForm/LoginForm';
+import React from 'react';
 
 const FriendsList = () => {
     const FriendsList = [
-        'bobby',
-        'sally',
-        'timmy',
-        'wendy',
-        'tommy',
-        'tammy'
+        'Bobby',
+        'Reggie',
+        'Timmy',
+        'Wendy',
+        'Tommy',
+        'Tammy'
     ]
 
     const FriendsLineItems = FriendsList.map( 
-        (item) => {
+        (item, index) => {
             return (
-                <li>{item}</li>
+                <li key={index}>{item}</li>
             )
         }
     )

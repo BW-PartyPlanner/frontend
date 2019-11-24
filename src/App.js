@@ -18,7 +18,6 @@ import decode from 'jwt-decode';
 import { connect } from 'react-redux';
 import { setUserId } from './store/actions/userActions';
 
-
 function App({ setUserId, user_id }) {
 
   useEffect(() => {
@@ -31,21 +30,24 @@ function App({ setUserId, user_id }) {
   })
 
   return (
+    <>
+      <Navigation />
     <div className="App">
    
-      <Navigation />
       <Switch>
-        <Route path='/item' component={ItemList} />
+
+        <Route path='/items' component={ItemList} />
+        <Route path='/items/:id' component={ItemList} />
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />
         <PrivateRoute path='/dashboard' component={UserDashboard} />
-        <PrivateRoute path='/hostedform' component={HostedForm} />
         <PrivateRoute path='/potluckform' component={PotLuckForm} /> 
         <PrivateRoute path='/potluckparty' component={PotLuckParty} /> 
+        <PrivateRoute path='/potluckparty/:id' component={PotLuckParty} /> 
         <PrivateRoute path='/hostedform' component={HostedForm} />  
         <PrivateRoute path='/hostedparty' component={HostedParty} />
-
+        <PrivateRoute path='/hostedparty/:id' component={HostedParty} />
         <PrivateRoute path='/itemForm' component={ItemForm} />
         <PrivateRoute path='/accountedForForm' component={AccountedForForm} />
         <PrivateRoute path='/guestListForm' component={GuestListForm} />
@@ -53,6 +55,7 @@ function App({ setUserId, user_id }) {
       </Switch>
 
     </div>
+    </>
   );
 }
 
