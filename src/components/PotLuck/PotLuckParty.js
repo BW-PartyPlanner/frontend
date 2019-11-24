@@ -4,8 +4,22 @@ import { connect } from 'react-redux';
 import GuestList from '../GuestList/GuestList';
 import AccountedForList from '../AccountedFor/AccountForList';
 import ItemList from '../Items/ItemList';
+/*
+
+This component is connected to the redux store
+and by doing so now we have access to the redux's store via props.state
+after mapStateToProps
 
 
+since the party object is only present in the store's object after posting a party
+successfuly to the back end after creating it in the form,
+with the following line of code I am conditionaly checking
+the redux's store to see if the party object is present, if it is not , a placeholder 
+string is rendered instead
+
+{props.state.partyReducer.party ? `hello${props.state.partyReducer.party.party.name}` : "Party's Name"}
+
+*/
 function PotLuckParty(props) {
 
     
