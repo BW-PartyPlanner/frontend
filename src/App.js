@@ -9,6 +9,7 @@ import HostedForm from './components/HostedParty/HostedForm';
 import HostedParty from './components/HostedParty/HostedParty';
 import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
+import PotLuckPartyCreated from './components/PotLuck/PotLuckPartyCreated';
 import ItemList from './components/Items/ItemList';
 import ItemForm from './components/Items/ItemForm';
 import AccountedForForm from './components/AccountedFor/AccountedForForm';
@@ -44,6 +45,7 @@ function App({ setUserId, user_id }) {
         <PrivateRoute path='/dashboard' component={UserDashboard} />
         <PrivateRoute path='/potluckform' component={PotLuckForm} /> 
         <PrivateRoute path='/potluckparty' component={PotLuckParty} /> 
+        <PrivateRoute path='/potluckpartycreated' component={PotLuckPartyCreated} /> 
         <PrivateRoute path='/potluckparty/:id' component={PotLuckParty} /> 
         <PrivateRoute path='/hostedform' component={HostedForm} />  
         <PrivateRoute path='/hostedparty' component={HostedParty} />
