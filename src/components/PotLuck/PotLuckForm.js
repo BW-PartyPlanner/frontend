@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createParty } from '../../store/actions/partyActions.js';
+import { createParty , getPartyById , getParties} from '../../store/actions/partyActions.js';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
@@ -73,8 +73,13 @@ const FormikPotLuckForm = withFormik({
 
     handleSubmit(values, formikBag) {
         formikBag.props.createParty({ user_id: formikBag.props.user_id, ...values });
-        formikBag.props.history.push('/PotLuckParty')
-        console.log(values, "console log from handle summit")
+        formikBag.props.history.push(`/PotLuckPartyCreated`);
+        // localStorage.setItem("party", values.name)
+        // localStorage.setItem("budget", values.budget)
+        // localStorage.setItem("date", values.date)
+      
+      
+       
     }
 
     
