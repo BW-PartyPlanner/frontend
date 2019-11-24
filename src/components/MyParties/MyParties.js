@@ -1,16 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import CreatePartyModal from '../Modal/CreatePartyModal';
-import { NavLink, Route } from 'react-router-dom';
-import ItemList from '../Items/ItemList';
-import LoginForm from '../LoginForm/LoginForm';
+import React from 'react';
 
 const MyParties = (props) => {
-    const welcome = localStorage.getItem('message')
-    const [welcomeMessage, setWelcomeMessage] = useState(welcome)
-
-    useEffect(() => {
-        setWelcomeMessage(welcomeMessage)
-    }, [welcomeMessage])
 
     return (
         <div className="container-my-parties">

@@ -1,36 +1,53 @@
-.user-form {
+.sign-up-user-form {
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    width: 100%;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('../../img/signupLOGO.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 145%;
+    object-fit: contain;
+    height: 90vh;
 
     .sign-up-form {
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
-        min-width: 220px;
-        width: 30%;
-        background: $iceberg;
-        border: 2px solid $cyprus;
+        max-width: 400px;
+        width: 100%;
 
         .sign-up-field {
             display: flex;
             flex-direction: column;
-            margin: 10px 0px;
-            color: red;
+            margin: 2% 0;
+            padding: 1%;
+            width: 90%;
+            height: 45px;
             font-family: 'Quicksand', sans-serif;
             align-items: center;
+            border: none;
+            border-radius: 5px;
             
             .existing-user {
                 text-decoration: none;
                 font-family: 'Quicksand', sans-serif;
             }
+        }
 
-            button {
-                background: $pacific-blue;
-                width: 80px;
-                min-width: 40px;
+        .signupBtn {
+            background: $pacific-blue;
+            min-width: 80px;
+            width: 80%;
+            height: 45px;
+            font-size: 1.2rem;
+
+            &:hover {
+                transform: scale(1.02);
+                background: #02e0e0;
             }
         }
     }

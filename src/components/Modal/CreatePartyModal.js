@@ -5,20 +5,21 @@ import { Link } from 'react-router-dom';
 export default function CreatePartyModal()  {
     return (
 
-        <div>
+        <div className='modalWrapper'>
             <Popup trigger={<button className="modal-button">Create Party</button>} position="center center">
 
-                <div>
+                <div className='modalContainer'>
                     <p>Please choose which type of party you would like to create.</p>
-                    <Link to="/hostedform">
-                        <button>Hosted Party</button>
+                    <Link to="/hostedform" className='modalLink'>
+                        <button className='modalBtn'>Hosted Party</button>
                     </Link>
-                    <Link to="/potluckform">
-                        <button>Pot Luck Party</button>
+                    <p> - OR - </p>
+                    <Link to="/potluckform" className='modalLink'>
+                        <button className='modalBtn'>Pot Luck Party</button>
                     </Link>
+                </div>
 
-                    </div>
-                </Popup>
+            </Popup>
            
         </div>
     );
