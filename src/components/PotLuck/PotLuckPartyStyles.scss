@@ -14,6 +14,8 @@
     justify-content: space-around;
     background-color: #004346;
     box-shadow: 0 5px 10px #004346;
+    margin-left: 5%;
+    margin-top: 5%;
     // width: 30%; 
     // height: 30%;
     // .pl-guest-num{
@@ -50,7 +52,9 @@
 .pl-edit-button{
     margin-left: 5%;
     margin-top: 5%;
-    height: 5%;
+    height: 15%;
+    background-color: #004346;
+    box-shadow: 0px 3px 6px #DEEEF4;
 }
 .pl-item-list, .pl-acct-for-list {
     width: 40%;
@@ -68,15 +72,20 @@
 }
 .pl-guest-info{
     display: flex;
-    flex-direction: column;  
+    flex-direction: column; 
+    align-content: center; 
     width: 40%;
     height: 35%;
+    margin-left: 5%;
+    background-color: #004346;
+   
     .pl-gst-list{
         display: flex;
         justify-content: space-evenly;
-        background-color:#004346;
+        margin-left: 10%;margin-top: 5%;
+        background-color:#07B5B5;
         height: 90%;
-        width: 100%;
+        width: 80%;
         box-shadow: 0 5px 10px #004346;
     }
     .pl-link-to-form{
@@ -100,12 +109,16 @@
 .pl-acct-for{
     display: flex;
     justify-content: space-evenly;
-    height: 90%;
-}
-.pl-acct-for-link{
-    display: flex;
-    justify-content: space-around;
-    height: 5%;
+    height: 83%;
+    margin-top: 5%;
+    background-color: #07B5B5 ;
+    .pl-acct-for-link{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        background-color: #07B5B5;
+        height: 10%;
+    }
 }
 .pl-add-acct-for-button{
     height: 80% ;
@@ -121,22 +134,33 @@
     text-align: center;
     font-family: 'Righteous', sans-serif;
     background-color: #07B5B5;
+    margin-top: 5%;
+
 }
 .pl-item-list-div{
-    height: 90%;
+    height: 80%;
+    background-color: #07B5B5;
 }
 .pl-add-items-link{
     display: flex;
     justify-content: space-around;
-    height: 5%;
+    height: 10%;
+    background-color: #07B5B5;
     .pl-add-items-button{
-        height: 90%;
+        height: 100%;
         font-family: 'Quicksand', sans-serif;
         background-color: #172A3A;
         color: #DEEEF4;
         border-radius: 10px;
-        box-shadow: 0 2px 4px #DEEEF4;         
+        box-shadow: 0 3px 6px #DEEEF4;
+        position: relative;
+        bottom: 10%;         
     }
 }
-
+#af-link, #pl-item-link{
+    background-color: #07B5B5;
+}
+#pl-guest-link{
+    background-color: #004346;
+}
 
