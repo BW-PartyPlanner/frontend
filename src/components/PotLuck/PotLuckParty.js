@@ -12,6 +12,9 @@ function PotLuckParty(props) {
     return (
         <div className="pl-pot-luck-party">
             <div className="pl-name-div">
+
+                
+
                     <h1 className="pl-pot-luck-name">
                         {props.state.partyReducer.party ? `hello${props.state.partyReducer.party.party.name}` : "Party's Name"}
                     </h1>
@@ -30,7 +33,7 @@ function PotLuckParty(props) {
                 </div>
                 <div className="pl-link-to-form">
 
-                    <Link to='/guestListForm'>
+                    <Link to='/guestListForm' id="pl-guest-link">
                         <button className="pl-add-guest-button">Add to Guest List</button>
                     </Link>
                 </div>
@@ -46,21 +49,23 @@ function PotLuckParty(props) {
                     </div>
                     <div className="pl-add-items-link">
 
-                        <Link to='/itemForm'>
+                        <Link to='/itemForm' id="pl-item-link">
                             <button className="pl-add-items-button">Add Items to List</button>
                         </Link>
                     </div>
                 </div>
                 <div className="pl-acct-for-list"> 
                     <div className="pl-acct-for">
-
+                        
                         <AccountedForList />  
                     </div>
                     <div classname="pl-acct-for-link">
+                    <div className="pl-fix-link-div">
 
-                        <Link to='/accountedForForm'>
+                        <Link to='/accountedForForm' id="af-link">
                             <button className="pl-add-acct-for-button">Add Items Accounted For</button>
                         </Link>
+                    </div>
                     </div>
                 </div>
             </div>

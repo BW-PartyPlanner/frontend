@@ -27,7 +27,7 @@ function ItemList() {
   
     <div className='listContainer'>
       <div className="formContainer">
-        <ItemForm />
+        {/* <ItemForm /> */}
       </div>
       <div className='listItems'>
         {items.map(item => <Item key={item.id} item={item} toggleUpdateItems={toggleUpdateItems} />)}
