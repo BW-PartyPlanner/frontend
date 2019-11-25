@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     object-fit: contain;
-    height: 100vh;
+    height: 150vh;
 }
 .hp-container{
     display: flex;
@@ -12,10 +12,10 @@
     margin: 5% auto;
     padding: 2%;
     width: 70%;
-    background: #DEEEF4;
-    border: 2 px solid $cyprus;
-    border-radius: 1 em;
-    box-shadow: 0 5x 10px $cyprus;
+    background-color: #DEEEF4;
+    border: 2px solid $cyprus;
+    border-radius: 1em;
+    box-shadow: 0 5px 10px $cyprus;
 }
 .hp-name {
     width: 40%;
@@ -73,21 +73,24 @@
         justify-content: space-around;
         height: 15%;
         background-color: #172A3A;
+        #hp-guest-link{
+            background-color: #172A3A;
+        }
+        .hp-gst-list-button{
+            height: 2em;
+            margin-top: 3%;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #508991;
+            color: #DEEEF4;
+            border-radius: 10x;
+            box-shadow: 0 2px 4px #DEEEF4;
+        }
+        .hp-gst-list-button:hover {
+            background-color: #DEEEF4;
+            color: #508991;
+        }
     }
     
-    .hp-gst-list-button{
-        height: 2em;
-        margin-top: 3%;
-        font-family: 'Quicksand', sans-serif;
-        background-color: #508991;
-        color: #DEEEF4;
-        border-radius: 10x;
-        box-shadow: 0 2px 4px #DEEEF4;
-    }
-    .hp-gst-list-button:hover {
-        background-color: #DEEEF4;
-        color: #508991;
-    }
 }
 .hp-budget {
     display: flex;
@@ -107,10 +110,81 @@
         margin-left: 10%;
         background-color: #07B5B5;
         color: #DEEEF4;
+        border-style: inset none none inset;
+        border-color: #172A3A;
     }
 }
 .hp-items-list{
     position: relative;
     width: 40%;
-    left: 5em;
+    left: 4em;
+    top: -10em;
+    border-top: 30px solid #172A3A;
+    border-right: 30px solid #172A3A;
+    border-left: 30px solid #172A3A;
+    box-shadow: 0 5px 10px #172A3A;
+}
+.hp-item-list-title{
+    text-align: center;
+    font-family: 'Righteous', sans-serif;
+    background-color: #508991;
+    border-style: inset none none inset;
+    border-color: #172A3A;
+    height: 10%;
+}
+.hp-item-list-div{
+    background-color: #508991;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-style: none none none inset;
+    border-color: #172A3A;
+    .listContainer{
+        width: 90%;
+        height: 90%;
+        background-color: #DEEEF4;
+        margin: 5%;
+    }
+}
+#hp-item-link{
+    background-color: #172A3A;
+}
+.hp-acct-for-list{
+    position: relative;
+    width: 40%;
+    height: 30em;
+    left: 30em;
+    top: -42em;
+    background-color: #07B5B5;
+    border: 30px solid #172A3A;
+    border-bottom: 15px solid #172A3A;
+    box-shadow: 0 5px 10px #172A3A;
+}
+.af-list-title{
+    margin-left: 5%;
+}
+.hp-acct-list{
+    height: 90%;
+    margin-left: 6%;
+}
+.af-list{
+    height: 80%;
+}
+
+.hp-add-items-button, .hp-acct-for-button {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #508991;
+    color: #DEEEF4;
+    border-radius: 10x;
+    box-shadow: 0 2px 4px #DEEEF4;
+}
+.hp-add-items-button:hover {
+    background-color: #DEEEF4;
+    color: #508991;
+}
+.hp-acct-for-button:hover {
+    background-color: #DEEEF4;
+    color: #508991;
+}
+#hp-af-link {
+    background-color: #172A3A;
 }

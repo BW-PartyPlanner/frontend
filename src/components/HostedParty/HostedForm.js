@@ -11,7 +11,7 @@ function HostedForm({ values, touched, errors }, props ) {
         <section className="hosted-form">
             <Form className="pot-luck">
                 <div className="name-theme-numOfGuests">
-                    <Field 
+                    <Field className="partyName"
                         type="text"
                         name="name"
                         placeholder="Party's Name"
@@ -24,7 +24,7 @@ function HostedForm({ values, touched, errors }, props ) {
 
                   
                 <div className= "date-times">
-                    <Field 
+                    <Field className="partyDate"
 
                         type="date"
                         name="date"
@@ -38,8 +38,8 @@ function HostedForm({ values, touched, errors }, props ) {
                    
                 </div>
                 
-                <div>
-                    <Field
+                <div className="budget">
+                    <Field className="partyBudget"
                         type="text"
 
                         name="budget"
