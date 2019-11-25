@@ -1,13 +1,14 @@
 .loginContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0 auto;
   background-image: url('../../img/loginLOGO.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-size: 60%;
   object-fit: contain;
   height: 90vh;
 
@@ -16,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 8% 3% 0 0;
+    margin: -8% 2% 0 0;
     max-width: 400px;
     width: 100%;
 
