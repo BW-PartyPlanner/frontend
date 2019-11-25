@@ -1,17 +1,23 @@
 .pot-luck-form{
     display: flex;
-    justify-content: space-around;
-   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('../../img/loginLOGO.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    object-fit: contain;
+    height: 90vh;
 }
 
 .pot-luck{
-    width: 60%;
-    background: #deeef4;
-    border: 2px solid #004346;
-    box-shadow: 0 5px 10px #004346;
+    width: 60%; 
 }
 
-.name-theme-numOfGuests, .date-times, .location, .item-list-qty, .food-list-qty, .description{
+.name-theme-numOfGuests, .date-times, .location, .item-list-qty, .food-list-qty, .description, .budget{
     display: flex;
     justify-content: space-around;
     margin-top: 2%;
@@ -31,4 +37,7 @@
 }
 .pot-luck-button{
     background: #07b5b5;
+    height: 30px;
+    margin-left: 24em;
+    font-family: 'Righteous', sans-serif;
 }

@@ -10,7 +10,7 @@ const PotLuckForm = ({ values, touched, errors }) => {
         <section className="pot-luck-form">
             <Form className="pot-luck">
                 <div className="name-theme-numOfGuests">
-                    <Field 
+                    <Field className="partyName"
                         type="text"
                         name="name"
                         placeholder="Party's Name"
@@ -21,7 +21,7 @@ const PotLuckForm = ({ values, touched, errors }) => {
 
                     
                 <div className= "date-times">
-                    <Field 
+                    <Field className="partyDate"
 
                         type="date"
                         name="date"
@@ -35,7 +35,7 @@ const PotLuckForm = ({ values, touched, errors }) => {
                 </div> 
 
                   <div className= "date-times">
-                    <Field 
+                    <Field className="partyBudget"
 
                         type="number"
                         name="budget"

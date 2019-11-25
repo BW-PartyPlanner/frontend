@@ -24,7 +24,7 @@ export default function HostedParty(props) {
                     </div>
                     <div className="hp-link-gst-list">
 
-                        <Link to="/guestListForm">
+                        <Link to="/guestListForm" id="hp-guest-link">
                             <button className="hp-gst-list-button">Add Guests</button>
                         </Link>
                     </div>
@@ -37,21 +37,26 @@ export default function HostedParty(props) {
                 <div className="hp-items-list">
 
                     <h3 className="hp-item-list-title">Items Needed List</h3>
-                    <ItemList />
-                </div>
-                <div className="hp-add-item-link">
-                    <Link to='/itemForm' id="hp-item-link">
-                        <button className="hp-add-items-button">Add Items to List</button>
-                    </Link>
+                    <div className="hp-item-list-div">
+
+                        <ItemList />
+                    </div>
+                    <div className="hp-add-item-link">
+                        <Link to='/itemForm' id="hp-item-link">
+                            <button className="hp-add-items-button">Add Items to List</button>
+                        </Link>
+                    </div>
                 </div>
                 <div className="hp-acct-for-list">
-                    <h3 className="hp-acct-for-title">Items Accounted For</h3>
-                    <AccountedForList />
-                </div>
+                    <div className="hp-acct-list">
+
+                        <AccountedForList />
+                    </div>
                 <div className="hp-acct-for-link">
-                    <Link to='/accountedForForm' id="af-link">
+                    <Link to='/accountedForForm' id="hp-af-link">
                         <button className="hp-acct-for-button">Add Items Accounted For</button>
                     </Link>
+                </div>
                 </div>
                 
             </div>
