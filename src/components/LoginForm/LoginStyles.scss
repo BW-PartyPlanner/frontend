@@ -17,9 +17,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: -8% 2% 0 0;
+    margin: -9% 2% 0 0;
     max-width: 400px;
     width: 100%;
+
+    .loginHeader {
+      color: white;
+    }
 
     .loginField {
       display: flex;

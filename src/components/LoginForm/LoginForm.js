@@ -10,6 +10,7 @@ const LoginForm = ({ values, touched, errors }) => {
     return (
         <div className="loginContainer">
             <Form className="loginForm">
+                <h2 className='loginHeader'>LOGIN</h2>
                 <Field 
                     className="loginField"
                     type="text"

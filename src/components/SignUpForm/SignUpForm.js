@@ -10,7 +10,7 @@ const SignUpForm = ({ values, touched, errors }) => {
     return (
         <div className="sign-up-user-form">
             <Form className="sign-up-form">
-                
+                <h2>Register an Account</h2>
                 <Field
                     className="sign-up-field"
                     type="text"
