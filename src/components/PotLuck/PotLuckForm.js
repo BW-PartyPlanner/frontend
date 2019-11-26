@@ -74,9 +74,18 @@ const FormikPotLuckForm = withFormik({
     handleSubmit(values, formikBag) {
         formikBag.props.createParty({ user_id: formikBag.props.user_id, ...values });
         formikBag.props.history.push(`/PotLuckPartyCreated`);
-        // localStorage.setItem("party", values.name)
-        // localStorage.setItem("budget", values.budget)
-        // localStorage.setItem("date", values.date)
+
+        /*After creating a party from the PotLuckForm 
+          we do get abject called party inserted into
+          the partyReducer store that contains the info
+          of the party just created. However, on page refresh
+          this data is lost so I set these varibles to local 
+          storage to avoid making another API call to get the data
+        */
+
+        localStorage.setItem("party", values.name)
+        localStorage.setItem("budget", values.budget)
+        localStorage.setItem("date", values.date)
       
       
        
