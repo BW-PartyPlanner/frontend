@@ -6,7 +6,7 @@ function Item({ item }) {
 
   return (
     <>
-      <div className='item' onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: item })}>
+      <div className='item' onClick={() => dispatch({ type: 'TOGGLE_ITEM', payload: item })}>
         {item.isAccountedFor ? <del>{`${item.name}`}</del> : `${item.name}`}
       </div>
     </>
