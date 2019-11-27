@@ -39,6 +39,7 @@ function App({ setUserId, user_id }) {
 
         <Route path='/items' component={ItemList} />
         <Route path='/items/:id' component={ItemList} />
+        <Route path='/edititem/:id' render={props => <ItemForm {...props} />} />
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />

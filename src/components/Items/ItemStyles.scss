@@ -12,11 +12,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 5% auto;
   border: none;
   border-radius: 1em;
   width: 70%;
-  height: 80%;
   box-shadow: 1px 3px 5px;
 }
 
@@ -72,7 +71,11 @@ hr {
 .listItems {
   width: 100%;
   margin: 0 auto;
-  
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: space-around;
 }
 
 .item {
@@ -130,4 +133,28 @@ button:focus {
 .removeBtn:hover {
   background-color: #fc003f; 
   transform: scale(1.02);
+}
+
+.editBtn {
+  background-color: rgb(200, 200, 4);
+  margin: 2% auto;
+  width: 70px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+}
+
+.editBtn:hover {
+  background-color: yellow;
+  transform: scale(1.02)
+}
+
+.editBtn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: white;
+  font-weight: 600;
+  padding: 0;
 }
