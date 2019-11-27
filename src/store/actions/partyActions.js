@@ -12,6 +12,11 @@ export const POST_PARTY_REQUEST = 'POST_PARTY_REQUEST'
 export const POST_PARTY_SUCCESS = 'POST_PARTY_SUCCESS'
 export const POST_PARTY_ERROR =   'POST_PARTY_ERROR'
 
+export const PUT_PARTY_REQUEST = 'POST_PARTY_REQUEST'
+export const PUT_PARTY_SUCCESS = 'POST_PARTY_SUCCESS'
+export const PUT_PARTY_ERROR =   'POST_PARTY_ERROR'
+
+
 export const getParties = () => dispatch => {
   dispatch({ type: FETCH_PARTIES_REQUEST })
 
@@ -35,13 +40,33 @@ export const getPartyById = (id) => dispatch => {
     .get(`/parties/${id}`)
     .then(res => {
       dispatch({ type: FETCH_PARTY_SUCCESS, payload: res.data })
-      console.log(res.data, "from getting party by specific id")
      
     })
     .catch(err => {
       console.log("Unable to find this specific party.", err.response.message)
       dispatch({ type: FETCH_PARTY_ERROR })
     })
+
+}
+
+export const updateParty = (id, update) => dispatch => {
+  dispatch({type: PUT_PARTY_REQUEST})
+  axios()
+    .put(`/parties/${id}`, update)
+    .then(res => {
+      dispatch({ type: PUT_PARTY_SUCCESS, payload: res.data })
+
+      localStorage.setItem('party', update.name)
+      localStorage.setItem('budget', update.budget)
+      localStorage.setItem('date', update.date)
+     
+     
+    })
+    .catch(err => {
+      console.log("Unable to update this specific party.", err.response.message)
+      dispatch({ type: PUT_PARTY_ERROR })
+    })
+  
 
 }
 
