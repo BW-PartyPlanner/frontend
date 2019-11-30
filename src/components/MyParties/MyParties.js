@@ -1,14 +1,13 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import {getParties} from '../../store/actions/partyActions';
-
 import Party from  './Party';
 
 const MyParties = (props) => {
 
-    useEffect( () => {
+    useEffect(() => {
       props.getParties()
-    },[props])
+    }, [])
 
     return (
         <div className="container-my-parties">
