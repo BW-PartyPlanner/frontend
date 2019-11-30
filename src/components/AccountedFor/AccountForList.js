@@ -2,7 +2,7 @@ import React,  {useState, useEffect } from 'react';
 
 
 export default function AccountedForList() {
-    const [acctFor, setAcctFor] = useState([]);
+    const [acctFor] = useState([]);
 
     useEffect(() => {
 

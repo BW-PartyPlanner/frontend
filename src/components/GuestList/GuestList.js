@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 
 export default function GuestList() {
-    const [guests, setGuests] = useState([]);
+    const [guests] = useState([]);
 
     useEffect(() => {
 

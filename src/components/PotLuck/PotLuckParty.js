@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import GuestList from '../GuestList/GuestList';
 import AccountedForList from '../AccountedFor/AccountForList';
 import ItemList from '../Items/ItemList';
-
 import {getPartyById} from '../../store/actions/partyActions'
 /*
 
@@ -87,7 +86,7 @@ function PotLuckParty(props) {
                             
                             <AccountedForList />  
                         </div>
-                        <div classname="pl-acct-for-link">
+                        <div className="pl-acct-for-link">
                         <div className="pl-fix-link-div">
 
                             <Link to='/accountedForForm' id="af-link">

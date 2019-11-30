@@ -40,10 +40,10 @@ export const getPartyById = (id) => dispatch => {
     .get(`/parties/${id}`)
     .then(res => {
       dispatch({ type: FETCH_PARTY_SUCCESS, payload: res.data })
-     
+      localStorage.setItem('partyId', res.data.party_id)
     })
     .catch(err => {
-      console.log("Unable to find this specific party.", err.response.message)
+      console.log("Unable to find this specific party.", err.response)
       dispatch({ type: FETCH_PARTY_ERROR })
     })
 

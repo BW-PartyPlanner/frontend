@@ -21,7 +21,7 @@ function PartyInfo(props) {
         
         })
 
-    })
+    }, [])
   
     
 

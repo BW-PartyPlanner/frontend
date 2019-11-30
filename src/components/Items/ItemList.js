@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Item from './Item';
-import ItemForm from './ItemForm';
+// import ItemForm from './ItemForm';
 import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
-function ItemList() {
+function ItemList(props) {
   const [items, setItems] = useState([])
-  const [updateItems, setUpdateItems] = useState(false)
-  console.log(items, updateItems)
+  console.log(items)
 
   useEffect(() => {
     axios()
@@ -17,11 +16,7 @@ function ItemList() {
       .catch(err => {
         console.log(err, "Unable to get data.")
       })
-  }, [updateItems])
-
-  const toggleUpdateItems = () => {
-    setUpdateItems(!updateItems)
-  }
+  }, [])
 
   return (
   
@@ -30,7 +25,7 @@ function ItemList() {
         {/* <ItemForm /> */}
       </div>
       <div className='listItems'>
-        {items.map(item => <Item key={item.id} item={item} toggleUpdateItems={toggleUpdateItems} />)}
+        {items.map(item => <Item key={item.id} item={item} {...props} />)}
       </div>
     </div>
   )
