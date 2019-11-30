@@ -56,7 +56,7 @@ export const deleteItem = id => dispatch => {
 
 }
 
-export const editItem = item => dispatch => {
+export const editItem = (id, item) => dispatch => {
 
   axios()
     .put(`/items/${item.id}`, item)

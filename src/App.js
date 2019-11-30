@@ -12,6 +12,7 @@ import PotLuckParty from './components/PotLuck/PotLuckParty';
 import PotLuckPartyCreated from './components/PotLuck/PotLuckPartyCreated';
 import ItemList from './components/Items/ItemList';
 import ItemForm from './components/Items/ItemForm';
+import EditItemForm from './components/Items/EditItemForm';
 import AccountedForForm from './components/AccountedFor/AccountedForForm';
 import GuestListForm from './components/GuestList/GuestListForm';
 import PrivateRoute from './auth/PrivateRoute';
@@ -39,7 +40,7 @@ function App({ setUserId, user_id }) {
 
         <Route path='/items' component={ItemList} />
         <Route path='/items/:id' component={ItemList} />
-        <Route path='/edititem/:id' render={props => <ItemForm {...props} />} />
+        <Route path='/edititem/:id' render={props => <EditItemForm {...props} />} />
         <Route exact path='/' component={UserDashboard} />
         <Route path='/signup' render={props => <SignUpForm {...props} /> } />
         <Route path='/login' component={LoginForm} />
