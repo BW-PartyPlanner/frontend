@@ -8,7 +8,7 @@ console.log(props, "from party");
     <div className="rendered-parties">
         {props.parties.map((party) =>
          <div className="party-link">
-            <Link to={{pathname: "/PotLuckParty", state:{id: party.id}}}>{party.name}</Link>
+            <Link to={{pathname: `/potluckparty/${party.id}`, state:{id: party.id}}}>{party.name}</Link>
             
              
         </div> )}
