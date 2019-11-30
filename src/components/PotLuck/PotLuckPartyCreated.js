@@ -46,8 +46,6 @@ function PotLuckPartyCreated(props) {
      
     }
   
-  
-   
     return (
         <div className="pl-wrapper">
 
@@ -112,6 +110,3 @@ const mapStateToProps = function(state) {
 }
 
 export default connect(mapStateToProps,{getPartyById})(PotLuckPartyCreated)
-
-
-

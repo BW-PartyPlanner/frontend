@@ -8,6 +8,10 @@ export const POST_ITEMS_REQUEST = 'POST_ITEMS_REQUEST'
 export const POST_ITEMS_SUCCESS = 'POST_ITEMS_SUCCESS'
 export const POST_ITEMS_ERROR = 'POST_ITEMS_ERROR'
 
+export const PUT_ITEMS_REQUEST = 'PUT_ITEMS_REQUEST'
+export const PUT_ITEMS_SUCCESS = 'PUT_ITEMS_SUCCESS'
+export const PUT_ITEMS_ERROR =   'PUT_ITEMS_ERROR'
+
 export const ADD_ITEM = 'ADD_ITEM'
 export const REMOVE_ITEM = 'REMOVE_ITEM'
 export const TOGGLE_ITEM = 'TOGGLE_ITEM'
@@ -61,9 +65,9 @@ export const editItem = (id, item) => dispatch => {
   axios()
     .put(`/items/${item.id}`, item)
     .then(res => {
-      dispatch({ type: FETCH_ITEMS_SUCCESS, payload: res.data })
+      dispatch({ type: PUT_ITEMS_SUCCESS, payload: res.data })
     })
     .catch(err => {
-      dispatch({ type: FETCH_ITEMS_ERROR, payload: err.response })
+      dispatch({ type: PUT_ITEMS_ERROR, payload: err.response })
     })
 }

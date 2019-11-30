@@ -19,21 +19,16 @@ const MyParties = (props) => {
                     <h3>Created Parties</h3>
                     <div>A bunch of parties I created.</div>
                     {props.state.partyReducer.parties ? <Party parties={props.state.partyReducer.parties}/>: "not it is not"}
-
-
                 </div>
         </div>
     );
 };
 
 function mapState(state){
-    // const {partyReducer} = state;
     return {
         state: state
         
     }
-
 }
-
 
 export default connect(mapState, {getParties})(MyParties);

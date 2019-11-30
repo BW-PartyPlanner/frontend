@@ -23,19 +23,16 @@ string is rendered instead
 */
 function PotLuckParty(props) {
  
-     const {id} = props.location.state;
+    //  const {id} = props.location.state;
 
-        useEffect(() => props.getPartyById(id), [])
+        useEffect(() => props.getPartyById(), [])
    
-
-    
     return (
 
         <div className="pl-wrapper">
             <div className="pl-container" >
 
                 <div className="pl-name-div">
-
 
                     <h1 className="pl-pot-luck-name">
                       {props.state.partyReducer.party ? `${props.state.partyReducer.party.party.name}`: 'Party name'}
@@ -50,31 +47,23 @@ function PotLuckParty(props) {
                
                 <div className="pl-guest-info  ">
                     <div className="pl-gst-list">
-
-
                         <GuestList />
                     </div>
                     <div className="pl-link-to-form">
-
                         <Link to='/guestListForm' id="pl-guest-link">
                             <button className="pl-add-guest-button">Add to Guest List</button>
                         </Link>
                     </div>
                 </div>
-
-                
-                
-                
+  
                 <div className="pl-lists">
 
                     <div className="pl-item-list">
                         <h3 className="item-list-title">Items Needed List</h3>
                         <div className="pl-item-list-div">
-
                             <ItemList />
                         </div>
                         <div className="pl-add-items-link">
-
                             <Link to='/itemForm' id="pl-item-link">
                                 <button className="pl-add-items-button">Add Items to List</button>
                             </Link>
@@ -83,12 +72,10 @@ function PotLuckParty(props) {
                     </div>
                     <div className="pl-acct-for-list"> 
                         <div className="pl-acct-for">
-                            
                             <AccountedForList />  
                         </div>
                         <div className="pl-acct-for-link">
                         <div className="pl-fix-link-div">
-
                             <Link to='/accountedForForm' id="af-link">
                                 <button className="pl-add-acct-for-button">Add Items Accounted For</button>
                             </Link>
@@ -98,8 +85,7 @@ function PotLuckParty(props) {
                 </div>
             </div>
         </div>
-        
-        
+    
     );
 }
 
@@ -110,6 +96,3 @@ const mapStateToProps = function(state) {
 }
 
 export default connect(mapStateToProps,{getPartyById})(PotLuckParty)
-
-
-

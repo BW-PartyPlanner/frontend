@@ -35,7 +35,7 @@ const EditItemForm = (props) => {
   const handleSubmit = (e) => {
 		e.preventDefault()
 		
-    dispatch(editItem())
+    dispatch(editItem(newItem.id, newItem))
 	}
 
   return (
@@ -52,7 +52,6 @@ const EditItemForm = (props) => {
           value={newItem.name}
         />
         
-
         <input
           type="text"
           name="description"
@@ -76,7 +75,7 @@ const EditItemForm = (props) => {
             Update
           </button>
           
-          <button className="removeBtn" type='delete' onClick={() => dispatch(deleteItem())}>
+          <button className="removeBtn" type='delete' onClick={() => dispatch(deleteItem(newItem.id))}>
             Remove
           </button>
         </div>
