@@ -26,7 +26,7 @@ function PotLuckParty(props) {
  
      const {id} = props.location.state;
 
-        useEffect(() => props.getPartyById(id), [])
+        useEffect(() => props.getPartyById(id), [id, props])
    
 
     

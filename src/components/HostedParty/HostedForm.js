@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { createParty } from '../../store/actions/partyActions';
 import { withFormik, Form, Field } from 'formik';

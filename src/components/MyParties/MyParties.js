@@ -8,7 +8,7 @@ const MyParties = (props) => {
 
     useEffect( () => {
       props.getParties()
-    },[])
+    },[props])
 
     return (
         <div className="container-my-parties">

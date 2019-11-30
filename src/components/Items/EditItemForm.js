@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { editItem } from '../../store/actions/itemActions';
+import { editItem, deleteItem } from '../../store/actions/itemActions';
+import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
 const EditItemForm = (props) => {
+  const [newItem, setNewItem] = useState({
+    name: '',
+    description: '',
+    cost: 0
+  })
+  console.log(props.match.params.id)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    axios()
+    .get(`items/${props.match.params.id}`)
+    .then(res => {
+      console.log(res.data)
+      setNewItem(res.data)
+    })
+    .catch(err => {
+      console.log(err.response);
+    })
+  }, [props.match.params.id])
+
+  const handleChange = (e) => {
+    setNewItem({
+      ...newItem, 
+      [e.target.name]: e.target.value
+    })
+    console.log(e.target.value)
+  } 
+
+  const handleSubmit = (e) => {
+		e.preventDefault()
+		
+    dispatch(editItem())
+	}
 
   return (
     <div className="editFormContainer">
-      <form className='editForm'>
+      <form className='editForm' onSubmit={handleSubmit}>
         <h1>Edit <br /> ITEM</h1>
         <hr />
         <input
@@ -15,7 +48,8 @@ const EditItemForm = (props) => {
           name="name"
           placeholder="Name"
           className='itemInput'
-          // value={name}
+          onChange={handleChange}
+          value={newItem.name}
         />
         
 
@@ -24,7 +58,8 @@ const EditItemForm = (props) => {
           name="description"
           placeholder="Description"
           className='itemInput'
-          // value={description}
+          onChange={handleChange}
+          value={newItem.description}
         />
 
         <input
@@ -32,15 +67,16 @@ const EditItemForm = (props) => {
           name="cost"
           placeholder="Cost"
           className='itemInput'
-          // value={cost}
+          onChange={handleChange}
+          value={newItem.cost}
         />
 
         <div className='btnContainer'>
           <button className='submitBtn' type='submit'>
-            Submit
+            Update
           </button>
           
-          <button className="removeBtn" type='delete' onClick={() => dispatch({ type: 'REMOVE_TODO' })}>
+          <button className="removeBtn" type='delete' onClick={() => dispatch(deleteItem())}>
             Remove
           </button>
         </div>
