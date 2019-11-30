@@ -1,16 +1,11 @@
 import React, {useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getPartyById } from '../../store/actions/partyActions';
 
 function Item(props) {
   const dispatch = useDispatch()
-  const partyId = localStorage.getItem('partyId')
+  const partyId = 1
   console.log(props)
-  
-  useEffect(() => {
-    dispatch(getPartyById())
-  }, [dispatch])
 
   return (
     <div className='itemContainer'>

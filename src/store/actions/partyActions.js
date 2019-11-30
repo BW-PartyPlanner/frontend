@@ -12,10 +12,9 @@ export const POST_PARTY_REQUEST = 'POST_PARTY_REQUEST'
 export const POST_PARTY_SUCCESS = 'POST_PARTY_SUCCESS'
 export const POST_PARTY_ERROR =   'POST_PARTY_ERROR'
 
-export const PUT_PARTY_REQUEST = 'POST_PARTY_REQUEST'
-export const PUT_PARTY_SUCCESS = 'POST_PARTY_SUCCESS'
-export const PUT_PARTY_ERROR =   'POST_PARTY_ERROR'
-
+export const PUT_PARTY_REQUEST = 'PUT_PARTY_REQUEST'
+export const PUT_PARTY_SUCCESS = 'PUT_PARTY_SUCCESS'
+export const PUT_PARTY_ERROR =   'PUT_PARTY_ERROR'
 
 export const getParties = () => dispatch => {
   dispatch({ type: FETCH_PARTIES_REQUEST })
