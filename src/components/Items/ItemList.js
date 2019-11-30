@@ -3,7 +3,7 @@ import Item from './Item';
 // import ItemForm from './ItemForm';
 import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
-function ItemList() {
+function ItemList(props) {
   const [items, setItems] = useState([])
   console.log(items)
 
@@ -25,7 +25,7 @@ function ItemList() {
         {/* <ItemForm /> */}
       </div>
       <div className='listItems'>
-        {items.map(item => <Item key={item.id} item={item} />)}
+        {items.map(item => <Item key={item.id} item={item} {...props} />)}
       </div>
     </div>
   )
