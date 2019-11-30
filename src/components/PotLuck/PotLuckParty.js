@@ -23,9 +23,9 @@ string is rendered instead
 */
 function PotLuckParty(props) {
  
-    //  const {id} = props.location.state;
+     const {id} = props.location.state;
 
-        useEffect(() => props.getPartyById(), [])
+        useEffect(() => props.getPartyById(id), [])
    
     return (
 

@@ -38,6 +38,7 @@ export const getPartyById = (id) => dispatch => {
   axios()
     .get(`/parties/${id}`)
     .then(res => {
+      console.log(res.data)
       dispatch({ type: FETCH_PARTY_SUCCESS, payload: res.data })
       localStorage.setItem('partyId', res.data.party_id)
     })
