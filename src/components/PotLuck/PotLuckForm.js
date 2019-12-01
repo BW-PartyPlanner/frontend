@@ -73,7 +73,7 @@ const FormikPotLuckForm = withFormik({
 
     handleSubmit(values, formikBag) {
         formikBag.props.createParty({ user_id: formikBag.props.user_id, ...values });
-        formikBag.props.history.push(`/PotLuckPartyCreated`);
+        formikBag.props.history.push(`/dashboard`);
 
         /*After creating a party from the PotLuckForm 
           we do get abject called party inserted into
