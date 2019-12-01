@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 function Item(props) {
   const dispatch = useDispatch()
-  const partyId = 1
-  console.log(props)
+  const partyId = props.id
+  console.log(props.id)
 
   return (
     <div className='itemContainer'>
@@ -13,7 +13,7 @@ function Item(props) {
         {props.item.isAccountedFor ? <del>{`${props.item.name}`}</del> : `${props.item.name}`}
       </div>
       <button className='editBtn'>
-      <Link to={`potluckparty/${partyId}/edititem/${props.item.id}`}>
+      <Link to={`/potluckparty/${partyId}/edititem/${props.item.id}`}>
          Edit
       </Link>
     </button>
