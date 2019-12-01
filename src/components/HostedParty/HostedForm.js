@@ -85,7 +85,7 @@ const FormikPotLuckForm = withFormik({
 
     handleSubmit(values, formikBag) {
         formikBag.props.createParty({ user_id: formikBag.props.user_id, ...values });
-        formikBag.props.history.push('/HostedParty')
+        formikBag.props.history.push(`/dashboard`)
         console.log(values, "console log from handle summit")
     }
 
