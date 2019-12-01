@@ -5,16 +5,22 @@ import { axiosWithAuth as axios } from '../../utils/axiosUtils';
 
 const EditItemForm = (props) => {
   const [newItem, setNewItem] = useState({
+    id: '',
     name: '',
     description: '',
-    cost: 0
+    cost: 0,
+    party_id: 1,
+    user_id: 1,
+    isAccountedFor: false,
   })
+  console.log(newItem)
   console.log(props.match.params.id)
   const dispatch = useDispatch()
+  const id = props.match.params.id
 
   useEffect(() => {
     axios()
-    .get(`items/${props.match.params.id}`)
+    .get(`items/${id}`)
     .then(res => {
       console.log(res.data)
       setNewItem(res.data)
@@ -22,7 +28,7 @@ const EditItemForm = (props) => {
     .catch(err => {
       console.log(err.response);
     })
-  }, [props.match.params.id])
+  }, [id])
 
   const handleChange = (e) => {
     setNewItem({
@@ -34,9 +40,9 @@ const EditItemForm = (props) => {
 
   const handleSubmit = (e) => {
 		e.preventDefault()
-		
-    dispatch(editItem(newItem.id, newItem))
-	}
+		console.log(id, newItem)
+    dispatch(editItem(id, newItem))
+  }
 
   return (
     <div className="editFormContainer">
@@ -48,8 +54,8 @@ const EditItemForm = (props) => {
           name="name"
           placeholder="Name"
           className='itemInput'
-          onChange={handleChange}
           value={newItem.name}
+          onChange={handleChange}
         />
         
         <input
@@ -57,8 +63,8 @@ const EditItemForm = (props) => {
           name="description"
           placeholder="Description"
           className='itemInput'
-          onChange={handleChange}
           value={newItem.description}
+          onChange={handleChange}
         />
 
         <input
@@ -66,8 +72,8 @@ const EditItemForm = (props) => {
           name="cost"
           placeholder="Cost"
           className='itemInput'
-          onChange={handleChange}
           value={newItem.cost}
+          onChange={handleChange}
         />
 
         <div className='btnContainer'>
@@ -80,7 +86,7 @@ const EditItemForm = (props) => {
           </button>
         </div>
       </form> 
-  </div>
+    </div>
   );
 };
 
