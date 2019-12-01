@@ -3,13 +3,7 @@ import { FETCH_ITEMS_REQUEST, FETCH_ITEMS_SUCCESS, FETCH_ITEMS_ERROR, POST_ITEMS
 const initialState = {
   isLoading: false,
   error: '',
-  items: [{
-    name: '',
-    description: '',
-    isAccountedFor: false,
-    party_id: 1,
-    user_id: 1
-  }]
+  items: []
 }
 
 export function reducer(state = initialState, action) {
