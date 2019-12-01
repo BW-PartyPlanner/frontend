@@ -22,7 +22,8 @@ string is rendered instead
 
 */
 function PotLuckParty(props) {
- 
+    
+    console.log(props.location.state)
      const {id} = props.location.state;
 
         useEffect(() => props.getPartyById(id), [])
@@ -61,7 +62,7 @@ function PotLuckParty(props) {
                     <div className="pl-item-list">
                         <h3 className="item-list-title">Items Needed List</h3>
                         <div className="pl-item-list-div">
-                            <ItemList />
+                            <ItemList id={id}/>
                         </div>
                         <div className="pl-add-items-link">
                             <Link to='/itemForm' id="pl-item-link">
