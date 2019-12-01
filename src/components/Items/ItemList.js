@@ -25,7 +25,7 @@ function ItemList(props) {
         {/* <ItemForm /> */}
       </div>
       <div className='listItems'>
-        {items.map(item => <Item key={item.id} item={item} {...props} />)}
+        {items.map(item => <Item key={item.id} item={item} {...props} id={props.id} />)}
       </div>
     </div>
   )

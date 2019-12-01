@@ -33,28 +33,31 @@ function App({ setUserId, user_id }) {
 
   return (
     <>
-      <Navigation />
+    <Navigation />
     <div className="App">
    
       <Switch>
 
+        <PrivateRoute path='/potluckform' component={PotLuckForm} /> 
+        <Route path='/potluckparty' render={props => <PotLuckParty {...props} />} /> 
+        <PrivateRoute path='/potluckparty/:id' component={PotLuckParty} /> 
         <Route path='/potluckparty/:id/items' render={props => <ItemList {...props} />} />
         <Route path='/potluckparty/:id/items/:id' render={props => <ItemList {...props} />} />
         <Route path='/potluckparty/:id/edititem/:id' render={props => <EditItemForm {...props} />} />
-        <Route path='/hostedparty/:id/items' component={ItemList} />
-        <Route path='/hostedparty/:id/items/:id' component={ItemList} />
-        <Route path='/hostedparty/:id/edititem/:id' render={props => <EditItemForm {...props} />} />
-        <Route exact path='/' component={UserDashboard} />
-        <Route path='/signup' render={props => <SignUpForm {...props} /> } />
-        <Route path='/login' component={LoginForm} />
-        <PrivateRoute path='/dashboard' component={UserDashboard} />
-        <PrivateRoute path='/potluckform' component={PotLuckForm} /> 
-        <Route path='/potluckparty' render={props => <PotLuckParty {...props} />} /> 
         <PrivateRoute path='/potluckpartycreated' component={PotLuckPartyCreated} /> 
-        <PrivateRoute path='/potluckparty/:id' component={PotLuckParty} /> 
+        
         <PrivateRoute path='/hostedform' component={HostedForm} />  
         <PrivateRoute path='/hostedparty' component={HostedParty} />
         <PrivateRoute path='/hostedparty/:id' component={HostedParty} />
+        <Route path='/hostedparty/:id/items' component={ItemList} />
+        <Route path='/hostedparty/:id/items/:id' component={ItemList} />
+        <Route path='/hostedparty/:id/edititem/:id' render={props => <EditItemForm {...props} />} />
+
+        <Route exact path='/' component={UserDashboard} />
+        <Route path='/signup' render={props => <SignUpForm {...props} /> } />
+        <Route path='/login' component={LoginForm} />
+
+        <PrivateRoute path='/dashboard' component={UserDashboard} />
         <PrivateRoute path='/itemform' component={ItemForm} />
         <PrivateRoute path='/accountedForForm' component={AccountedForForm} />
         <PrivateRoute path='/guestListForm' component={GuestListForm} />
