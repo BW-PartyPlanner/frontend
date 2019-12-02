@@ -1,4 +1,4 @@
-import React , {useEffect, useReducer} from 'react';
+import React , {useEffect, useState, useReducer} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GuestList from '../GuestList/GuestList';
@@ -7,6 +7,8 @@ import ItemList from '../Items/ItemList';
 import {getPartyById} from '../../store/actions/partyActions';
 import { ItemContext } from '../../contexts/ItemContext';
 import { initialState, reducer } from '../../store/reducers/itemReducer';
+import PartyInfo from './PartyInfo'
+import PartyInfoForm from './PartyInfoForm'
 /*
 
 This component is connected to the redux store
@@ -25,29 +27,45 @@ string is rendered instead
 */
 function PotLuckParty(props) {
     const [state, dispatch] = useReducer(reducer, initialState)
-    console.log(state.items)
-
+    const [edit, setEdit] = useState(false);
+    const {id} = props.location.state;
     console.log(props.location.state)
-     const {id} = props.location.state;
+    useEffect(() => getParty(), [])
+    
 
-        useEffect(() => props.getPartyById(id), [])
+    function getParty(){
+        props.getPartyById(localStorage.getItem('lastItemId'))
+       
+    }
+
+    function editParty(e){
+        e.preventDefault();
+        setEdit(true);
+    }
+
+    function updated(){
+        setEdit(false);
+     
+    }
+
+    useEffect(() => props.getPartyById(id), [])
    
     return (
 
         <div className="pl-wrapper">
             <div className="pl-container" >
-
+            {edit ? <PartyInfoForm updated={updated} id={id}/> : <PartyInfo editParty={editParty} id={id}/>}
                 <div className="pl-name-div">
 
-                    <h1 className="pl-pot-luck-name">
-                      {props.state.partyReducer.party ? `${props.state.partyReducer.party.party.name}`: 'Party name'}
+                    {/* <h1 className="pl-pot-luck-name">
+                      {props.state.partyReducer.party ? `${props.state.partyReducer.party.name}`: 'Party name'}
                     </h1>
 
                     <h2 className="pl-guest-num">Number of Guests</h2>
                     <h3 className="pl-date">Date of Party</h3>
-                    <p className="pl-time">{props.state.partyReducer.party ? `${props.state.partyReducer.party.party.date}`: "date not available"}</p>
+                    <p className="pl-time">{props.state.partyReducer.party ? `${props.state.partyReducer.party.date}`: "date not available"}</p> */}
 
-                    <button className="pl-edit-button">Edit</button>
+                    {/* <button className="pl-edit-button">Edit</button> */}
                 </div>
                
                 <div className="pl-guest-info  ">

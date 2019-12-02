@@ -26,7 +26,7 @@ export const getParties = () => dispatch => {
       return res.data;
     })
     .catch(err => {
-      console.log("Unable to find parties.", err.response.message)
+      console.log("Unable to find parties.", err.response)
       dispatch({ type: FETCH_PARTIES_ERROR })
     })
 
@@ -63,7 +63,7 @@ export const updateParty = (id, update) => dispatch => {
      
     })
     .catch(err => {
-      console.log("Unable to update this specific party.", err.response.message)
+      console.log("Unable to update this specific party.", err.response)
       dispatch({ type: PUT_PARTY_ERROR })
     })
   
