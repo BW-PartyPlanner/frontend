@@ -49,8 +49,8 @@ function App({ setUserId, user_id }) {
         <PrivateRoute path='/hostedform' component={HostedForm} />  
         <PrivateRoute path='/hostedparty' component={HostedParty} />
         <PrivateRoute path='/hostedparty/:id' component={HostedParty} />
-        <Route path='/hostedparty/:id/items' component={ItemList} />
-        <Route path='/hostedparty/:id/items/:id' component={ItemList} />
+        <PrivateRoute path='/hostedparty/:id/items' component={ItemList} />
+        <PrivateRoute path='/hostedparty/:id/items/:id' component={ItemList} />
         <Route path='/hostedparty/:id/edititem/:id' render={props => <EditItemForm {...props} />} />
 
         <Route exact path='/' component={UserDashboard} />
