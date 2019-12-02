@@ -2,8 +2,6 @@ import React , {useState} from 'react';
 import { connect } from 'react-redux';
 import {updateParty} from '../../store/actions/partyActions'
 
-
-
 function PartyInfoForm(props) {
 
     const [state, setState] = useState({
@@ -22,8 +20,7 @@ function PartyInfoForm(props) {
 
     function putParty(e){
         e.preventDefault()
-        const id = localStorage.getItem('lastItemId');
-        props.updateParty(id, state)
+        props.updateParty(props.id, state)
         props.updated()
 
     }

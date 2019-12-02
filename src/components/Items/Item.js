@@ -1,22 +1,21 @@
-import React, {useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function Item(props) {
-  const dispatch = useDispatch()
-  const partyId = props.id
-  console.log(props.id)
+function Item({ item, id, dispatch }) {
+  const partyId = id
+  console.log(id)
 
   return (
     <div className='itemContainer'>
-      <div className='item' onClick={() => dispatch({ type: 'TOGGLE_ITEM', payload: props.item })}>
-        {props.item.isAccountedFor ? <del>{`${props.item.name}`}</del> : `${props.item.name}`}
+      <div className='item' onClick={() => dispatch({ type: 'TOGGLE_ITEM', payload: item })}>
+        {item.isAccountedFor ? <del>{`${item.name}`}</del> : `${item.name}`}
       </div>
       <button className='editBtn'>
-      <Link to={`/potluckparty/${partyId}/edititem/${props.item.id}`}>
-         Edit
-      </Link>
-    </button>
+        <Link to={`/potluckparty/${partyId}/edititem/${item.id}`}>
+          Edit
+        </Link>
+      </button>
     </div>
   )
 }

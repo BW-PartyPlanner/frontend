@@ -20,7 +20,7 @@ const ItemForm = ({ values, touched, errors }) => {
           className='itemInput'
           value={values.name}
         />
-        {touched.name && errors.name && <p>{errors.name}</p>}
+        {touched.name && errors.name && <p className='formErrors'>{errors.name}</p>}
 
         <Field
           type="text"
@@ -29,7 +29,7 @@ const ItemForm = ({ values, touched, errors }) => {
           className='itemInput'
           value={values.description}
         />
-        {touched.description && errors.description && <p>{errors.description}</p>}
+        {touched.description && errors.description && <p className='formErrors'>{errors.description}</p>}
 
         <Field
           type="text"
@@ -38,7 +38,7 @@ const ItemForm = ({ values, touched, errors }) => {
           className='itemInput'
           value={values.cost}
         />
-        {touched.cost && errors.cost && <p>{errors.cost}</p>}
+        {touched.cost && errors.cost && <p className='formErrors'>{errors.cost}</p>}
 
         <div className='btnContainer'>
           <button className='submitBtn' type='submit'>

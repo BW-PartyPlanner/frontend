@@ -4,6 +4,7 @@
   border-radius: 10px;
   width: 400px;
   min-height: 400px;
+  margin: 5% auto;
   padding: 1%;
 }
 
@@ -15,7 +16,7 @@
   margin: 5% auto;
   border: none;
   border-radius: 1em;
-  width: 70%;
+  width: 90%;
   box-shadow: 1px 3px 5px;
 }
 
@@ -29,7 +30,11 @@
 
 .itemFormContainer {
   width: 100%;
-  margin: 0 auto;
+  margin: 5% auto;
+  border: none;
+  border-radius: 1em;
+  width: 85%;
+  box-shadow: 1px 3px 5px;
 }
 
 .itemForm {
@@ -48,7 +53,7 @@ h1 {
 }
 
 hr {
-  width: 30%;
+  width: 15%;
   height: 6px;
   border: none;
   border-radius: 10px;
@@ -56,8 +61,13 @@ hr {
   margin: 2% auto;
 }
 
+.formErrors {
+  text-align: center;
+  color: red;
+}
+
 .itemInput {
-  width: 300px;
+  width: 90%;
   height: 35px;
   padding: 2% 3%;
   border-radius: 20px;
