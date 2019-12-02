@@ -1,9 +1,20 @@
 import { FETCH_ITEMS_REQUEST, FETCH_ITEMS_SUCCESS, FETCH_ITEMS_ERROR, POST_ITEMS_REQUEST, POST_ITEMS_SUCCESS, POST_ITEMS_ERROR, PUT_ITEMS_SUCCESS, PUT_ITEMS_ERROR, PUT_ITEMS_REQUEST, ADD_ITEM, TOGGLE_ITEM, REMOVE_ITEM } from '../actions/itemActions';
 
-const initialState = {
+export const initialState = {
   isLoading: false,
   error: '',
-  items: []
+  items: [
+    {
+      id: 1,
+      name: 'Chips',
+      isAccountedFor: false,
+    },
+    {
+      id: 2,
+      name: 'Chairs',
+      isAccountedFor: false,
+    }
+  ]
 }
 
 export function reducer(state = initialState, action) {
@@ -69,9 +80,9 @@ export function reducer(state = initialState, action) {
       return {
         ...state, items: [ ...state.items, 
           {
-            name: action.payload.name,
-            description: action.payload.description,
-            isAccounredFor: false,
+            name: action.payload,
+            isAccountedFor: false,
+            id: Date.now()
           }
         ]
       }
