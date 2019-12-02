@@ -1,10 +1,12 @@
-import React , {useEffect} from 'react';
+import React , {useEffect, useReducer} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GuestList from '../GuestList/GuestList';
 import AccountedForList from '../AccountedFor/AccountForList';
 import ItemList from '../Items/ItemList';
-import {getPartyById} from '../../store/actions/partyActions'
+import {getPartyById} from '../../store/actions/partyActions';
+import { ItemContext } from '../../contexts/ItemContext';
+import { initialState, reducer } from '../../store/reducers/itemReducer';
 /*
 
 This component is connected to the redux store
@@ -22,7 +24,9 @@ string is rendered instead
 
 */
 function PotLuckParty(props) {
-    
+    const [state, dispatch] = useReducer(reducer, initialState)
+    console.log(state.items)
+
     console.log(props.location.state)
      const {id} = props.location.state;
 
@@ -62,7 +66,9 @@ function PotLuckParty(props) {
                     <div className="pl-item-list">
                         <h3 className="item-list-title">Items Needed List</h3>
                         <div className="pl-item-list-div">
-                            <ItemList id={id}/>
+                            <ItemContext.Provider value={{state, dispatch}}>
+                                <ItemList id={id}/>
+                            </ItemContext.Provider>
                         </div>
                         <div className="pl-add-items-link">
                             <Link to='/itemForm' id="pl-item-link">
