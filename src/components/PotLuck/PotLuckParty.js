@@ -30,12 +30,11 @@ function PotLuckParty(props) {
     const [edit, setEdit] = useState(false);
     const {id} = props.location.state;
     console.log(props.location.state)
-    useEffect(() => getParty(), [])
+    console.log(edit)
+    useEffect(() => getParty(), [edit])
     
-
     function getParty(){
-        props.getPartyById(localStorage.getItem('lastItemId'))
-       
+        props.getPartyById(id) 
     }
 
     function editParty(e){
@@ -45,10 +44,9 @@ function PotLuckParty(props) {
 
     function updated(){
         setEdit(false);
-     
     }
 
-    useEffect(() => props.getPartyById(id), [])
+    useEffect(() => props.getPartyById(id), [edit])
    
     return (
 

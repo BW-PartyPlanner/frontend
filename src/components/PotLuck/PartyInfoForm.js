@@ -8,7 +8,6 @@ function PartyInfoForm(props) {
         name: '',
         date: '',
         budget: 0
-
     })
 
     function handleChange(e){
@@ -22,7 +21,6 @@ function PartyInfoForm(props) {
         e.preventDefault()
         props.updateParty(props.id, state)
         props.updated()
-
     }
 
 

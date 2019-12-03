@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 
 
 function PartyInfo(props) {
-
+    const [updateParty, setUpdateParty] = useState(false)
 
     const [state, setState] = useState({
         partyName: localStorage.getItem('party'),
@@ -12,6 +12,9 @@ function PartyInfo(props) {
     
     })
 
+    const refreshParty = () => {
+        setUpdateParty(!updateParty)
+    }
 
     useEffect( () => {
         setState( {
@@ -20,7 +23,7 @@ function PartyInfo(props) {
             budget: localStorage.getItem('budget')
         
         })
-
+        refreshParty()
     }, [])
   
     

@@ -59,14 +59,12 @@ export const updateParty = (id, update) => dispatch => {
       localStorage.setItem('party', update.name)
       localStorage.setItem('budget', update.budget)
       localStorage.setItem('date', update.date)
-     
-     
+    
     })
     .catch(err => {
       console.log("Unable to update this specific party.", err.response)
       dispatch({ type: PUT_PARTY_ERROR })
-    })
-  
+    }) 
 
 }
 
