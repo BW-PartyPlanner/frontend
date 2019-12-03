@@ -7,8 +7,8 @@ const initialState = {
     name: '',
     description: '',
     isAccountedFor: false,
-    party_id: 1,
-    user_id: 1
+    party_id: '',
+    user_id: ''
   }]
 }
 
@@ -58,13 +58,14 @@ export function reducer(state = initialState, action) {
           {
             name: action.payload.name,
             description: action.payload.description,
-            isAccounredFor: false,
+            isAccountedFor: false,
           }
         ]
       }
     case TOGGLE_ITEM:
       const toggleItem = state.items.map(item => {
         if (item.id === action.payload.id) {
+          console.log(item, !item.isAccountedFor)
           return { ...item, isAccountedFor: !item.isAccountedFor };
         } else {
           return item;
