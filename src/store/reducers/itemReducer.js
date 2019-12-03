@@ -80,15 +80,9 @@ export function reducer(state = initialState, action) {
       return {
         ...state, items: [ ...state.items, 
           {
-<<<<<<< HEAD
-            name: action.payload.name,
-            description: action.payload.description,
-            isAccountedFor: false,
-=======
             name: action.payload,
             isAccountedFor: false,
             id: Date.now()
->>>>>>> 4b56245c5f0f47275d552f5a9195bd0901421b70
           }
         ]
       }
