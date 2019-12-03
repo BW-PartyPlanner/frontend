@@ -11,7 +11,8 @@ import PotLuckForm from './components/PotLuck/PotLuckForm';
 import PotLuckParty from './components/PotLuck/PotLuckParty';
 import PotLuckPartyCreated from './components/PotLuck/PotLuckPartyCreated';
 import ItemList from './components/Items/ItemList';
-import ItemForm from './components/Items/ItemForm';
+import ItemFormBackup from './components/Items/ItemFormBackup';
+import EditItemForm from './components/Items/EditItemForm';
 import AccountedForForm from './components/AccountedFor/AccountedForForm';
 import GuestListForm from './components/GuestList/GuestListForm';
 import PrivateRoute from './auth/PrivateRoute';
@@ -32,25 +33,32 @@ function App({ setUserId, user_id }) {
 
   return (
     <>
-      <Navigation />
+    <Navigation />
     <div className="App">
    
       <Switch>
 
-        <Route path='/items' component={ItemList} />
-        <Route path='/items/:id' component={ItemList} />
-        <Route exact path='/' component={UserDashboard} />
-        <Route path='/signup' render={props => <SignUpForm {...props} /> } />
-        <Route path='/login' component={LoginForm} />
-        <PrivateRoute path='/dashboard' component={UserDashboard} />
         <PrivateRoute path='/potluckform' component={PotLuckForm} /> 
         <PrivateRoute path='/potluckparty' component={PotLuckParty} /> 
-        <PrivateRoute path='/potluckpartycreated' component={PotLuckPartyCreated} /> 
         <PrivateRoute path='/potluckparty/:id' component={PotLuckParty} /> 
+        <PrivateRoute path='/potluckparty/:id/items' component={ItemList} />
+        <PrivateRoute path='/potluckparty/:id/items/:id' component={ItemList} />
+        <PrivateRoute path='/potluckparty/:id/edititem/:id' component={EditItemForm} />
+        <PrivateRoute path='/potluckpartycreated' component={PotLuckPartyCreated} /> 
+        
         <PrivateRoute path='/hostedform' component={HostedForm} />  
         <PrivateRoute path='/hostedparty' component={HostedParty} />
         <PrivateRoute path='/hostedparty/:id' component={HostedParty} />
-        <PrivateRoute path='/itemForm' component={ItemForm} />
+        <PrivateRoute path='/hostedparty/:id/items' component={ItemList} />
+        <PrivateRoute path='/hostedparty/:id/items/:id' component={ItemList} />
+        <PrivateRoute path='/hostedparty/:id/edititem/:id' component={EditItemForm} />
+
+        <Route exact path='/' component={UserDashboard} />
+        <Route path='/signup' render={props => <SignUpForm {...props} /> } />
+        <Route path='/login' component={LoginForm} />
+
+        <PrivateRoute path='/dashboard' component={UserDashboard} />
+        <PrivateRoute path='/itemform' component={ItemFormBackup} />
         <PrivateRoute path='/accountedForForm' component={AccountedForForm} />
         <PrivateRoute path='/guestListForm' component={GuestListForm} />
 

@@ -1,4 +1,4 @@
-import React , {useEffect} from 'react';
+import React , {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GuestList from '../GuestList/GuestList';
@@ -6,6 +6,9 @@ import AccountedForList from '../AccountedFor/AccountForList';
 import ItemList from '../Items/ItemList';
 
 import {getPartyById} from '../../store/actions/partyActions'
+import PartyInfo from './PartyInfo'
+import PartyInfoForm from './PartyInfoForm'
+
 /*
 
 This component is connected to the redux store
@@ -24,28 +27,32 @@ string is rendered instead
 */
 function PotLuckPartyCreated(props) {
  
+    const [edit, setEdit] = useState(false);
+    useEffect(() => getParty(), [])
+    
 
-        useEffect(() => props.getPartyById(localStorage.getItem('lastItemId')), [])
+    function getParty(){
+        props.getPartyById(localStorage.getItem('lastItemId'))
+       
+    }
+
+    function editParty(e){
+        e.preventDefault();
+        setEdit(true);
+    }
+
+    function updated(){
+        setEdit(false);
+     
+    }
   
-   
     return (
         <div className="pl-wrapper">
 
             <div className="pl-pot-luck-party">
                 <div className="pl-container">
-
-                    <div className="pl-name-div">
-                                <h1>Party's name:</h1>
-                            <h1 className="pl-pot-luck-name">
-                            {props.state.partyReducer.party ? `${props.state.partyReducer.party.party.name}`: 'Party name'}
-                            </h1>
-                        <div className="pl-date-time-location">
-                            <h3>Date of Party</h3>
-                            <p className="pl-time"> {props.state.partyReducer.party ? `${props.state.partyReducer.party.party.date}`: 'date n/a'}</p>
-                        </div>
-                        <button className="pl-edit-button">Edit</button>
-                    </div>
-                    
+                {edit ? <PartyInfoForm updated={updated}/> : <PartyInfo editParty={editParty}/>}
+              
                 <div className="pl-guest-info  ">
                         <div className="pl-gst-list">
 
@@ -103,6 +110,3 @@ const mapStateToProps = function(state) {
 }
 
 export default connect(mapStateToProps,{getPartyById})(PotLuckPartyCreated)
-
-
-

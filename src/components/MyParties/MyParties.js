@@ -1,14 +1,13 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import {getParties} from '../../store/actions/partyActions';
-
 import Party from  './Party';
 
 const MyParties = (props) => {
 
-    useEffect( () => {
+    useEffect(() => {
       props.getParties()
-    },[])
+    }, [])
 
     return (
         <div className="container-my-parties">
@@ -20,21 +19,16 @@ const MyParties = (props) => {
                     <h3>Created Parties</h3>
                     <div>A bunch of parties I created.</div>
                     {props.state.partyReducer.parties ? <Party parties={props.state.partyReducer.parties}/>: "not it is not"}
-
-
                 </div>
         </div>
     );
 };
 
 function mapState(state){
-    // const {partyReducer} = state;
     return {
         state: state
         
     }
-
 }
-
 
 export default connect(mapState, {getParties})(MyParties);
