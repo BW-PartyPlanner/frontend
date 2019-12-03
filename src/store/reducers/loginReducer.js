@@ -4,7 +4,7 @@ const initialState = {
   isLoading: false,
   error: '',
   users: [],
-  isLoggedIn: false
+  isLoggedIn: true
 }
 
 export function reducer(state = initialState, action) {

@@ -28,7 +28,7 @@ string is rendered instead
 function PotLuckPartyCreated(props) {
  
     const [edit, setEdit] = useState(false);
-    useEffect(() => getParty(), [])
+    useEffect(() => getParty())
     
 
     function getParty(){

@@ -11,15 +11,15 @@ const MyParties = (props) => {
 
     return (
         <div className="container-my-parties">
-                <div className="party-list">
-                    <h3>RSVP's</h3>
-                    <div>A bunch of parties I have RSVP'd to.</div>
-                </div>
-                <div className="party-list">
-                    <h3>Created Parties</h3>
-                    <div>A bunch of parties I created.</div>
-                    {props.state.partyReducer.parties ? <Party parties={props.state.partyReducer.parties}/>: "not it is not"}
-                </div>
+            <div className="party-list">
+                <h3>RSVP's</h3>
+                <div>A bunch of parties I have RSVP'd to.</div>
+            </div>
+            <div className="party-list">
+                <h3>Created Parties</h3>
+                <div>A bunch of parties I created.</div>
+                {props.state.partyReducer.parties ? <Party parties={props.state.partyReducer.parties}/>: "not it is not"}
+            </div>
         </div>
     );
 };
@@ -27,7 +27,6 @@ const MyParties = (props) => {
 function mapState(state){
     return {
         state: state
-        
     }
 }
 

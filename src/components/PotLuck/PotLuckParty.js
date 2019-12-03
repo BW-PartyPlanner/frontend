@@ -30,15 +30,17 @@ function PotLuckParty(props) {
     const [edit, setEdit] = useState(false);
     const {id} = props.location.state;
     console.log(props.location.state)
+    console.log(props.history)
     console.log(edit)
-    useEffect(() => getParty(), [edit])
+    
+
+    useEffect(() => getParty(), [])
     
     function getParty(){
         props.getPartyById(id) 
     }
 
     function editParty(e){
-        e.preventDefault();
         setEdit(true);
     }
 
@@ -46,25 +48,13 @@ function PotLuckParty(props) {
         setEdit(false);
     }
 
-    useEffect(() => props.getPartyById(id), [edit])
+    useEffect(() => props.getPartyById(id), [id])
    
     return (
 
         <div className="pl-wrapper">
             <div className="pl-container" >
-            {edit ? <PartyInfoForm updated={updated} id={id}/> : <PartyInfo editParty={editParty} id={id}/>}
-                <div className="pl-name-div">
-
-                    {/* <h1 className="pl-pot-luck-name">
-                      {props.state.partyReducer.party ? `${props.state.partyReducer.party.name}`: 'Party name'}
-                    </h1>
-
-                    <h2 className="pl-guest-num">Number of Guests</h2>
-                    <h3 className="pl-date">Date of Party</h3>
-                    <p className="pl-time">{props.state.partyReducer.party ? `${props.state.partyReducer.party.date}`: "date not available"}</p> */}
-
-                    {/* <button className="pl-edit-button">Edit</button> */}
-                </div>
+            {edit ? <PartyInfoForm updated={updated} id={id} /> : <PartyInfo editParty={editParty} id={id} />}
                
                 <div className="pl-guest-info  ">
                     <div className="pl-gst-list">

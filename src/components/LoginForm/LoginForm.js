@@ -54,12 +54,11 @@ const FormikUserForm = withFormik({
 
     handleSubmit(values, formikBag) {
       formikBag.props.loginUser(values);
-      formikBag.props.setLoggedIn()
       formikBag.resetForm()
       if (!localStorage.getItem('token')) {
         setTimeout(function () { return formikBag.props.history.push('/dashboard') }, 2000)
       }
-      formikBag.props.history.push('/dashboard')
+      return formikBag.props.history.push('/dashboard')
   }
 })(LoginForm);
 
